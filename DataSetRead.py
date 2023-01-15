@@ -5,7 +5,7 @@ import io
 import dlib
 from collections.abc import Mapping
 import requests
-import json as json
+from json import loads
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 #set the directory
@@ -14,16 +14,17 @@ model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
 detector2 = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(model_path)
 # This key will serve all examples in this document.
-KEY = "3bf95fe5f0554d7f8f7bf5d877076c0c"
+"""KEY = "3bf95fe5f0554d7f8f7bf5d877076c0c"
 headers = {"Ocp-Apim-Subscription-Key": KEY}
 
 
 # This endpoint will be used in all examples in this quickstart.
-ENDPOINT = "https://sapirendprojectfaceapi.cognitiveservices.azure.com/"
-endpoint = f"{ENDPOINT}face/v1.0/detect?returnFaceLandmarks=true"
+ENDPOINT = "https://eastus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel][&detectionModel]&subscription-key=<3bf95fe5f0554d7f8f7bf5d877076c0c>"
+endpoint = "https://sapirendprojectfaceapi.cognitiveservices.azure.com"""
+
 # Create a client for interacting with the Face API
-credentials = CognitiveServicesCredentials(KEY)
-face_client = FaceClient(ENDPOINT, credentials)
+"""credentials = CognitiveServicesCredentials(KEY)
+face_client = FaceClient(ENDPOINT, credentials)"""
 def extract_features(directory):
     features = []
     labels = []
@@ -44,8 +45,8 @@ def extract_features(directory):
                 # Make the API call
                 response = requests.post(endpoint, headers=headers, params=params, data=payload)
                 """
-                hair_colorAzura = extract_hair_color(file_path)
-                print("micro Azura hair color : " + hair_colorAzura)
+                """hair_colorAzura = extract_hair_color(file_path)
+                print("micro Azura hair color : " + hair_colorAzura)"""
                 # Load the image and extract the landmarks
                 image = cv2.imread(file_path)
                 image_name = os.path.basename(file_path)
@@ -83,6 +84,12 @@ def extract_landmarks(image):
     for face in faces:
         shape = predictor(image, face)
         landmarks.append(np.array([[point.x, point.y] for point in shape.parts()]))
+    for shape in landmarks:
+        for point in shape:
+            x, y = point
+            cv2.circle(image, (x, y), 2, (255, 0, 0), -1)
+    cv2.imshow("Facial Landmarks", image)
+    cv2.waitKey(0)
     return landmarks
 
 def extract_hair_and_skin_color(image,landmarks):
@@ -114,34 +121,37 @@ def extract_color_from_region(image, rectangular_area):
     color = cv2.mean(image, mask=mask)
     return color
 
-def extract_hair_color(image_path):
+"""def extract_hair_color(image_path):
     with open(image_path, 'rb') as image_file:
         image_data = image_file.read()
     headers = {
         "Ocp-Apim-Subscription-Key": KEY,
         "Content-Type": "application/octet-stream"
     }
-    params = {
-        "returnFaceAttributes": "hairColor"
-    }
-    """
+    params = {'returnFaceId': 'false', 'detectionModel': 'detection_03'}
+    response = requests.post(f'{endpoint}/detect', headers=headers, params=params, data=image_data)
+    faces = loads(response.text)
+    
     response_det = face_client.face.detect_with_stream(
         image=image_data,
         detection_model='detection_03',
         recognition_model='recognition_04',
         return_face_landmarks=True
-    )
-    """
+    )"""
+"""
+    print("Detected Faces:")
+    for face in faces:
+        print(face)
     image = io.BytesIO(image_data)
     response = face_client.face.detect_with_stream(
-        image=image,
+        image=image
     )
    # print(vars(response[0]))
    # response = requests.post(f"{ENDPOINT}/face/v1.0/detect", headers=headers, params=params, data=image_data)
    # hair_color_data = response.json()["hairColor"]
     hair_color_data = response[0].face_attributes.hair.hair_color
     return hair_color_data
-
+"""
 
 
 class FaceFeatures:
