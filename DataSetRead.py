@@ -13,6 +13,11 @@ directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
 detector2 = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(model_path)
+count = 1
+def count_plus1():
+   global count
+   count += 1
+path_resize = "C:/kobbi/endProject/TSKinFace_Data/Azura_Test/test/resize_pics"
 # This key will serve all examples in this document.
 """KEY = "3bf95fe5f0554d7f8f7bf5d877076c0c"
 headers = {"Ocp-Apim-Subscription-Key": KEY}
@@ -49,6 +54,7 @@ def extract_features(directory):
                 print("micro Azura hair color : " + hair_colorAzura)"""
                 # Load the image and extract the landmarks
                 image = cv2.imread(file_path)
+                resizeImage(image)
                 image_name = os.path.basename(file_path)
                 landmarks = np.array(extract_landmarks(image))
                 # Preprocess the landmarks
@@ -84,35 +90,51 @@ def extract_landmarks(image):
     for face in faces:
         shape = predictor(image, face)
         landmarks.append(np.array([[point.x, point.y] for point in shape.parts()]))
-    for shape in landmarks:
+    """ for shape in landmarks:
         for point in shape:
             x, y = point
             cv2.circle(image, (x, y), 2, (255, 0, 0), -1)
     cv2.imshow("Facial Landmarks", image)
-    cv2.waitKey(0)
+    cv2.waitKey(0)"""
     return landmarks
 
 def extract_hair_and_skin_color(image,landmarks):
-    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    upper_hair = np.array([180, 255, 50])
-    rectangular_area_left_skin = extract_bounding_box(landmarks[0][32][0]-4 , landmarks[0][32][1]+4)
-    rectangular_area_right_skin = extract_bounding_box(landmarks[0][35][0]+4 , landmarks[0][35][1]+4)
-    right_skin = extract_color_from_region(image,rectangular_area_right_skin)
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2BGRA)
+    rectangular_area_right_hair = extract_bounding_box(landmarks[0][16][0]+2 , landmarks[0][16][1]-7)
+    rectangular_area_left_hair = extract_bounding_box(landmarks[0][0][0] , landmarks[0][1][1]-20)
+    rectangular_area_left_skin = extract_bounding_box(landmarks[0][31][0]-6 , landmarks[0][32][1]-6)
+    rectangular_area_right_skin = extract_bounding_box(landmarks[0][35][0]+6 , landmarks[0][35][1]-6)
+    right_skin = extract_color_from_region(hsv,rectangular_area_right_skin)
     left_skin = extract_color_from_region(image,rectangular_area_left_skin)
+    right_hair = extract_color_from_region(image,rectangular_area_right_hair)
+    left_hair = extract_color_from_region(image,rectangular_area_left_hair)
     # Convert the average color of the rectangular areas to the same color space
     # print(right_skin + " and with left " + left_skin + )
-    hair_mask = cv2.inRange(hsv, upper_hair, upper_hair)
+    hair_mask = ((right_hair[0]+left_hair[0]) / 2,(right_hair[1]+left_hair[1]) / 2 , (right_hair[2]+left_hair[2]) /2)
     skin_mask = ((right_skin[0]+left_skin[0]) / 2,(right_skin[1]+left_skin[1]) / 2 , (right_skin[2]+left_skin[2]) /2)
-    hair_color = cv2.mean(image, mask=hair_mask)
     #mean_skin = cv2.mean(image, mask=skin_mask)
-    return hair_color , skin_mask
+    return hair_mask , skin_mask
 
 def extract_bounding_box(point_x,point_y) :
     x,y = point_x,point_y
-    rectangular_area = [[x-1, y-1], [x-1, y+1], [x+1, y+1], [x+1, y-1]]
+    rectangular_area = [[x-2, y-2], [x-2, y+2], [x+2, y+2], [x+2, y-2]]
     return rectangular_area  
 
 def extract_color_from_region(image, rectangular_area):
+    # Create a copy of the original image
+    image_with_bounding_box = image.copy()
+    # Draw the bounding box on the image_with_bounding_box
+    cv2.fillPoly(image_with_bounding_box, [np.array(rectangular_area)], (0, 255, 0))
+
+    # Save the image with the bounding box
+    
+    path = "C:/kobbi/endProject/TSKinFace_Data/Azura_Test/test/bounding_boxes/"
+    if not os.path.exists(path):
+        os.makedirs(path)
+    file_name = "image_with_bounding_box" + str(count) + ".jpg"
+    file_path = os.path.join(path, file_name)
+    cv2.imwrite(file_path, image_with_bounding_box)
+    count_plus1()
     # Create a black image with the same shape as the original image
     mask = np.zeros(image.shape[:2], dtype=np.uint8)
     # Create a polygon with the rectangular_area points
@@ -120,6 +142,14 @@ def extract_color_from_region(image, rectangular_area):
     # Use the mask to extract the color
     color = cv2.mean(image, mask=mask)
     return color
+
+def resizeImage(image):
+    file_name22 = "image_resize" + str(count) + ".jpg"
+    file_path22 = os.path.join(path_resize, file_name22)
+    new_size = (256, 256)
+    copyBefore = image.copy()
+    image_resize = cv2.resize(copyBefore, new_size)
+    cv2.imwrite(file_path22, image_resize)
 
 """def extract_hair_color(image_path):
     with open(image_path, 'rb') as image_file:

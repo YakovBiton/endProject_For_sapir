@@ -27,17 +27,16 @@ def visualize_data(features):
 def visualize_skin_color(predictions):
      #Create an empty figure
      fig = plt.figure()
+     ax = fig.add_subplot(111,projection='3d')
      # Loop through the predictions
      for prediction in predictions:
           color = prediction[0][0]
-          x = prediction[1].skin_color[0]
-          y = prediction[1].skin_color[1]
-          z = prediction[1].skin_color[2]
-     #     plt.scatter(x, y, z, c=color, marker='o')
+          x = prediction[2][0]
+          y = prediction[2][1]
+          z = prediction[2][2]
+          ax.scatter(x, y, z, c='b')
      # Add the labels for the axis
-     plt.xlabel('Red')
-     plt.ylabel('Green')
-     # plt.zlabel('Blue')      
+     plt.show()      
 
 def visualize_skin_color2(knn_skin_colors):
      predicted_labels = [x[0][0] for x in knn_skin_colors]
