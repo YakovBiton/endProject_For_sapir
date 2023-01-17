@@ -38,7 +38,7 @@ def visualize_skin_color(predictions):
      # Add the labels for the axis
      plt.show()      
 
-def visualize_skin_color2(knn_skin_colors):
+def visualize_color(knn_skin_colors):
      predicted_labels = [x[0][0] for x in knn_skin_colors]
      image_names = [x[1] for x in knn_skin_colors]
 
@@ -48,3 +48,10 @@ def visualize_skin_color2(knn_skin_colors):
      plt.ylabel('Predicted Color')
      plt.show()
 
+def visualize_shape(features):
+     for shape in features.landmarks:
+        for point in shape:
+            x, y = point
+            cv2.circle(features.image, (x, y), 2, (255, 0, 0), -1)
+     cv2.imshow("Facial Landmarks", features.image)
+     cv2.waitKey(0)

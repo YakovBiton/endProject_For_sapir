@@ -62,7 +62,7 @@ def extract_features(directory):
                 # Append the features and labels
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
-                    face_features = FaceFeatures(landmarks, hair_color, skin_color, subdir,image_name)
+                    face_features = FaceFeatures(landmarks, hair_color, skin_color, subdir, image, image_name)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -90,12 +90,13 @@ def extract_landmarks(image):
     for face in faces:
         shape = predictor(image, face)
         landmarks.append(np.array([[point.x, point.y] for point in shape.parts()]))
-    """ for shape in landmarks:
+    copyImage = image.copy()
+    for shape in landmarks:
         for point in shape:
             x, y = point
-            cv2.circle(image, (x, y), 2, (255, 0, 0), -1)
-    cv2.imshow("Facial Landmarks", image)
-    cv2.waitKey(0)"""
+            cv2.circle(copyImage, (x, y), 2, (255, 0, 0), -1)
+    cv2.imshow("Facial Landmarks", copyImage)
+    cv2.waitKey(0)
     return landmarks
 
 def extract_hair_and_skin_color(image,landmarks):
@@ -185,10 +186,11 @@ def resizeImage(image):
 
 
 class FaceFeatures:
-    def __init__(self, landmarks, hair_color, skin_color, label,name):
+    def __init__(self, landmarks, hair_color, skin_color, label, image ,name):
         self.landmarks = landmarks
         self.hair_color = hair_color
         self.skin_color = skin_color
         self.label = label
+        self.image = image
         self.name = name
 
