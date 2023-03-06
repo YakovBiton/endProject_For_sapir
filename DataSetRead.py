@@ -130,11 +130,25 @@ def extract_color_from_region(image, rectangular_area):
     # Save the image with the bounding box
     
     path = "C:/kobbi/endProject/TSKinFace_Data/Azura_Test/test/bounding_boxes/"
+    path_for_only = "C:/kobbi/endProject/TSKinFace_Data/Azura_Test/test/only_bounding_boxes/"
     if not os.path.exists(path):
         os.makedirs(path)
     file_name = "image_with_bounding_box" + str(count) + ".jpg"
     file_path = os.path.join(path, file_name)
     cv2.imwrite(file_path, image_with_bounding_box)
+     # Crop the region from the original image
+    x1, y1 = rectangular_area[0]
+    x2, y2 = rectangular_area[2]
+    cropped_image = image[y1:y2, x1:x2]
+    if cropped_image is not None and cropped_image.size != 0:
+        if not os.path.exists(path_for_only):
+            os.makedirs(path_for_only)
+        file_name2 = "only_bounding_box" + str(count) + ".jpg"
+        file_path2 = os.path.join(path_for_only, file_name2)
+        new_size = (128, 128)
+        copyBefore = cropped_image.copy()
+        image_resize = cv2.resize(copyBefore, new_size)
+        cv2.imwrite(file_path2, image_resize)
     count_plus1()
     # Create a black image with the same shape as the original image
     mask = np.zeros(image.shape[:2], dtype=np.uint8)
