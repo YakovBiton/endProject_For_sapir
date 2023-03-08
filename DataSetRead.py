@@ -54,7 +54,7 @@ def extract_features(directory):
                 print("micro Azura hair color : " + hair_colorAzura)"""
                 # Load the image and extract the landmarks
                 image = cv2.imread(file_path)
-                resizeImage(image)
+                image_resize = resizeImage(image) # Resize the image still doesn't used
                 image_name = os.path.basename(file_path)
                 landmarks = np.array(extract_landmarks(image))
                 # Preprocess the landmarks
@@ -101,10 +101,11 @@ def extract_landmarks(image):
 
 def extract_hair_and_skin_color(image,landmarks):
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2BGRA)
-    rectangular_area_right_hair = extract_bounding_box(landmarks[0][16][0]+2 , landmarks[0][16][1]-7)
-    rectangular_area_left_hair = extract_bounding_box(landmarks[0][0][0] , landmarks[0][1][1]-20)
-    rectangular_area_left_skin = extract_bounding_box(landmarks[0][31][0]-6 , landmarks[0][32][1]-6)
-    rectangular_area_right_skin = extract_bounding_box(landmarks[0][35][0]+6 , landmarks[0][35][1]-6)
+    height, width, _ = image.shape # extract the image width and height
+    rectangular_area_right_hair = extract_bounding_box(landmarks[0][16][0]+2 , landmarks[0][16][1]-7, width, height)
+    rectangular_area_left_hair = extract_bounding_box(landmarks[0][0][0] , landmarks[0][1][1]-20, width, height)
+    rectangular_area_left_skin = extract_bounding_box(landmarks[0][31][0]-6 , landmarks[0][32][1]-6, width, height)
+    rectangular_area_right_skin = extract_bounding_box(landmarks[0][35][0]+6 , landmarks[0][35][1]-6, width, height)
     right_skin = extract_color_from_region(hsv,rectangular_area_right_skin)
     left_skin = extract_color_from_region(image,rectangular_area_left_skin)
     right_hair = extract_color_from_region(image,rectangular_area_right_hair)
@@ -116,10 +117,18 @@ def extract_hair_and_skin_color(image,landmarks):
     #mean_skin = cv2.mean(image, mask=skin_mask)
     return hair_mask , skin_mask
 
-def extract_bounding_box(point_x,point_y) :
-    x,y = point_x,point_y
-    rectangular_area = [[x-2, y-2], [x-2, y+2], [x+2, y+2], [x+2, y-2]]
-    return rectangular_area  
+def extract_bounding_box(point_x, point_y, image_width, image_height):
+    x, y = point_x, point_y
+    margin = 2
+    x1, y1 = max(x - margin, 0), max(y - margin, 0)
+    x2, y2 = min(x + margin, image_width), min(y + margin, image_height)
+    rectangular_area = [[x1, y1], [x1, y2], [x2, y2], [x2, y1]]
+    return rectangular_area
+
+# def extract_bounding_box(point_x,point_y) :
+#     x,y = point_x,point_y
+#     rectangular_area = [[x-2, y-2], [x-2, y+2], [x+2, y+2], [x+2, y-2]]
+#     return rectangular_area  
 
 def extract_color_from_region(image, rectangular_area):
     # Create a copy of the original image
@@ -165,6 +174,7 @@ def resizeImage(image):
     copyBefore = image.copy()
     image_resize = cv2.resize(copyBefore, new_size)
     cv2.imwrite(file_path22, image_resize)
+    return image_resize
 
 """def extract_hair_color(image_path):
     with open(image_path, 'rb') as image_file:
