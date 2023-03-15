@@ -52,6 +52,9 @@ def extract_features(directory):
                 """
                 """hair_colorAzura = extract_hair_color(file_path)
                 print("micro Azura hair color : " + hair_colorAzura)"""
+                #get the name of the file (photo)
+                file_name = os.path.basename(file_path)
+                label = makeLabel(file_name)
                 # Load the image and extract the landmarks
                 image = cv2.imread(file_path)
                 image_resize = resizeImage(image) # Resize the image still doesn't used
@@ -62,7 +65,7 @@ def extract_features(directory):
                 # Append the features and labels
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
-                    face_features = FaceFeatures(landmarks, hair_color, skin_color, subdir, image, image_name)
+                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -95,8 +98,9 @@ def extract_landmarks(image):
         for point in shape:
             x, y = point
             cv2.circle(copyImage, (x, y), 2, (255, 0, 0), -1)
-    cv2.imshow("Facial Landmarks", copyImage)
-    cv2.waitKey(0)
+    # show the landmarks on the face
+    # cv2.imshow("Facial Landmarks", copyImage)
+    # cv2.waitKey(0)
     return landmarks
 
 def extract_hair_and_skin_color(image,landmarks):
@@ -175,6 +179,12 @@ def resizeImage(image):
     image_resize = cv2.resize(copyBefore, new_size)
     cv2.imwrite(file_path22, image_resize)
     return image_resize
+
+def makeLabel(photo_name):
+    label = photo_name.split("-")[1:3]
+    label = "-".join(label)
+    return label
+
 
 """def extract_hair_color(image_path):
     with open(image_path, 'rb') as image_file:

@@ -1,6 +1,6 @@
 import cv2
 import math
-
+import numpy as np
 # Define your line drawing function
 def draw_line_direct(image, start_point, end_point, color, thickness):
     cv2.line(image, start_point, end_point, color, thickness)
@@ -14,6 +14,8 @@ def draw_line(image, arr_of_dots, color, thickness):
 
 # Define your landmarks calculator function
 def landmarks_calculator(features):
+    X = []
+    y = []
     for feature in features:
         ratio_features = [[]]
         landmarks_coordinates = feature.landmarks
@@ -29,15 +31,21 @@ def landmarks_calculator(features):
         ratio_features[0].append(nose_ratio) # Append nose_ratio to the sub-list
         ratio_features[0].append(mouth_middle_ratio) # Append mouth_middle_ratio to the sub-list
         feature.ratio_features = ratio_features
+        X.append([nose_ratio, mouth_middle_ratio])
+        y.append(int(feature.label.split('-')[0]))
         # Draw the line on the image
         image = feature.image
         draw_line(image, landmarks_coordinates[0][27:31], (0, 255, 0), 2)
         draw_line(image, landmarks_coordinates[0][31:36], (0, 0, 255), 2)
         draw_line_direct(image, get_midpoint(landmarks_coordinates[0][12], landmarks_coordinates[0][13]),landmarks_coordinates[0][54], (255,0,0), 2)
         draw_line_direct(image, get_midpoint(landmarks_coordinates[0][3], landmarks_coordinates[0][4]),landmarks_coordinates[0][48], (255,0,0), 2)
-        cv2.imshow("Image with Line", image)
-        cv2.waitKey(0)
-    return features    
+        # show lines on the face
+        # cv2.imshow("Image with Line", image)
+        # cv2.waitKey(0)
+    X = np.array(X)
+    y = np.array(y)
+
+    return features , X , y   
 
 # Define your line length calculator function
 def line_length_calculator(arr_of_dots):

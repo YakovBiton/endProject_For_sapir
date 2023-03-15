@@ -4,6 +4,7 @@ from Visualize_Data import visualize_color , visualize_shape
 from Color_classify import predict_Skin_Colors , predict_hair_Colors
 import random
 from Cac_Landmarks import *
+from Classifier import *
 # Set the directory where the images are stored
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 
@@ -12,7 +13,8 @@ directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 
 # Extract the features
 features = extract_features(directory)
-landmarks_calculator(features)
+features , x ,y = landmarks_calculator(features)
+landmarks_classifier(features , x , y)
 
 
 # fraction = 0.1
