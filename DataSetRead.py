@@ -4,13 +4,14 @@ import numpy as np
 import io
 import dlib
 from collections.abc import Mapping
-import requests
+import shutil
 from json import loads
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 #set the directory
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
+bad_photos_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test_Copy'
 detector2 = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(model_path)
 count = 1
@@ -72,7 +73,10 @@ def extract_features(directory):
                    # landmarks[3] = 
                     features.append(face_features)
                     labels.append(subdir)
-
+                else:
+                    file_path_bad = os.path.join(bad_photos_path, file_name)
+                    copyBefore = image.copy()
+                    cv2.imwrite(file_path_bad, copyBefore)
    
     
     for feature in features:
@@ -181,7 +185,7 @@ def resizeImage(image):
     return image_resize
 
 def makeLabel(photo_name):
-    label = photo_name.split("-")[1:3]
+    label = photo_name.split("-")[0:3]
     label = "-".join(label)
     return label
 

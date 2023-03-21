@@ -31,8 +31,15 @@ def landmarks_calculator(features):
         ratio_features[0].append(nose_ratio) # Append nose_ratio to the sub-list
         ratio_features[0].append(mouth_middle_ratio) # Append mouth_middle_ratio to the sub-list
         feature.ratio_features = ratio_features
-        X.append([nose_ratio, mouth_middle_ratio])
-        y.append(int(feature.label.split('-')[0]))
+        fm , number , sex = feature.label.split('-')[0 : 3]
+        print(fm , number , sex)
+        if fm == 'FMD' and sex == 'M.jpg' :
+            X.append([nose_ratio, mouth_middle_ratio])
+        if fm == 'FMD' and sex == 'D.jpg' :
+            y.append([nose_ratio, mouth_middle_ratio])
+        
+       # X.append([nose_ratio, mouth_middle_ratio])
+        # y.append(int(feature.label.split('-')[0]))
         # Draw the line on the image
         image = feature.image
         draw_line(image, landmarks_coordinates[0][27:31], (0, 255, 0), 2)
