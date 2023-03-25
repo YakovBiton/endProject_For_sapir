@@ -3,11 +3,14 @@ import cv2
 import numpy as np
 import io
 import dlib
+from PIL import Image
 from collections.abc import Mapping
 import shutil
 from json import loads
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
+import colorthief
+from DomiColor import *
 #set the directory
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
@@ -41,21 +44,14 @@ def extract_features(directory):
         for file in os.listdir(subdir_path):
             file_path = os.path.join(subdir_path, file)
             if os.path.isfile(file_path):
-                """"
-                # Read the image file and convert it to a byte array
-                with open(file_path, "rb") as image_file:
-                    image_data = image_file.read()
-                 # Define the payload for the API call
-                params = {"returnFaceLandmarks": True}
-                payload = image_data
-                # Make the API call
-                response = requests.post(endpoint, headers=headers, params=params, data=payload)
-                """
-                """hair_colorAzura = extract_hair_color(file_path)
-                print("micro Azura hair color : " + hair_colorAzura)"""
+               
                 #get the name of the file (photo)
                 file_name = os.path.basename(file_path)
                 label = makeLabel(file_name)
+                # Extract information from filename
+                family_type = file_name.split("-")[0] # FMD or FMS
+                family_number = file_name.split("-")[1] # number of the family
+                member_type = file_name.split("-")[2] # M, F, D, or S
                 # Load the image and extract the landmarks
                 image = cv2.imread(file_path)
                 image_resize = resizeImage(image) # Resize the image still doesn't used
@@ -66,7 +62,7 @@ def extract_features(directory):
                 # Append the features and labels
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
-                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name)
+                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -82,6 +78,7 @@ def extract_features(directory):
     for feature in features:
        print("feature", feature.name , "68 is ", feature.landmarks[0][35][0]) 
        print(feature.skin_color)
+       print(feature.hair_color)
        #np.set_printoptions(threshold=sys.maxsize) 
     return features
 
@@ -118,6 +115,7 @@ def extract_hair_and_skin_color(image,landmarks):
     left_skin = extract_color_from_region(image,rectangular_area_left_skin)
     right_hair = extract_color_from_region(image,rectangular_area_right_hair)
     left_hair = extract_color_from_region(image,rectangular_area_left_hair)
+
     # Convert the average color of the rectangular areas to the same color space
     # print(right_skin + " and with left " + left_skin + )
     hair_mask = ((right_hair[0]+left_hair[0]) / 2,(right_hair[1]+left_hair[1]) / 2 , (right_hair[2]+left_hair[2]) /2)
@@ -166,13 +164,15 @@ def extract_color_from_region(image, rectangular_area):
         copyBefore = cropped_image.copy()
         image_resize = cv2.resize(copyBefore, new_size)
         cv2.imwrite(file_path2, image_resize)
-    count_plus1()
+        count_plus1()
+        return dominant_color(copyBefore)
     # Create a black image with the same shape as the original image
     mask = np.zeros(image.shape[:2], dtype=np.uint8)
     # Create a polygon with the rectangular_area points
     cv2.fillPoly(mask, [np.array(rectangular_area)], 255)
     # Use the mask to extract the color
     color = cv2.mean(image, mask=mask)
+    count_plus1()
     return color
 
 def resizeImage(image):
@@ -224,11 +224,14 @@ def makeLabel(photo_name):
 
 
 class FaceFeatures:
-    def __init__(self, landmarks, hair_color, skin_color, label, image ,name):
+    def __init__(self, landmarks, hair_color, skin_color, label, image , name, family_type, family_number, member_type):
         self.landmarks = landmarks
         self.hair_color = hair_color
         self.skin_color = skin_color
         self.label = label
         self.image = image
         self.name = name
+        self.family_type = family_type
+        self.family_number = family_number
+        self.member_type = member_type
 
