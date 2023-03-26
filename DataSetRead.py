@@ -49,9 +49,10 @@ def extract_features(directory):
                 file_name = os.path.basename(file_path)
                 label = makeLabel(file_name)
                 # Extract information from filename
-                family_type = file_name.split("-")[0] # FMD or FMS
-                family_number = file_name.split("-")[1] # number of the family
-                member_type = file_name.split("-")[2] # M, F, D, or S
+                family_type , family_number , member_type  = label.split('-')[0 : 3] 
+                # FMD or FMS
+                # number of the family
+                # M, F, D, or S
                 # Load the image and extract the landmarks
                 image = cv2.imread(file_path)
                 image_resize = resizeImage(image) # Resize the image still doesn't used
@@ -62,7 +63,8 @@ def extract_features(directory):
                 # Append the features and labels
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
-                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type)
+                    belongs_to_set = '$'
+                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -224,7 +226,7 @@ def makeLabel(photo_name):
 
 
 class FaceFeatures:
-    def __init__(self, landmarks, hair_color, skin_color, label, image , name, family_type, family_number, member_type):
+    def __init__(self, landmarks, hair_color, skin_color, label, image , name, family_type, family_number, member_type, belongs_to_set):
         self.landmarks = landmarks
         self.hair_color = hair_color
         self.skin_color = skin_color
@@ -234,4 +236,5 @@ class FaceFeatures:
         self.family_type = family_type
         self.family_number = family_number
         self.member_type = member_type
+        self.belongs_to_set = belongs_to_set
 

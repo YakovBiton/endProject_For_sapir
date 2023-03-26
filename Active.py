@@ -15,7 +15,7 @@ directory3 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Single_SD'
 
 # Extract the features
 features = extract_features(directory3)
-# features , x ,y = landmarks_calculator(features)
+features , x ,y = landmarks_calculator(features)
 # landmarks_classifier(features , x , y)
 
 

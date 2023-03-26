@@ -30,14 +30,9 @@ def landmarks_calculator(features):
         print("Nose wide:", nose_width)
         ratio_features[0].append(nose_ratio) # Append nose_ratio to the sub-list
         ratio_features[0].append(mouth_middle_ratio) # Append mouth_middle_ratio to the sub-list
-        feature.ratio_features = ratio_features
-        fm , number , sex = feature.label.split('-')[0 : 3]
-        print(fm , number , sex)
-        if fm == 'FMD' and sex == 'M.jpg' :
-            X.append([nose_ratio, mouth_middle_ratio])
-        if fm == 'FMD' and sex == 'D.jpg' :
-            y.append([nose_ratio, mouth_middle_ratio])
-        
+        feature.ratio_features = [nose_ratio , mouth_middle_ratio]
+
+
        # X.append([nose_ratio, mouth_middle_ratio])
         # y.append(int(feature.label.split('-')[0]))
         # Draw the line on the image
@@ -49,6 +44,46 @@ def landmarks_calculator(features):
         # show lines on the face
         # cv2.imshow("Image with Line", image)
         # cv2.waitKey(0)
+    for feature in features:
+        fm , number , sex = feature.label.split('-')[0 : 3]
+        if feature.belongs_to_set == '$':
+            if fm == 'FMD' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'M.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([feature.ratio_features[0], feature.ratio_features[1], f.ratio_features[0], f.ratio_features[1]])
+                                y.append([f1.ratio_features[0], f1.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
+            elif fm == 'FMD' and sex == 'M.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'F.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([f.ratio_features[0], f.ratio_features[1], feature.ratio_features[0], feature.ratio_features[1]])
+                                y.append([f1.ratio_features[0], f1.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)                  
+            elif fm == 'FMD' and sex == 'D.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'F.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMD' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.ratio_features[0], f.ratio_features[1], f1.ratio_features[0], f1.ratio_features[1]])
+                                y.append([feature.ratio_features[0], feature.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+
     X = np.array(X)
     y = np.array(y)
 
