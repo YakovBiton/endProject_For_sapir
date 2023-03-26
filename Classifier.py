@@ -16,7 +16,7 @@ def landmarks_classifier(features , x , y):
 
     # Define the Keras model
     model = Sequential()
-    model.add(Dense(10, input_dim=2, activation='relu'))
+    model.add(Dense(10, input_dim=4, activation='relu'))
     model.add(Dense(2, activation='sigmoid'))
 
     # Compile the model
