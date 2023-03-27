@@ -1,6 +1,6 @@
 import os
 
-dir1 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Single_SD\\all'
+dir1 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD'
 dir2 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test_Copy'
 
 # Get the list of file names in both directories

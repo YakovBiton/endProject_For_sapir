@@ -76,6 +76,7 @@ def neural_Classifier(X , y ):
             # Print the training and validation losses
             if epoch % 10 == 0:
                 print('Epoch [{}/{}], Train Loss: {:.4f}, Validation Loss: {:.4f}'.format(epoch+1, epochs, train_loss, val_loss))
+            torch.save(model.state_dict(), 'C://kobbi//endProject//py_torch_model//model.pth')        
 
         
 

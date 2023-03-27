@@ -46,6 +46,7 @@ def landmarks_calculator(features):
         # cv2.waitKey(0)
     for feature in features:
         fm , number , sex = feature.label.split('-')[0 : 3]
+        print(fm , number , sex)
         if feature.belongs_to_set == '$':
             if fm == 'FMD' and sex == 'F.jpg':
                 for f in features:
@@ -83,7 +84,90 @@ def landmarks_calculator(features):
                                 X.append([f.ratio_features[0], f.ratio_features[1], f1.ratio_features[0], f1.ratio_features[1]])
                                 y.append([feature.ratio_features[0], feature.ratio_features[1]])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
-
+            elif fm == 'FMS' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'M.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMS' and f1.family_number == number and f1.member_type == 'S.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([feature.ratio_features[0], feature.ratio_features[1], f.ratio_features[0], f.ratio_features[1]])
+                                y.append([f1.ratio_features[0], f1.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+            elif fm == 'FMS' and sex == 'M.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'F.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMS' and f1.family_number == number and f1.member_type == 'S.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([f.ratio_features[0], f.ratio_features[1], feature.ratio_features[0], feature.ratio_features[1]])
+                                y.append([f1.ratio_features[0], f1.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+            elif fm == 'FMS' and sex == 'S.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'F.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMS' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.ratio_features[0], f.ratio_features[1], f1.ratio_features[0], f1.ratio_features[1]])
+                                y.append([feature.ratio_features[0], feature.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+        elif fm == 'FMSD' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'M.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([feature.ratio_features[0], feature.ratio_features[1], f.ratio_features[0], f.ratio_features[1]])
+                                y.append([f1.ratio_features[0], f1.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
+        elif fm == 'FMSD' and sex == 'M.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'F.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([f.ratio_features[0], f.ratio_features[1], feature.ratio_features[0], feature.ratio_features[1]])
+                                y.append([f1.ratio_features[0], f1.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set) 
+        elif fm == 'FMSD' and sex == 'D.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'F.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.ratio_features[0], f.ratio_features[1], f1.ratio_features[0], f1.ratio_features[1]])
+                                y.append([feature.ratio_features[0], feature.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
+        elif fm == 'FMSD' and sex == 'S.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'F.jpg':
+                        print('im here')
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.ratio_features[0], f.ratio_features[1], f1.ratio_features[0], f1.ratio_features[1]])
+                                y.append([feature.ratio_features[0], feature.ratio_features[1]])
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)                                                                
     X = np.array(X)
     y = np.array(y)
 
