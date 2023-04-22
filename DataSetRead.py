@@ -1,12 +1,12 @@
 import os
 import cv2
 import numpy as np
-import io
+from PIL import Image
+from deepface import DeepFace
+from deepface.commons import functions
 import dlib
 from PIL import Image
 from collections.abc import Mapping
-import shutil
-from json import loads
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 import colorthief
@@ -64,7 +64,8 @@ def extract_features(directory):
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
                     belongs_to_set = '$'
-                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+                    features_VGGFace = extract_VGGFace_features(file_path)
+                    face_features = FaceFeatures(landmarks , features_VGGFace, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -82,6 +83,10 @@ def extract_features(directory):
        print(feature.skin_color)
        print(feature.hair_color)
        #np.set_printoptions(threshold=sys.maxsize) 
+    if check_VGGFace_features_extraction(features):
+        print("VGGFace features extracted for all images.")
+    else:
+        print("VGGFace features not extracted for some images.")   
     return features
 
 
@@ -192,6 +197,33 @@ def makeLabel(photo_name):
     return label
 
 
+def extract_VGGFace_features(img_path):
+    img = Image.open(img_path)
+
+    # Ensure the image is in RGB format
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
+
+    # Resize the image
+    img = img.resize((224, 224))
+
+    # Convert the image to a numpy array and normalize it
+    x = np.array(img)
+    x = functions.preprocess_face(x, target_size=(224, 224), grayscale=False , enforce_detection=False)
+
+    # Extract features with VGGFace
+    features_VGGFace = DeepFace.represent(x, model_name='VGG-Face', enforce_detection=False)
+    return features_VGGFace
+
+def check_VGGFace_features_extraction(features):
+    all_extracted = True
+    for face_features in features:
+        if face_features.features_VGGFace is None or len(face_features.features_VGGFace) == 0:
+            print(f"VGGFace features not extracted for image {face_features.image_name}")
+            all_extracted = False
+    return all_extracted
+
+
 """def extract_hair_color(image_path):
     with open(image_path, 'rb') as image_file:
         image_data = image_file.read()
@@ -226,8 +258,9 @@ def makeLabel(photo_name):
 
 
 class FaceFeatures:
-    def __init__(self, landmarks, hair_color, skin_color, label, image , name, family_type, family_number, member_type, belongs_to_set):
+    def __init__(self, landmarks, features_VGGFace ,hair_color, skin_color, label, image , name, family_type, family_number, member_type, belongs_to_set):
         self.landmarks = landmarks
+        self.features_VGGFace = features_VGGFace
         self.hair_color = hair_color
         self.skin_color = skin_color
         self.label = label
