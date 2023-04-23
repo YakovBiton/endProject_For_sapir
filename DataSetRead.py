@@ -11,6 +11,8 @@ from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 import colorthief
 from DomiColor import *
+from keras_vggface.utils import preprocess_input
+
 #set the directory
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
@@ -64,8 +66,14 @@ def extract_features(directory):
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
                     belongs_to_set = '$'
-                    features_VGGFace = extract_VGGFace_features(file_path)
-                    face_features = FaceFeatures(landmarks , features_VGGFace, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+                    # With these lines:
+                    ######   features_VGGFace still does not work ######
+                    #features_VGGFace = extract_VGGFace_features(file_path)
+                    #if features_VGGFace is None:
+                    #    print("Skipping image", file_path)
+                    #    continue
+                    #features_VGGFace_array = np.array(features_VGGFace)
+                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -80,13 +88,10 @@ def extract_features(directory):
     
     for feature in features:
        print("feature", feature.name , "68 is ", feature.landmarks[0][35][0]) 
-       print(feature.skin_color)
-       print(feature.hair_color)
-       #np.set_printoptions(threshold=sys.maxsize) 
-    if check_VGGFace_features_extraction(features):
-        print("VGGFace features extracted for all images.")
-    else:
-        print("VGGFace features not extracted for some images.")   
+       #print(feature.skin_color)
+       #print(feature.hair_color)
+       
+       #np.set_printoptions(threshold=sys.maxsize)   
     return features
 
 
@@ -198,22 +203,40 @@ def makeLabel(photo_name):
 
 
 def extract_VGGFace_features(img_path):
-    img = Image.open(img_path)
+    # Extract face using the desired detector backend
+    detector_backend = 'opencv'
+    face_imgs = functions.extract_faces(img=img_path, target_size=(224, 224), detector_backend=detector_backend)
 
-    # Ensure the image is in RGB format
-    if img.mode != 'RGB':
-        img = img.convert('RGB')
+    if len(face_imgs) > 0:
+        # If a face is detected, use the first one (assuming there's only one face in the image)
+        face_img = face_imgs[0][0]  # Get the face image from the first tuple
 
-    # Resize the image
-    img = img.resize((224, 224))
+        # Check if the face image is empty before processing
+        if face_img.size == 0:
+            print(f"Empty face image detected in {img_path}. Skipping this image.")
+            return None
 
-    # Convert the image to a numpy array and normalize it
-    x = np.array(img)
-    x = functions.preprocess_face(x, target_size=(224, 224), grayscale=False , enforce_detection=False)
+        # Convert the face image to a numpy array and make sure it's in the correct format
+        x = np.array(face_img, dtype=np.float64)
+        x = np.expand_dims(x, axis=0)
 
-    # Extract features with VGGFace
-    features_VGGFace = DeepFace.represent(x, model_name='VGG-Face', enforce_detection=False)
-    return features_VGGFace
+        # Extract features with VGGFace
+        features_VGGFace = DeepFace.represent(x, model_name='VGG-Face', enforce_detection=False)
+
+        # Convert features_VGGFace to a NumPy array
+        features_VGGFace_array = np.array(features_VGGFace)
+
+        return features_VGGFace_array
+    else:
+        # If no face is detected, return None
+        return None
+
+
+
+
+
+
+
 
 def check_VGGFace_features_extraction(features):
     all_extracted = True
@@ -223,6 +246,11 @@ def check_VGGFace_features_extraction(features):
             all_extracted = False
     return all_extracted
 
+def string_to_array(s):
+    s = s.strip('[]')
+    s = s.split(',')
+    array = np.array([float(value) for value in s])
+    return array
 
 """def extract_hair_color(image_path):
     with open(image_path, 'rb') as image_file:
@@ -258,9 +286,8 @@ def check_VGGFace_features_extraction(features):
 
 
 class FaceFeatures:
-    def __init__(self, landmarks, features_VGGFace ,hair_color, skin_color, label, image , name, family_type, family_number, member_type, belongs_to_set):
+    def __init__(self, landmarks ,hair_color, skin_color, label, image , name, family_type, family_number, member_type, belongs_to_set):
         self.landmarks = landmarks
-        self.features_VGGFace = features_VGGFace
         self.hair_color = hair_color
         self.skin_color = skin_color
         self.label = label

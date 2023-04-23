@@ -11,20 +11,20 @@ from Eval_Model import *
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 directory2 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Bigger_test'
 directory_For_Singles = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Single_SD'
-directory_For_pairs = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD'
+directory_For_Pairs = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD'
 model_path = 'C:\\kobbi\\endProject\\py_torch_model\\model.pth'
 
 
 
 # Extract the features
-features = extract_features(directory_For_pairs)
+features = extract_features(directory_For_Singles)
 features , x ,y = landmarks_calculator(features)
 neural_Classifier(x , y)
 # landmarks_classifier(features , x , y)
 
 
 #eval model activation:
-#features , input_data ,true_label = landmarks_calculator(features)
+features , input_data ,true_label = landmarks_calculator(features)
 #evaluate(model_path , input_data , true_label)
 
 # fraction = 0.1
