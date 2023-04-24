@@ -20,4 +20,3 @@ def evaluate(model_path, input_data, true_labels):
         print("Mean Absolute Error:", mae)
         print("R^2 Score:", r2)
 
-

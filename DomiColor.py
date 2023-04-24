@@ -2,6 +2,8 @@ from PIL import Image
 from collections import Counter
 import webcolors
 import cv2 
+from colorthief import ColorThief
+from io import BytesIO
 def closest_color(requested_color):
     min_colors = {}
     for key, name in webcolors.CSS3_HEX_TO_NAMES.items():
@@ -35,3 +37,19 @@ def dominant_color(image):
     return most_frequent_pixel[1]
 
 
+def three_most_dominant_colors(image):
+    # Convert NumPy array to PIL Image
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    image = Image.fromarray(image)
+    
+    # Save the image in memory
+    image_file = BytesIO()
+    image.save(image_file, format='JPEG')
+    image_file.seek(0)
+    
+    # Get the dominant colors using ColorThief
+    color_thief = ColorThief(image_file)
+    dominant_colors = color_thief.get_color(quality=1)
+    palette = color_thief.get_palette(color_count=3, quality=1)
+    
+    return dominant_colors, palette

@@ -18,13 +18,13 @@ model_path = 'C:\\kobbi\\endProject\\py_torch_model\\model.pth'
 
 # Extract the features
 features = extract_features(directory_For_Singles)
-features , x ,y = landmarks_calculator(features)
-neural_Classifier(x , y)
+#features , x ,y = landmarks_calculator(features)
+#neural_Classifier(x , y)
 # landmarks_classifier(features , x , y)
 
 
 #eval model activation:
-features , input_data ,true_label = landmarks_calculator(features)
+#features , input_data ,true_label = landmarks_calculator(features)
 #evaluate(model_path , input_data , true_label)
 
 # fraction = 0.1

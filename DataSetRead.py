@@ -65,6 +65,7 @@ def extract_features(directory):
                 # Append the features and labels
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
+                    dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
                     belongs_to_set = '$'
                     # With these lines:
                     ######   features_VGGFace still does not work ######
@@ -86,8 +87,8 @@ def extract_features(directory):
                     cv2.imwrite(file_path_bad, copyBefore)
    
     
-    for feature in features:
-       print("feature", feature.name , "68 is ", feature.landmarks[0][35][0]) 
+    #for feature in features:
+       #print("feature", feature.name , "68 is ", feature.landmarks[0][35][0]) 
        #print(feature.skin_color)
        #print(feature.hair_color)
        
@@ -186,6 +187,89 @@ def extract_color_from_region(image, rectangular_area):
     color = cv2.mean(image, mask=mask)
     count_plus1()
     return color
+
+def extract_eye_color(image, landmarks, image_name) :
+    left_eye_points = get_eye_region(landmarks, 36, 41)
+    right_eye_points = get_eye_region(landmarks, 42, 47)
+
+    # Draw bounding boxes around the eye regions
+    image_with_boxes = draw_eye_bounding_boxes(image.copy(), left_eye_points, right_eye_points)
+    cv2.imshow("Eye Bounding Boxes", image_with_boxes)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+    left_eye_region = crop_eye_region(image, left_eye_points)
+    right_eye_region = crop_eye_region(image, right_eye_points)
+    combined_eye_region = combine_eye_regions(left_eye_region, right_eye_region)
+
+    # Save the combined_eye_region image
+    output_directory = "C:/kobbi/endProject/TSKinFace_Data/Azura_Test/test/bounding_eyes/"
+    os.makedirs(output_directory, exist_ok=True)
+    output_image_path = os.path.join(output_directory, f"combined_eye_{image_name}")
+    cv2.imwrite(output_image_path, combined_eye_region)
+
+
+    dominant_color, palette = three_most_dominant_colors(combined_eye_region)
+    print(dominant_color)
+    if is_blueish(palette):
+        print(f"{image_name} has a blueish tone")
+
+    if is_greenish(palette):
+        print(f"{image_name} has a greenish tone")
+    return dominant_color,palette
+
+
+
+def get_eye_region(landmarks, start_point, end_point):
+    points = []
+    for i in range(start_point, end_point + 1):
+        x, y = landmarks[0][i][0], landmarks[0][i][1]
+        points.append((x, y))
+    
+    return points
+
+def crop_eye_region(image, points):
+    x_min = min([p[0] for p in points])
+    x_max = max([p[0] for p in points])
+    y_min = min([p[1] for p in points])
+    y_max = max([p[1] for p in points])
+
+    return image[y_min:y_max, x_min:x_max]
+
+def combine_eye_regions(left_eye_region, right_eye_region):
+    combined_height = max(left_eye_region.shape[0], right_eye_region.shape[0])
+    combined_width = left_eye_region.shape[1] + right_eye_region.shape[1]
+    
+    combined_eye_region = np.zeros((combined_height, combined_width, 3), dtype=np.uint8)
+    
+    combined_eye_region[0:left_eye_region.shape[0], 0:left_eye_region.shape[1]] = left_eye_region
+    combined_eye_region[0:right_eye_region.shape[0], left_eye_region.shape[1]:] = right_eye_region
+    
+    return combined_eye_region
+
+def is_blueish(palette):
+    for color in palette:
+        r, g, b = color
+        if b > r and b > g:
+            return True
+    return False
+
+def is_greenish(palette):
+    for color in palette:
+        r, g, b = color
+        if g > r and g > b:
+            return True
+    return False
+
+def draw_eye_bounding_boxes(image, left_eye_points, right_eye_points):
+    left_eye_hull = cv2.convexHull(np.array(left_eye_points))
+    right_eye_hull = cv2.convexHull(np.array(right_eye_points))
+
+    cv2.drawContours(image, [left_eye_hull], -1, (0, 255, 0), 1)
+    cv2.drawContours(image, [right_eye_hull], -1, (0, 255, 0), 1)
+
+    return image
+
 
 def resizeImage(image):
     file_name22 = "image_resize" + str(count) + ".jpg"
