@@ -194,9 +194,9 @@ def extract_eye_color(image, landmarks, image_name) :
 
     # Draw bounding boxes around the eye regions
     image_with_boxes = draw_eye_bounding_boxes(image.copy(), left_eye_points, right_eye_points)
-    cv2.imshow("Eye Bounding Boxes", image_with_boxes)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    #cv2.imshow("Eye Bounding Boxes", image_with_boxes)
+    #cv2.waitKey(0)
+    #cv2.destroyAllWindows()
 
     left_eye_region = crop_eye_region(image, left_eye_points)
     right_eye_region = crop_eye_region(image, right_eye_points)

@@ -7,6 +7,8 @@ from Cac_Landmarks import *
 from Classifier import *
 from Classifier_PyTorch import *
 from Eval_Model import *
+from Find_Child import *
+from Child_Data_Maker import *
 # Set the directory where the images are stored
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 directory2 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Bigger_test'
@@ -14,10 +16,11 @@ directory_For_Singles = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Single_SD'
 directory_For_Pairs = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD'
 model_path = 'C:\\kobbi\\endProject\\py_torch_model\\model.pth'
 
-
+img_father_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-1-F.jpg'
+img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-1-M.jpg'
 
 # Extract the features
-features = extract_features(directory_For_Singles)
+#features = extract_features(directory_For_Singles)
 #features , x ,y = landmarks_calculator(features)
 #neural_Classifier(x , y)
 # landmarks_classifier(features , x , y)
@@ -26,6 +29,16 @@ features = extract_features(directory_For_Singles)
 #eval model activation:
 #features , input_data ,true_label = landmarks_calculator(features)
 #evaluate(model_path , input_data , true_label)
+
+########################  find child from data base  ######################################## 
+find_child(img_father_path , img_mother_path)
+########################  find child from data base  ######################################## 
+
+###################### create data base       ##########################################
+#son_daughter_featurs = extract_son_daughter_attributes("C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD")
+#cal_son_daughter_landmarks_and_save(son_daughter_featurs)
+###################### create data base       ##########################################
+
 
 # fraction = 0.1
 

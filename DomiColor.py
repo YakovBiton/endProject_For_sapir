@@ -4,6 +4,10 @@ import webcolors
 import cv2 
 from colorthief import ColorThief
 from io import BytesIO
+import numpy as np
+from sklearn.cluster import KMeans
+
+
 def closest_color(requested_color):
     min_colors = {}
     for key, name in webcolors.CSS3_HEX_TO_NAMES.items():
@@ -36,6 +40,32 @@ def dominant_color(image):
     # Return the color name
     return most_frequent_pixel[1]
 
+def dominant_color_cluster(image, n_clusters=3):
+    # Convert NumPy array to PIL Image
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    image = Image.fromarray(image)
+    
+    # Resize the image for efficiency
+    image = image.resize((50, 50))
+    
+    # Convert the image to a 2D array of pixels
+    pixels = np.array(image).reshape(-1, 3)
+    
+    # Perform k-means clustering
+    kmeans = KMeans(n_clusters=n_clusters)
+    kmeans.fit(pixels)
+    
+    # Compute the average color of each cluster
+    avg_colors = kmeans.cluster_centers_
+    
+    # Find the cluster with the highest count
+    labels, counts = np.unique(kmeans.labels_, return_counts=True)
+    dominant_cluster = labels[np.argmax(counts)]
+    
+    # Get the dominant color
+    dominant_color = avg_colors[dominant_cluster]
+    
+    return dominant_color
 
 def three_most_dominant_colors(image):
     # Convert NumPy array to PIL Image
@@ -53,3 +83,9 @@ def three_most_dominant_colors(image):
     palette = color_thief.get_palette(color_count=3, quality=1)
     
     return dominant_colors, palette
+
+def average_color(image, bounding_box):
+    x1, y1, x2, y2 = bounding_box
+    cropped_image = image[y1:y2, x1:x2]
+    avg_color = np.mean(cropped_image, axis=(0, 1))
+    return avg_color

@@ -1,0 +1,4224 @@
+Child: FMSD-1-D.jpg
+Ratio Features:
+face_ratio: 1.7326914773919964
+nose_ratio: 0.7895882688675149
+mouth_middle_ratio: 1.3806701271484076
+mouth_nose_ratio: 2.090909090909091
+eye_mouth_ratio: 0.6086956521739131
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-1-S.jpg
+Ratio Features:
+face_ratio: 1.962962962962963
+nose_ratio: 0.8811284005580547
+mouth_middle_ratio: 0.8436614877321075
+mouth_nose_ratio: 2.1
+eye_mouth_ratio: 0.7142857142857143
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 85.23635830927383
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-100-D.jpg
+Ratio Features:
+face_ratio: 1.5761991212168502
+nose_ratio: 0.9521770848491448
+mouth_middle_ratio: 1.118033988749895
+mouth_nose_ratio: 2.2745447278539643
+eye_mouth_ratio: 0.559552536884202
+
+Angle Features:
+angle_between_nose_mouth: 107.72323661688633
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-100-S.jpg
+Ratio Features:
+face_ratio: 1.6804208203874056
+nose_ratio: 0.8181818181818182
+mouth_middle_ratio: 1.4266373462261035
+mouth_nose_ratio: 2.1818181818181817
+eye_mouth_ratio: 0.5833333333333334
+
+Angle Features:
+angle_between_nose_mouth: 98.74616226255522
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-101-D.jpg
+Ratio Features:
+face_ratio: 1.6853684837655054
+nose_ratio: 0.9844194978446309
+mouth_middle_ratio: 0.6850042111044058
+mouth_nose_ratio: 2.3359773379587376
+eye_mouth_ratio: 0.7150609884440418
+
+Angle Features:
+angle_between_nose_mouth: 97.33437880141672
+angle_nose_inner_eye_corners: 80.39479584498706
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-101-S.jpg
+Ratio Features:
+face_ratio: 1.5714285714285714
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 1.361050703094283
+mouth_nose_ratio: 2.0024984394500787
+eye_mouth_ratio: 0.7490642541583834
+
+Angle Features:
+angle_between_nose_mouth: 88.10348169679071
+angle_nose_inner_eye_corners: 78.69006752597979
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-102-D.jpg
+Ratio Features:
+face_ratio: 1.6900070006679786
+nose_ratio: 1.0771156984315073
+mouth_middle_ratio: 1.0102918663299303
+mouth_nose_ratio: 1.8888888888888888
+eye_mouth_ratio: 0.8235294117647058
+
+Angle Features:
+angle_between_nose_mouth: 86.24827092947403
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-102-S.jpg
+Ratio Features:
+face_ratio: 1.5455099599386055
+nose_ratio: 0.7693531527765219
+mouth_middle_ratio: 0.9090909090909091
+mouth_nose_ratio: 2.1023796041628637
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 90.0
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-104-D.jpg
+Ratio Features:
+face_ratio: 1.5620499351813308
+nose_ratio: 0.9822112490053069
+mouth_middle_ratio: 1.27072975032485
+mouth_nose_ratio: 1.7272727272727273
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 88.89118787224008
+angle_nose_inner_eye_corners: 78.69006752597979
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-104-S.jpg
+Ratio Features:
+face_ratio: 1.817148991374343
+nose_ratio: 0.9
+mouth_middle_ratio: 0.937108632354055
+mouth_nose_ratio: 1.6031219541881399
+eye_mouth_ratio: 0.9356742923277079
+
+Angle Features:
+angle_between_nose_mouth: 81.2538377374448
+angle_nose_inner_eye_corners: 86.18592516570965
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-105-D.jpg
+Ratio Features:
+face_ratio: 1.7088613910689217
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 1.435609838973005
+mouth_nose_ratio: 2.1023796041628637
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 84.28940686250037
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-105-S.jpg
+Ratio Features:
+face_ratio: 1.6647137078746383
+nose_ratio: 0.7191262172221755
+mouth_middle_ratio: 1.9284730395996752
+mouth_nose_ratio: 1.8888888888888888
+eye_mouth_ratio: 0.8843115516689946
+
+Angle Features:
+angle_between_nose_mouth: 79.69515353123397
+angle_nose_inner_eye_corners: 104.2500326978036
+angle_right_eye_right_corner: 40.60129464500447
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-106-D.jpg
+Ratio Features:
+face_ratio: 1.6218354400346937
+nose_ratio: 0.9856702841234781
+mouth_middle_ratio: 0.9965457582448796
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.637984947619009
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 72.59729586864373
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.0
+
+-----------------------------------------
+
+Child: FMSD-106-S.jpg
+Ratio Features:
+face_ratio: 1.5880117190210865
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 1.7669044171975445
+mouth_nose_ratio: 1.8
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 53.13010235415599
+
+-----------------------------------------
+
+Child: FMSD-107-D.jpg
+Ratio Features:
+face_ratio: 1.457142857142857
+nose_ratio: 0.8038252173973173
+mouth_middle_ratio: 1.5919317118967342
+mouth_nose_ratio: 2.272727272727273
+eye_mouth_ratio: 0.6
+
+Angle Features:
+angle_between_nose_mouth: 100.76253722314246
+angle_nose_inner_eye_corners: 92.72631099390628
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-107-S.jpg
+Ratio Features:
+face_ratio: 1.5153408185150283
+nose_ratio: 0.8038252173973173
+mouth_middle_ratio: 1.3038404810405297
+mouth_nose_ratio: 2.272727272727273
+eye_mouth_ratio: 0.56
+
+Angle Features:
+angle_between_nose_mouth: 96.1886159632416
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-11-D.jpg
+Ratio Features:
+face_ratio: 1.5308215552919098
+nose_ratio: 1.2668737080010095
+mouth_middle_ratio: 0.9950371902099892
+mouth_nose_ratio: 2.2222222222222223
+eye_mouth_ratio: 0.65
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 61.0816519568137
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-11-S.jpg
+Ratio Features:
+face_ratio: 1.7503643935489779
+nose_ratio: 0.8888888888888888
+mouth_middle_ratio: 1.27072975032485
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 94.08561677997488
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 53.13010235415599
+
+-----------------------------------------
+
+Child: FMSD-110-D.jpg
+Ratio Features:
+face_ratio: 1.4994216309790775
+nose_ratio: 0.8295770731328371
+mouth_middle_ratio: 1.7149858514250884
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.5833333333333334
+
+Angle Features:
+angle_between_nose_mouth: 97.12501634890181
+angle_nose_inner_eye_corners: 69.14554196042165
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-110-S.jpg
+Ratio Features:
+face_ratio: 1.5865816648727364
+nose_ratio: 0.7794281601425893
+mouth_middle_ratio: 1.711724276862369
+mouth_nose_ratio: 1.9026297590440446
+eye_mouth_ratio: 0.7358236637186915
+
+Angle Features:
+angle_between_nose_mouth: 89.58482045885515
+angle_nose_inner_eye_corners: 96.11550356628541
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 45.0
+
+-----------------------------------------
+
+Child: FMSD-111-D.jpg
+Ratio Features:
+face_ratio: 1.65625
+nose_ratio: 0.972803192483569
+mouth_middle_ratio: 0.5374838498865699
+mouth_nose_ratio: 1.9034050592745968
+eye_mouth_ratio: 0.6676086858827283
+
+Angle Features:
+angle_between_nose_mouth: 93.17983011986425
+angle_nose_inner_eye_corners: 69.81419699053515
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-111-S.jpg
+Ratio Features:
+face_ratio: 1.5003254855197254
+nose_ratio: 0.8038252173973173
+mouth_middle_ratio: 0.8333333333333334
+mouth_nose_ratio: 1.9090909090909092
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-112-D.jpg
+Ratio Features:
+face_ratio: 1.4866908459679464
+nose_ratio: 0.8574035267420176
+mouth_middle_ratio: 2.0953818267800264
+mouth_nose_ratio: 2.148871112659745
+eye_mouth_ratio: 0.5353729576861872
+
+Angle Features:
+angle_between_nose_mouth: 97.04917816749528
+angle_nose_inner_eye_corners: 74.67308211207782
+angle_right_eye_right_corner: 28.07248693585296
+angle_left_eye_right_corner: 37.8749836510982
+
+-----------------------------------------
+
+Child: FMSD-112-S.jpg
+Ratio Features:
+face_ratio: 1.428274264128775
+nose_ratio: 0.7895882688675149
+mouth_middle_ratio: 0.9166666666666666
+mouth_nose_ratio: 1.8204531267727988
+eye_mouth_ratio: 0.6991266372144912
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 90.0
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-113-D.jpg
+Ratio Features:
+face_ratio: 1.696560810602083
+nose_ratio: 1.0379458885029058
+mouth_middle_ratio: 0.7474093186836597
+mouth_nose_ratio: 2.429493573646624
+eye_mouth_ratio: 0.6833316535624049
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 82.05652818940959
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-113-S.jpg
+Ratio Features:
+face_ratio: 1.5753258000003647
+nose_ratio: 0.8138394800374176
+mouth_middle_ratio: 1.860521018838127
+mouth_nose_ratio: 1.8288869801622232
+eye_mouth_ratio: 0.6357072528610997
+
+Angle Features:
+angle_between_nose_mouth: 84.28940686250037
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 14.036243467926484
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-115-D.jpg
+Ratio Features:
+face_ratio: 1.696560810602083
+nose_ratio: 1.0623058987490537
+mouth_middle_ratio: 1.4925557853149838
+mouth_nose_ratio: 2.2534695471649933
+eye_mouth_ratio: 0.7765802747153208
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-115-S.jpg
+Ratio Features:
+face_ratio: 1.5139374244946455
+nose_ratio: 0.7849592564609895
+mouth_middle_ratio: 0.866757772121482
+mouth_nose_ratio: 1.8027756377319946
+eye_mouth_ratio: 0.8320502943378437
+
+Angle Features:
+angle_between_nose_mouth: 106.58733855692742
+angle_nose_inner_eye_corners: 92.72631099390628
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-117-D.jpg
+Ratio Features:
+face_ratio: 1.6975385616066556
+nose_ratio: 1.1704187549681582
+mouth_middle_ratio: 0.8500255011475574
+mouth_nose_ratio: 1.8888888888888888
+eye_mouth_ratio: 0.8256275792716588
+
+Angle Features:
+angle_between_nose_mouth: 79.69515353123397
+angle_nose_inner_eye_corners: 72.34987578006988
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-117-S.jpg
+Ratio Features:
+face_ratio: 1.664305111578036
+nose_ratio: 1.0687246967010104
+mouth_middle_ratio: 1.0752066611409408
+mouth_nose_ratio: 1.8921540406584891
+eye_mouth_ratio: 0.8221083073205848
+
+Angle Features:
+angle_between_nose_mouth: 76.15930450834439
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-118-D.jpg
+Ratio Features:
+face_ratio: 1.44415446284927
+nose_ratio: 0.9744406409659521
+mouth_middle_ratio: 1.0737509843863184
+mouth_nose_ratio: 1.8805811245074375
+eye_mouth_ratio: 0.7633862853691145
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 78.05582281155368
+angle_right_eye_right_corner: 63.43494882292201
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-118-S.jpg
+Ratio Features:
+face_ratio: 1.5308215552919098
+nose_ratio: 0.8038252173973173
+mouth_middle_ratio: 0.5311851620184319
+mouth_nose_ratio: 1.9090909090909092
+eye_mouth_ratio: 0.6190476190476191
+
+Angle Features:
+angle_between_nose_mouth: 110.3764352138364
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-119-D.jpg
+Ratio Features:
+face_ratio: 1.6200935429431185
+nose_ratio: 1.2291187558520755
+mouth_middle_ratio: 0.6023552593005889
+mouth_nose_ratio: 2.232625222605752
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 89.37040139158974
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-119-S.jpg
+Ratio Features:
+face_ratio: 1.5002883229243353
+nose_ratio: 1.0578605850677176
+mouth_middle_ratio: 0.9505542064987067
+mouth_nose_ratio: 1.8
+eye_mouth_ratio: 0.8333333333333334
+
+Angle Features:
+angle_between_nose_mouth: 77.00538320808349
+angle_nose_inner_eye_corners: 79.50852298766841
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-12-D.jpg
+Ratio Features:
+face_ratio: 1.7
+nose_ratio: 0.9685647168069826
+mouth_middle_ratio: 1.180441706714406
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.70178344238091
+
+Angle Features:
+angle_between_nose_mouth: 94.39870535499553
+angle_nose_inner_eye_corners: 79.06090881680785
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-12-S.jpg
+Ratio Features:
+face_ratio: 1.3827983032752766
+nose_ratio: 0.8907867705913443
+mouth_middle_ratio: 0.8027729719194864
+mouth_nose_ratio: 1.6609095970747993
+eye_mouth_ratio: 0.75
+
+Angle Features:
+angle_between_nose_mouth: 90.43078721700861
+angle_nose_inner_eye_corners: 72.95096902789018
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-120-D.jpg
+Ratio Features:
+face_ratio: 1.5142857142857142
+nose_ratio: 0.9521770848491448
+mouth_middle_ratio: 1.3337339141845925
+mouth_nose_ratio: 2.272727272727273
+eye_mouth_ratio: 0.6412487816752559
+
+Angle Features:
+angle_between_nose_mouth: 101.90830006131758
+angle_nose_inner_eye_corners: 79.99202019855866
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-120-S.jpg
+Ratio Features:
+face_ratio: 1.5111685776299768
+nose_ratio: 1.069699547716902
+mouth_middle_ratio: 1.174440439029407
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7387194130325367
+
+Angle Features:
+angle_between_nose_mouth: 87.06432655357884
+angle_nose_inner_eye_corners: 72.59729586864373
+angle_right_eye_right_corner: 63.43494882292201
+angle_left_eye_right_corner: 67.38013505195957
+
+-----------------------------------------
+
+Child: FMSD-122-D.jpg
+Ratio Features:
+face_ratio: 1.6446220553007627
+nose_ratio: 0.979289277145654
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.0928844424038795
+eye_mouth_ratio: 0.6515583641446041
+
+Angle Features:
+angle_between_nose_mouth: 100.90502204523445
+angle_nose_inner_eye_corners: 78.69006752597979
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-122-S.jpg
+Ratio Features:
+face_ratio: 1.8336363385966756
+nose_ratio: 1.01803085112982
+mouth_middle_ratio: 1.2272937708633578
+mouth_nose_ratio: 1.8888888888888888
+eye_mouth_ratio: 0.8823529411764706
+
+Angle Features:
+angle_between_nose_mouth: 68.72839107595253
+angle_nose_inner_eye_corners: 86.18592516570965
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-123-D.jpg
+Ratio Features:
+face_ratio: 1.6288220358559113
+nose_ratio: 0.9109508984146399
+mouth_middle_ratio: 0.5665288228870652
+mouth_nose_ratio: 2.089578099440977
+eye_mouth_ratio: 0.7142857142857143
+
+Angle Features:
+angle_between_nose_mouth: 102.52880770915151
+angle_nose_inner_eye_corners: 87.27368900609373
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-123-S.jpg
+Ratio Features:
+face_ratio: 1.3675400344620094
+nose_ratio: 1.0596442562694068
+mouth_middle_ratio: 1.002954216185023
+mouth_nose_ratio: 1.7272727272727273
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 94.39870535499553
+angle_nose_inner_eye_corners: 73.65182845264876
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-126-D.jpg
+Ratio Features:
+face_ratio: 1.5098273431617382
+nose_ratio: 0.8655222968735872
+mouth_middle_ratio: 1.2484473115254693
+mouth_nose_ratio: 1.8
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 93.81407483429035
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-126-S.jpg
+Ratio Features:
+face_ratio: 1.5424922102224903
+nose_ratio: 1.065421188487681
+mouth_middle_ratio: 0.8
+mouth_nose_ratio: 1.9026297590440446
+eye_mouth_ratio: 0.7883824968414551
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 73.65182845264876
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-129-D.jpg
+Ratio Features:
+face_ratio: 1.6596521880402304
+nose_ratio: 1.065421188487681
+mouth_middle_ratio: 0.6903350635742038
+mouth_nose_ratio: 2.3021728866442674
+eye_mouth_ratio: 0.7384328126972179
+
+Angle Features:
+angle_between_nose_mouth: 84.8055710922652
+angle_nose_inner_eye_corners: 85.88777115528154
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-129-S.jpg
+Ratio Features:
+face_ratio: 1.71875
+nose_ratio: 1.089992306844715
+mouth_middle_ratio: 1.6944872760551706
+mouth_nose_ratio: 2.0030840419244385
+eye_mouth_ratio: 0.8338972450995479
+
+Angle Features:
+angle_between_nose_mouth: 82.05652818940959
+angle_nose_inner_eye_corners: 77.93511558947458
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-134-D.jpg
+Ratio Features:
+face_ratio: 1.7
+nose_ratio: 1.1545181751493392
+mouth_middle_ratio: 1.2973697687366095
+mouth_nose_ratio: 2.3190620475717774
+eye_mouth_ratio: 0.6190476190476191
+
+Angle Features:
+angle_between_nose_mouth: 89.20427644726072
+angle_nose_inner_eye_corners: 65.22485943116808
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-134-S.jpg
+Ratio Features:
+face_ratio: 1.7029386365926402
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 1.6915632233569815
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7912261251775214
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 75.67728002179645
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-136-D.jpg
+Ratio Features:
+face_ratio: 1.716357291749354
+nose_ratio: 1.05478943151967
+mouth_middle_ratio: 0.6474803234313529
+mouth_nose_ratio: 1.7669044171975445
+eye_mouth_ratio: 0.875
+
+Angle Features:
+angle_between_nose_mouth: 79.01134890350603
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-136-S.jpg
+Ratio Features:
+face_ratio: 1.7244827241448257
+nose_ratio: 1.0728601984227781
+mouth_middle_ratio: 0.7388176557069271
+mouth_nose_ratio: 1.7777777777777777
+eye_mouth_ratio: 0.875
+
+Angle Features:
+angle_between_nose_mouth: 85.40574666873361
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-137-D.jpg
+Ratio Features:
+face_ratio: 1.7815324493312785
+nose_ratio: 1.0640170499710528
+mouth_middle_ratio: 1.2
+mouth_nose_ratio: 2.3359773379587376
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-137-S.jpg
+Ratio Features:
+face_ratio: 1.6739392279470913
+nose_ratio: 0.8773202987416832
+mouth_middle_ratio: 0.9974586998307351
+mouth_nose_ratio: 1.6363636363636365
+eye_mouth_ratio: 0.8333333333333334
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 79.50852298766841
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-138-D.jpg
+Ratio Features:
+face_ratio: 1.7350242875390869
+nose_ratio: 1.0427372247228304
+mouth_middle_ratio: 0.6023552593005889
+mouth_nose_ratio: 2.3190620475717774
+eye_mouth_ratio: 0.7142857142857143
+
+Angle Features:
+angle_between_nose_mouth: 89.37040139158974
+angle_nose_inner_eye_corners: 77.06739160326049
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-138-S.jpg
+Ratio Features:
+face_ratio: 1.4702465412174823
+nose_ratio: 1.0343776721558584
+mouth_middle_ratio: 0.9172673058301095
+mouth_nose_ratio: 2.089578099440977
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-14-D.jpg
+Ratio Features:
+face_ratio: 1.6446220553007627
+nose_ratio: 1.1742975057010945
+mouth_middle_ratio: 0.7071067811865475
+mouth_nose_ratio: 2.3359773379587376
+eye_mouth_ratio: 0.7150609884440418
+
+Angle Features:
+angle_between_nose_mouth: 82.6656211985833
+angle_nose_inner_eye_corners: 75.96375653207353
+angle_right_eye_right_corner: 63.43494882292201
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-14-S.jpg
+Ratio Features:
+face_ratio: 1.6774193548387097
+nose_ratio: 0.9501552810007571
+mouth_middle_ratio: 0.8579280908893565
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 85.23635830927383
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-142-D.jpg
+Ratio Features:
+face_ratio: 1.7865510644485796
+nose_ratio: 1.0872226273407894
+mouth_middle_ratio: 0.46563307366641754
+mouth_nose_ratio: 2.75
+eye_mouth_ratio: 0.6818181818181818
+
+Angle Features:
+angle_between_nose_mouth: 102.52880770915151
+angle_nose_inner_eye_corners: 80.53767779197439
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-142-S.jpg
+Ratio Features:
+face_ratio: 1.6609190512236496
+nose_ratio: 1.0532622281770379
+mouth_middle_ratio: 1.5221142148893811
+mouth_nose_ratio: 2.288585537482975
+eye_mouth_ratio: 0.6956521739130435
+
+Angle Features:
+angle_between_nose_mouth: 96.11550356628541
+angle_nose_inner_eye_corners: 74.29136217098426
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-143-D.jpg
+Ratio Features:
+face_ratio: 1.5801523650842966
+nose_ratio: 0.7905694150420948
+mouth_middle_ratio: 0.8099382692526635
+mouth_nose_ratio: 1.9166666666666667
+eye_mouth_ratio: 0.6086956521739131
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-143-S.jpg
+Ratio Features:
+face_ratio: 1.4550492876935734
+nose_ratio: 0.7207592200561265
+mouth_middle_ratio: 1.3416407864998738
+mouth_nose_ratio: 2.1837112999026025
+eye_mouth_ratio: 0.5828276259705386
+
+Angle Features:
+angle_between_nose_mouth: 96.91122711902469
+angle_nose_inner_eye_corners: 96.11550356628541
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-144-D.jpg
+Ratio Features:
+face_ratio: 1.6853684837655054
+nose_ratio: 0.9842823584034913
+mouth_middle_ratio: 1.40356688476182
+mouth_nose_ratio: 2.1
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 91.62497635752477
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-144-S.jpg
+Ratio Features:
+face_ratio: 1.6777294998639798
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.1023796041628637
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-145-D.jpg
+Ratio Features:
+face_ratio: 1.633673433979046
+nose_ratio: 1.1613008990009253
+mouth_middle_ratio: 0.8498365855987974
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 78.69006752597979
+angle_nose_inner_eye_corners: 69.98404039711733
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-145-S.jpg
+Ratio Features:
+face_ratio: 1.5479179229047952
+nose_ratio: 0.8512136399768423
+mouth_middle_ratio: 1.2973697687366095
+mouth_nose_ratio: 1.7812466157645999
+eye_mouth_ratio: 0.8109177200173469
+
+Angle Features:
+angle_between_nose_mouth: 85.60129464500447
+angle_nose_inner_eye_corners: 85.60129464500447
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-148-D.jpg
+Ratio Features:
+face_ratio: 1.5422277905393575
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 0.7511340324005764
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7
+
+Angle Features:
+angle_between_nose_mouth: 100.47423482822583
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 28.07248693585296
+
+-----------------------------------------
+
+Child: FMSD-148-S.jpg
+Ratio Features:
+face_ratio: 1.5628124687562484
+nose_ratio: 0.8655222968735872
+mouth_middle_ratio: 0.8574929257125442
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 79.69515353123397
+angle_nose_inner_eye_corners: 86.18592516570965
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-149-D.jpg
+Ratio Features:
+face_ratio: 1.7099817136385254
+nose_ratio: 0.8811284005580547
+mouth_middle_ratio: 1.3038404810405297
+mouth_nose_ratio: 2.2
+eye_mouth_ratio: 0.6818181818181818
+
+Angle Features:
+angle_between_nose_mouth: 88.05851360908562
+angle_nose_inner_eye_corners: 85.23635830927383
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-149-S.jpg
+Ratio Features:
+face_ratio: 1.5115481661870946
+nose_ratio: 1.2817290466902531
+mouth_middle_ratio: 1.0194733163239875
+mouth_nose_ratio: 1.8204531267727988
+eye_mouth_ratio: 0.7490642541583834
+
+Angle Features:
+angle_between_nose_mouth: 68.81165425097275
+angle_nose_inner_eye_corners: 59.90825801225528
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-15-D.jpg
+Ratio Features:
+face_ratio: 1.4205608327645722
+nose_ratio: 1.1067971810589328
+mouth_middle_ratio: 0.7937618052465161
+mouth_nose_ratio: 1.8352262954621033
+eye_mouth_ratio: 0.6811149137797498
+
+Angle Features:
+angle_between_nose_mouth: 73.30075576600638
+angle_nose_inner_eye_corners: 59.90825801225528
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-15-S.jpg
+Ratio Features:
+face_ratio: 1.7933633259890132
+nose_ratio: 1.1588703933719642
+mouth_middle_ratio: 1.0827805840074194
+mouth_nose_ratio: 1.7225600467774984
+eye_mouth_ratio: 0.7358236637186915
+
+Angle Features:
+angle_between_nose_mouth: 89.68691142497936
+angle_nose_inner_eye_corners: 56.38264281508082
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-150-D.jpg
+Ratio Features:
+face_ratio: 1.7558018785405118
+nose_ratio: 1.0659026685801682
+mouth_middle_ratio: 0.7160239907502746
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7
+
+Angle Features:
+angle_between_nose_mouth: 89.48383577023516
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-150-S.jpg
+Ratio Features:
+face_ratio: 1.6660746266260813
+nose_ratio: 1.0728601984227781
+mouth_middle_ratio: 0.989812977147567
+mouth_nose_ratio: 2.224998266055643
+eye_mouth_ratio: 0.7009078544636789
+
+Angle Features:
+angle_between_nose_mouth: 79.5257651717742
+angle_nose_inner_eye_corners: 78.50343698241423
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-152-D.jpg
+Ratio Features:
+face_ratio: 1.7298140469912198
+nose_ratio: 1.0827118232955024
+mouth_middle_ratio: 1.406030965847864
+mouth_nose_ratio: 1.877335943272391
+eye_mouth_ratio: 0.8235294117647058
+
+Angle Features:
+angle_between_nose_mouth: 86.42366562500266
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-152-S.jpg
+Ratio Features:
+face_ratio: 1.7666666666666666
+nose_ratio: 0.9331495152964633
+mouth_middle_ratio: 0.6459422414661737
+mouth_nose_ratio: 2.0030840419244385
+eye_mouth_ratio: 0.8320502943378437
+
+Angle Features:
+angle_between_nose_mouth: 104.0362434679265
+angle_nose_inner_eye_corners: 98.84181456019168
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-154-D.jpg
+Ratio Features:
+face_ratio: 1.852765801916494
+nose_ratio: 0.9920106350980555
+mouth_middle_ratio: 1.071750273453965
+mouth_nose_ratio: 1.9877674693472376
+eye_mouth_ratio: 0.8333333333333334
+
+Angle Features:
+angle_between_nose_mouth: 79.26110289909457
+angle_nose_inner_eye_corners: 78.69006752597979
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 71.56505117707799
+
+-----------------------------------------
+
+Child: FMSD-154-S.jpg
+Ratio Features:
+face_ratio: 1.6063464582664935
+nose_ratio: 0.9927911462200514
+mouth_middle_ratio: 0.9135002783911397
+mouth_nose_ratio: 2.089578099440977
+eye_mouth_ratio: 0.7619047619047619
+
+Angle Features:
+angle_between_nose_mouth: 95.71059313749964
+angle_nose_inner_eye_corners: 82.8749836510982
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 53.13010235415599
+
+-----------------------------------------
+
+Child: FMSD-157-D.jpg
+Ratio Features:
+face_ratio: 1.857753257441063
+nose_ratio: 0.8151422852868506
+mouth_middle_ratio: 0.8955334711889903
+mouth_nose_ratio: 2.142857142857143
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 99.46232220802563
+angle_nose_inner_eye_corners: 75.96375653207353
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 53.13010235415599
+
+-----------------------------------------
+
+Child: FMSD-157-S.jpg
+Ratio Features:
+face_ratio: 1.6629752630943482
+nose_ratio: 1.16603966573834
+mouth_middle_ratio: 1.099054499139696
+mouth_nose_ratio: 2.8607120563572552
+eye_mouth_ratio: 0.649189020270599
+
+Angle Features:
+angle_between_nose_mouth: 88.06941255883301
+angle_nose_inner_eye_corners: 94.39870535499554
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-159-D.jpg
+Ratio Features:
+face_ratio: 1.5918689307248268
+nose_ratio: 0.8530311768241585
+mouth_middle_ratio: 1.214746786823312
+mouth_nose_ratio: 2.090909090909091
+eye_mouth_ratio: 0.5652173913043478
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 78.05582281155368
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-159-S.jpg
+Ratio Features:
+face_ratio: 1.6063464582664935
+nose_ratio: 0.8062870566386034
+mouth_middle_ratio: 1.1261850127429458
+mouth_nose_ratio: 2.2652036422766955
+eye_mouth_ratio: 0.5609781507536663
+
+Angle Features:
+angle_between_nose_mouth: 101.30993247402021
+angle_nose_inner_eye_corners: 93.73139699916045
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 32.47119229084849
+
+-----------------------------------------
+
+Child: FMSD-16-D.jpg
+Ratio Features:
+face_ratio: 1.499639829994568
+nose_ratio: 1.034138705858421
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 1.9112541856026035
+eye_mouth_ratio: 0.713477241231741
+
+Angle Features:
+angle_between_nose_mouth: 79.5257651717742
+angle_nose_inner_eye_corners: 68.49856567595211
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-16-S.jpg
+Ratio Features:
+face_ratio: 1.7244827241448257
+nose_ratio: 1.0591883764632959
+mouth_middle_ratio: 1.393052066293985
+mouth_nose_ratio: 2.25
+eye_mouth_ratio: 0.8333333333333334
+
+Angle Features:
+angle_between_nose_mouth: 83.6598082540901
+angle_nose_inner_eye_corners: 85.23635830927383
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-160-D.jpg
+Ratio Features:
+face_ratio: 1.6421983091649448
+nose_ratio: 0.8303567108023246
+mouth_middle_ratio: 0.8372758970823486
+mouth_nose_ratio: 2.650356625796317
+eye_mouth_ratio: 0.5833333333333334
+
+Angle Features:
+angle_between_nose_mouth: 104.0362434679265
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-160-S.jpg
+Ratio Features:
+face_ratio: 1.726006346972971
+nose_ratio: 0.9666705693201696
+mouth_middle_ratio: 1.4884168150705015
+mouth_nose_ratio: 2.3
+eye_mouth_ratio: 0.6086956521739131
+
+Angle Features:
+angle_between_nose_mouth: 95.71059313749964
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 32.47119229084849
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-161-D.jpg
+Ratio Features:
+face_ratio: 1.416392629246934
+nose_ratio: 1.0557280900008412
+mouth_middle_ratio: 0.9958932064677039
+mouth_nose_ratio: 2.2222222222222223
+eye_mouth_ratio: 0.7
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-161-S.jpg
+Ratio Features:
+face_ratio: 1.4120445218904278
+nose_ratio: 0.8811284005580547
+mouth_middle_ratio: 1.0143479354265215
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.65
+
+Angle Features:
+angle_between_nose_mouth: 96.6544250460066
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-162-D.jpg
+Ratio Features:
+face_ratio: 1.6446220553007627
+nose_ratio: 1.065421188487681
+mouth_middle_ratio: 1.104536101718726
+mouth_nose_ratio: 2.3021728866442674
+eye_mouth_ratio: 0.6081211398682972
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 69.98404039711733
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-162-S.jpg
+Ratio Features:
+face_ratio: 1.5760489241146478
+nose_ratio: 0.7620715107664072
+mouth_middle_ratio: 1.3885243966167824
+mouth_nose_ratio: 1.9877674693472376
+eye_mouth_ratio: 0.7222222222222222
+
+Angle Features:
+angle_between_nose_mouth: 88.98602127721472
+angle_nose_inner_eye_corners: 99.60520415501296
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-164-D.jpg
+Ratio Features:
+face_ratio: 1.6187162242137663
+nose_ratio: 0.8353631404109062
+mouth_middle_ratio: 1.7460757394239452
+mouth_nose_ratio: 2.172857905020445
+eye_mouth_ratio: 0.6263873490988712
+
+Angle Features:
+angle_between_nose_mouth: 95.9061411137705
+angle_nose_inner_eye_corners: 91.134421630977
+angle_right_eye_right_corner: 14.036243467926484
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-164-S.jpg
+Ratio Features:
+face_ratio: 1.6660746266260813
+nose_ratio: 0.9910405890853501
+mouth_middle_ratio: 0.5813183589761798
+mouth_nose_ratio: 2.604729426373378
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 97.12501634890181
+angle_nose_inner_eye_corners: 84.75286109838356
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-165-D.jpg
+Ratio Features:
+face_ratio: 1.6768572723551376
+nose_ratio: 1.01803085112982
+mouth_middle_ratio: 1.0864289525102224
+mouth_nose_ratio: 2.114033065604494
+eye_mouth_ratio: 0.6832648305959278
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 92.93567344642118
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-165-S.jpg
+Ratio Features:
+face_ratio: 1.7003267659809134
+nose_ratio: 0.9748819646988041
+mouth_middle_ratio: 1.6269784336399213
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 83.6598082540901
+angle_nose_inner_eye_corners: 90.54565759341573
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 53.13010235415599
+
+-----------------------------------------
+
+Child: FMSD-166-D.jpg
+Ratio Features:
+face_ratio: 1.4923010612265488
+nose_ratio: 1.0593037188165342
+mouth_middle_ratio: 0.3747658444979307
+mouth_nose_ratio: 2.2652036422766955
+eye_mouth_ratio: 0.5609781507536663
+
+Angle Features:
+angle_between_nose_mouth: 99.46232220802563
+angle_nose_inner_eye_corners: 58.79948539601937
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-166-S.jpg
+Ratio Features:
+face_ratio: 1.5661513939205385
+nose_ratio: 0.8696234270692144
+mouth_middle_ratio: 1.308767086661608
+mouth_nose_ratio: 2.1122354181147664
+eye_mouth_ratio: 0.7633862853691145
+
+Angle Features:
+angle_between_nose_mouth: 90.61605990839922
+angle_nose_inner_eye_corners: 102.9946167919165
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-167-D.jpg
+Ratio Features:
+face_ratio: 1.7705126449440387
+nose_ratio: 0.8062870566386034
+mouth_middle_ratio: 0.9217771979249536
+mouth_nose_ratio: 1.9034050592745968
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 74.74488129694222
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-167-S.jpg
+Ratio Features:
+face_ratio: 1.765575440803406
+nose_ratio: 0.7166996059009808
+mouth_middle_ratio: 0.6023552593005889
+mouth_nose_ratio: 1.8107149208503706
+eye_mouth_ratio: 0.65
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 92.93567344642118
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-17-D.jpg
+Ratio Features:
+face_ratio: 1.6443059945588605
+nose_ratio: 0.9748819646988041
+mouth_middle_ratio: 0.764077894524985
+mouth_nose_ratio: 2.5579698740491863
+eye_mouth_ratio: 0.6081211398682972
+
+Angle Features:
+angle_between_nose_mouth: 102.05078488340955
+angle_nose_inner_eye_corners: 80.3718438715133
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-17-S.jpg
+Ratio Features:
+face_ratio: 1.4235889521161493
+nose_ratio: 1.125
+mouth_middle_ratio: 0.9270944570168699
+mouth_nose_ratio: 2.2534695471649933
+eye_mouth_ratio: 0.8320502943378437
+
+Angle Features:
+angle_between_nose_mouth: 78.69006752597979
+angle_nose_inner_eye_corners: 93.81407483429035
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-171-D.jpg
+Ratio Features:
+face_ratio: 1.747006141046102
+nose_ratio: 0.8522224253414797
+mouth_middle_ratio: 1.2366938848016844
+mouth_nose_ratio: 2.290747640504132
+eye_mouth_ratio: 0.5646839155919902
+
+Angle Features:
+angle_between_nose_mouth: 101.30993247402021
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-171-S.jpg
+Ratio Features:
+face_ratio: 1.7589587234285309
+nose_ratio: 0.8655222968735872
+mouth_middle_ratio: 1.099054499139696
+mouth_nose_ratio: 2.2
+eye_mouth_ratio: 0.6363636363636364
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-172-D.jpg
+Ratio Features:
+face_ratio: 1.3814835257889049
+nose_ratio: 1.0506917239205975
+mouth_middle_ratio: 1.1701413458342413
+mouth_nose_ratio: 1.5403834149615991
+eye_mouth_ratio: 0.7990018711022757
+
+Angle Features:
+angle_between_nose_mouth: 77.00538320808349
+angle_nose_inner_eye_corners: 63.2150044924978
+angle_right_eye_right_corner: 63.43494882292201
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-172-S.jpg
+Ratio Features:
+face_ratio: 1.7190468147259725
+nose_ratio: 0.9921485844236605
+mouth_middle_ratio: 0.7544738360147217
+mouth_nose_ratio: 1.8888888888888888
+eye_mouth_ratio: 0.8235294117647058
+
+Angle Features:
+angle_between_nose_mouth: 93.0664855011259
+angle_nose_inner_eye_corners: 77.9052429229879
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-173-D.jpg
+Ratio Features:
+face_ratio: 1.7244827241448257
+nose_ratio: 1.01803085112982
+mouth_middle_ratio: 0.8879535677396305
+mouth_nose_ratio: 2.446968393949471
+eye_mouth_ratio: 0.5902995919424497
+
+Angle Features:
+angle_between_nose_mouth: 102.68038349181982
+angle_nose_inner_eye_corners: 77.0053832080835
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-173-S.jpg
+Ratio Features:
+face_ratio: 1.65625
+nose_ratio: 0.7064295041796046
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.1837112999026025
+eye_mouth_ratio: 0.5411970812583573
+
+Angle Features:
+angle_between_nose_mouth: 105.25511870305778
+angle_nose_inner_eye_corners: 94.39870535499554
+angle_right_eye_right_corner: 32.47119229084849
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-176-D.jpg
+Ratio Features:
+face_ratio: 1.5521072324037104
+nose_ratio: 0.9442719099991588
+mouth_middle_ratio: 0.8944271909999159
+mouth_nose_ratio: 2.125
+eye_mouth_ratio: 0.6470588235294118
+
+Angle Features:
+angle_between_nose_mouth: 101.30993247402021
+angle_nose_inner_eye_corners: 76.13897243697885
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-176-S.jpg
+Ratio Features:
+face_ratio: 1.2943174772669814
+nose_ratio: 1.1713617181661033
+mouth_middle_ratio: 0.2382615347721177
+mouth_nose_ratio: 1.770352038850865
+eye_mouth_ratio: 0.6268940173182516
+
+Angle Features:
+angle_between_nose_mouth: 66.61477894278624
+angle_nose_inner_eye_corners: 39.80557109226519
+angle_right_eye_right_corner: 90.0
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-18-D.jpg
+Ratio Features:
+face_ratio: 1.5132022409109134
+nose_ratio: 1.0188306509354486
+mouth_middle_ratio: 1.174440439029407
+mouth_nose_ratio: 2.2
+eye_mouth_ratio: 0.6363636363636364
+
+Angle Features:
+angle_between_nose_mouth: 98.130102354156
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-18-S.jpg
+Ratio Features:
+face_ratio: 1.5123765100472586
+nose_ratio: 0.813434126419523
+mouth_middle_ratio: 1.0770329614269007
+mouth_nose_ratio: 1.9026297590440446
+eye_mouth_ratio: 0.6832648305959278
+
+Angle Features:
+angle_between_nose_mouth: 80.7273982227997
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-180-D.jpg
+Ratio Features:
+face_ratio: 1.8574862319922634
+nose_ratio: 1.1876853746930147
+mouth_middle_ratio: 1.4071950894605838
+mouth_nose_ratio: 2.224998266055643
+eye_mouth_ratio: 0.6511068649814216
+
+Angle Features:
+angle_between_nose_mouth: 76.67546873810922
+angle_nose_inner_eye_corners: 58.64723833314403
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-180-S.jpg
+Ratio Features:
+face_ratio: 1.7993092767709276
+nose_ratio: 1.1006144577784012
+mouth_middle_ratio: 1.40356688476182
+mouth_nose_ratio: 2.75
+eye_mouth_ratio: 0.5909090909090909
+
+Angle Features:
+angle_between_nose_mouth: 81.55680907082336
+angle_nose_inner_eye_corners: 74.9315118405078
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-183-D.jpg
+Ratio Features:
+face_ratio: 1.6327665932575033
+nose_ratio: 0.683936657330063
+mouth_middle_ratio: 1.3968605915391563
+mouth_nose_ratio: 2.1023796041628637
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 100.30484646876603
+angle_nose_inner_eye_corners: 96.11550356628541
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-183-S.jpg
+Ratio Features:
+face_ratio: 1.3812163554960009
+nose_ratio: 0.8512136399768423
+mouth_middle_ratio: 0.8148217143826667
+mouth_nose_ratio: 2.3333333333333335
+eye_mouth_ratio: 0.6190476190476191
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 85.60129464500447
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-184-D.jpg
+Ratio Features:
+face_ratio: 1.7326914773919964
+nose_ratio: 0.8967345042425222
+mouth_middle_ratio: 0.5881716976750462
+mouth_nose_ratio: 2.2022715545545237
+eye_mouth_ratio: 0.6357072528610997
+
+Angle Features:
+angle_between_nose_mouth: 102.52880770915151
+angle_nose_inner_eye_corners: 74.52867183447987
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-184-S.jpg
+Ratio Features:
+face_ratio: 1.859045710953341
+nose_ratio: 1.0202847075210475
+mouth_middle_ratio: 0.746787993805677
+mouth_nose_ratio: 1.875
+eye_mouth_ratio: 0.8666666666666667
+
+Angle Features:
+angle_between_nose_mouth: 92.36137465817562
+angle_nose_inner_eye_corners: 84.35175262626474
+angle_right_eye_right_corner: 71.56505117707799
+angle_left_eye_right_corner: 74.74488129694222
+
+-----------------------------------------
+
+Child: FMSD-186-D.jpg
+Ratio Features:
+face_ratio: 1.6587269629187775
+nose_ratio: 0.9576153449739476
+mouth_middle_ratio: 0.7298980008898892
+mouth_nose_ratio: 1.8888888888888888
+eye_mouth_ratio: 0.7647058823529411
+
+Angle Features:
+angle_between_nose_mouth: 84.8055710922652
+angle_nose_inner_eye_corners: 78.05582281155368
+angle_right_eye_right_corner: 71.56505117707799
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-186-S.jpg
+Ratio Features:
+face_ratio: 1.6129032258064515
+nose_ratio: 1.1803398874989484
+mouth_middle_ratio: 1.0770329614269007
+mouth_nose_ratio: 2.5
+eye_mouth_ratio: 0.65
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 78.05582281155368
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-188-D.jpg
+Ratio Features:
+face_ratio: 1.6832105399280801
+nose_ratio: 0.9069197400187089
+mouth_middle_ratio: 1.3518824678560455
+mouth_nose_ratio: 2.7777777777777777
+eye_mouth_ratio: 0.6
+
+Angle Features:
+angle_between_nose_mouth: 93.49463892725333
+angle_nose_inner_eye_corners: 98.84181456019168
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-188-S.jpg
+Ratio Features:
+face_ratio: 1.7235394498804248
+nose_ratio: 1.317528155763517
+mouth_middle_ratio: 0.7363574011458174
+mouth_nose_ratio: 2.2534695471649933
+eye_mouth_ratio: 0.7211102550927979
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 59.27251338440034
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-190-D.jpg
+Ratio Features:
+face_ratio: 1.7857142857142858
+nose_ratio: 0.9262096826685895
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.4
+eye_mouth_ratio: 0.5833333333333334
+
+Angle Features:
+angle_between_nose_mouth: 97.12501634890181
+angle_nose_inner_eye_corners: 69.98404039711733
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-190-S.jpg
+Ratio Features:
+face_ratio: 1.6660746266260813
+nose_ratio: 0.8888888888888888
+mouth_middle_ratio: 0.9053574604251853
+mouth_nose_ratio: 2.3333333333333335
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-193-D.jpg
+Ratio Features:
+face_ratio: 1.6657415116319239
+nose_ratio: 0.8617145804226098
+mouth_middle_ratio: 1.3060943124220306
+mouth_nose_ratio: 2.5579698740491863
+eye_mouth_ratio: 0.5646839155919902
+
+Angle Features:
+angle_between_nose_mouth: 87.6386253418244
+angle_nose_inner_eye_corners: 84.35175262626474
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-193-S.jpg
+Ratio Features:
+face_ratio: 1.6661772981861283
+nose_ratio: 0.7018562389933466
+mouth_middle_ratio: 0.7810249675906654
+mouth_nose_ratio: 2.002065049595022
+eye_mouth_ratio: 0.6811149137797498
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 93.81407483429035
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-195-D.jpg
+Ratio Features:
+face_ratio: 1.3587696374760054
+nose_ratio: 1.0640170499710528
+mouth_middle_ratio: 1.2803687993289596
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.6842105263157895
+
+Angle Features:
+angle_between_nose_mouth: 98.130102354156
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-195-S.jpg
+Ratio Features:
+face_ratio: 1.597841464330158
+nose_ratio: 1.0812836696959094
+mouth_middle_ratio: 1.8646509262923925
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.6842105263157895
+
+Angle Features:
+angle_between_nose_mouth: 88.10348169679071
+angle_nose_inner_eye_corners: 66.44773632710535
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-197-D.jpg
+Ratio Features:
+face_ratio: 1.577694257764937
+nose_ratio: 0.9804882933483543
+mouth_middle_ratio: 1.109823101702776
+mouth_nose_ratio: 2.3021728866442674
+eye_mouth_ratio: 0.6081211398682972
+
+Angle Features:
+angle_between_nose_mouth: 101.42118627499929
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 60.25511870305777
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-197-S.jpg
+Ratio Features:
+face_ratio: 1.5479179229047952
+nose_ratio: 0.8856282322688355
+mouth_middle_ratio: 1.1261850127429458
+mouth_nose_ratio: 2.288585537482975
+eye_mouth_ratio: 0.6086956521739131
+
+Angle Features:
+angle_between_nose_mouth: 101.30993247402021
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-2-D.jpg
+Ratio Features:
+face_ratio: 1.6990563418645623
+nose_ratio: 0.8038252173973173
+mouth_middle_ratio: 0.7957309676805121
+mouth_nose_ratio: 1.7272727272727273
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 101.10383343663608
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-2-S.jpg
+Ratio Features:
+face_ratio: 1.3248218858988752
+nose_ratio: 1.352682666860396
+mouth_middle_ratio: 1.0752906583803283
+mouth_nose_ratio: 1.8129769016459198
+eye_mouth_ratio: 0.7990018711022757
+
+Angle Features:
+angle_between_nose_mouth: 76.71134586523797
+angle_nose_inner_eye_corners: 59.30027744918559
+angle_right_eye_right_corner: 78.69006752597979
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-20-D.jpg
+Ratio Features:
+face_ratio: 1.6554272504737457
+nose_ratio: 1.028538328578604
+mouth_middle_ratio: 0.601328537469379
+mouth_nose_ratio: 2.0024984394500787
+eye_mouth_ratio: 0.7990018711022757
+
+Angle Features:
+angle_between_nose_mouth: 96.54629078329404
+angle_nose_inner_eye_corners: 85.9780098229799
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-20-S.jpg
+Ratio Features:
+face_ratio: 1.5875487865022078
+nose_ratio: 0.8967345042425222
+mouth_middle_ratio: 1.6698687189301857
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 80.8376529542783
+angle_nose_inner_eye_corners: 77.9052429229879
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-208-D.jpg
+Ratio Features:
+face_ratio: 1.718195309605756
+nose_ratio: 0.9748819646988041
+mouth_middle_ratio: 0.8397632476708708
+mouth_nose_ratio: 2.4444444444444446
+eye_mouth_ratio: 0.5909090909090909
+
+Angle Features:
+angle_between_nose_mouth: 101.53462065364472
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 60.25511870305777
+angle_left_eye_right_corner: 45.0
+
+-----------------------------------------
+
+Child: FMSD-208-S.jpg
+Ratio Features:
+face_ratio: 1.868195771436845
+nose_ratio: 0.8594235253127366
+mouth_middle_ratio: 1.2456821978060995
+mouth_nose_ratio: 2.1
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 32.47119229084849
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-21-D.jpg
+Ratio Features:
+face_ratio: 1.3994289210449724
+nose_ratio: 0.9023575536958524
+mouth_middle_ratio: 2.3696802770383636
+mouth_nose_ratio: 2.4545454545454546
+eye_mouth_ratio: 0.48148148148148145
+
+Angle Features:
+angle_between_nose_mouth: 103.13402230639632
+angle_nose_inner_eye_corners: 68.00887008282287
+angle_right_eye_right_corner: 14.036243467926484
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-21-S.jpg
+Ratio Features:
+face_ratio: 1.499639829994568
+nose_ratio: 0.7207592200561265
+mouth_middle_ratio: 1.4680505487867588
+mouth_nose_ratio: 2.3653839693195797
+eye_mouth_ratio: 0.5380637094168615
+
+Angle Features:
+angle_between_nose_mouth: 93.17983011986425
+angle_nose_inner_eye_corners: 98.13010235415598
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-213-D.jpg
+Ratio Features:
+face_ratio: 1.5424922102224903
+nose_ratio: 0.8655222968735872
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.5
+eye_mouth_ratio: 0.6
+
+Angle Features:
+angle_between_nose_mouth: 104.0362434679265
+angle_nose_inner_eye_corners: 93.81407483429035
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-213-S.jpg
+Ratio Features:
+face_ratio: 1.5258343217863277
+nose_ratio: 1.0295624954832387
+mouth_middle_ratio: 0.5368754921931592
+mouth_nose_ratio: 2.3359773379587376
+eye_mouth_ratio: 0.6183469424008423
+
+Angle Features:
+angle_between_nose_mouth: 95.71059313749964
+angle_nose_inner_eye_corners: 61.69924423399363
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-216-D.jpg
+Ratio Features:
+face_ratio: 1.553222456700907
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 0.6575959492214292
+mouth_nose_ratio: 2.2
+eye_mouth_ratio: 0.6363636363636364
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 68.55226367289465
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-216-S.jpg
+Ratio Features:
+face_ratio: 1.1740145716198707
+nose_ratio: 1.0881371197843628
+mouth_middle_ratio: 2.9154759474226504
+mouth_nose_ratio: 1.720227796970328
+eye_mouth_ratio: 0.5872202195147035
+
+Angle Features:
+angle_between_nose_mouth: 80.36246188706905
+angle_nose_inner_eye_corners: 38.659808254090095
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-217-D.jpg
+Ratio Features:
+face_ratio: 1.8279114869929063
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 1.2222222222222223
+mouth_nose_ratio: 2.3021728866442674
+eye_mouth_ratio: 0.5646839155919902
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 32.47119229084849
+angle_left_eye_right_corner: 47.72631099390626
+
+-----------------------------------------
+
+Child: FMSD-217-S.jpg
+Ratio Features:
+face_ratio: 1.7241379310344827
+nose_ratio: 0.8512136399768423
+mouth_middle_ratio: 1.0198039027185568
+mouth_nose_ratio: 2.5555555555555554
+eye_mouth_ratio: 0.6521739130434783
+
+Angle Features:
+angle_between_nose_mouth: 101.30993247402021
+angle_nose_inner_eye_corners: 102.52880770915151
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-22-D.jpg
+Ratio Features:
+face_ratio: 1.88
+nose_ratio: 0.8811284005580547
+mouth_middle_ratio: 1.5206906325745548
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.6519202405202649
+
+Angle Features:
+angle_between_nose_mouth: 93.1221304621157
+angle_nose_inner_eye_corners: 74.05460409907715
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-22-S.jpg
+Ratio Features:
+face_ratio: 1.3389706475665308
+nose_ratio: 0.8846892505023164
+mouth_middle_ratio: 1.0807404868885035
+mouth_nose_ratio: 1.9938429817981087
+eye_mouth_ratio: 0.5448919310237998
+
+Angle Features:
+angle_between_nose_mouth: 71.26663835708311
+angle_nose_inner_eye_corners: 61.92751306414704
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 47.72631099390626
+
+-----------------------------------------
+
+Child: FMSD-221-D.jpg
+Ratio Features:
+face_ratio: 1.5588235294117647
+nose_ratio: 0.7947331922020551
+mouth_middle_ratio: 1.3700084222088116
+mouth_nose_ratio: 2.3653839693195797
+eye_mouth_ratio: 0.5380637094168615
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 28.07248693585296
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-221-S.jpg
+Ratio Features:
+face_ratio: 1.7165366452466746
+nose_ratio: 1.069699547716902
+mouth_middle_ratio: 1.194044628251987
+mouth_nose_ratio: 2.4
+eye_mouth_ratio: 0.5833333333333334
+
+Angle Features:
+angle_between_nose_mouth: 84.8055710922652
+angle_nose_inner_eye_corners: 68.55226367289465
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-223-D.jpg
+Ratio Features:
+face_ratio: 1.6443059945588605
+nose_ratio: 1.0812836696959094
+mouth_middle_ratio: 0.7474093186836597
+mouth_nose_ratio: 2.446968393949471
+eye_mouth_ratio: 0.6357072528610997
+
+Angle Features:
+angle_between_nose_mouth: 95.71059313749964
+angle_nose_inner_eye_corners: 71.97527647876151
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-223-S.jpg
+Ratio Features:
+face_ratio: 1.7494249926413104
+nose_ratio: 0.8668739671667289
+mouth_middle_ratio: 1.5811388300841895
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.6363636363636364
+
+Angle Features:
+angle_between_nose_mouth: 96.38416393951246
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-225-D.jpg
+Ratio Features:
+face_ratio: 1.5129835329521786
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 1.1524430571616109
+mouth_nose_ratio: 2.4
+eye_mouth_ratio: 0.5416666666666666
+
+Angle Features:
+angle_between_nose_mouth: 96.81821457165186
+angle_nose_inner_eye_corners: 70.68814343564735
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-225-S.jpg
+Ratio Features:
+face_ratio: 1.7575760678287229
+nose_ratio: 0.9412399966814652
+mouth_middle_ratio: 0.8471405189362208
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.6519202405202649
+
+Angle Features:
+angle_between_nose_mouth: 79.09497795476555
+angle_nose_inner_eye_corners: 68.68208772453846
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-226-D.jpg
+Ratio Features:
+face_ratio: 1.5972632844963288
+nose_ratio: 0.9893034389451926
+mouth_middle_ratio: 0.3333333333333333
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.581334790378277
+
+Angle Features:
+angle_between_nose_mouth: 95.38931175997341
+angle_nose_inner_eye_corners: 43.8542371618249
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 53.13010235415599
+
+-----------------------------------------
+
+Child: FMSD-226-S.jpg
+Ratio Features:
+face_ratio: 1.5116427330149367
+nose_ratio: 1.0566652894359345
+mouth_middle_ratio: 2.4714587004658015
+mouth_nose_ratio: 2.2022715545545237
+eye_mouth_ratio: 0.6357072528610997
+
+Angle Features:
+angle_between_nose_mouth: 78.55895613123258
+angle_nose_inner_eye_corners: 61.50436138175502
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-227-D.jpg
+Ratio Features:
+face_ratio: 1.6193426883640405
+nose_ratio: 0.9744406409659521
+mouth_middle_ratio: 0.5362934080044491
+mouth_nose_ratio: 2.211389586309709
+eye_mouth_ratio: 0.5992514033267068
+
+Angle Features:
+angle_between_nose_mouth: 82.87498365109819
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 45.0
+
+-----------------------------------------
+
+Child: FMSD-227-S.jpg
+Ratio Features:
+face_ratio: 1.7901770101893977
+nose_ratio: 0.9576153449739476
+mouth_middle_ratio: 0.6945163361480208
+mouth_nose_ratio: 2.3333333333333335
+eye_mouth_ratio: 0.5714285714285714
+
+Angle Features:
+angle_between_nose_mouth: 83.6598082540901
+angle_nose_inner_eye_corners: 73.19130837379315
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-228-D.jpg
+Ratio Features:
+face_ratio: 1.5090790528096485
+nose_ratio: 1.0640170499710528
+mouth_middle_ratio: 0.8049844718999243
+mouth_nose_ratio: 2.224998266055643
+eye_mouth_ratio: 0.7009078544636789
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 78.50343698241423
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-228-S.jpg
+Ratio Features:
+face_ratio: 1.6324266813992854
+nose_ratio: 0.967287389422694
+mouth_middle_ratio: 1.5342249358702764
+mouth_nose_ratio: 2.3359773379587376
+eye_mouth_ratio: 0.6183469424008423
+
+Angle Features:
+angle_between_nose_mouth: 97.69605172201656
+angle_nose_inner_eye_corners: 84.35175262626474
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-23-D.jpg
+Ratio Features:
+face_ratio: 1.7142857142857142
+nose_ratio: 0.967287389422694
+mouth_middle_ratio: 1.2785207798918972
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 79.26110289909457
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-23-S.jpg
+Ratio Features:
+face_ratio: 1.6541892403093863
+nose_ratio: 0.8594235253127366
+mouth_middle_ratio: 1.0946904162538451
+mouth_nose_ratio: 1.8027756377319946
+eye_mouth_ratio: 0.7785588263926151
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 86.18592516570965
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-24-D.jpg
+Ratio Features:
+face_ratio: 1.7179113807746667
+nose_ratio: 1.0771156984315073
+mouth_middle_ratio: 0.669991708074726
+mouth_nose_ratio: 2.3359773379587376
+eye_mouth_ratio: 0.713477241231741
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 78.69006752597979
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-24-S.jpg
+Ratio Features:
+face_ratio: 1.6554418760192244
+nose_ratio: 0.9655428926792627
+mouth_middle_ratio: 1.255388386118017
+mouth_nose_ratio: 1.720179174807852
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 91.10881212775993
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-25-D.jpg
+Ratio Features:
+face_ratio: 1.75
+nose_ratio: 0.9748819646988041
+mouth_middle_ratio: 0.8333333333333334
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-25-S.jpg
+Ratio Features:
+face_ratio: 1.6666666666666667
+nose_ratio: 0.9549150281252629
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 79.50852298766841
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-26-D.jpg
+Ratio Features:
+face_ratio: 1.424877268173578
+nose_ratio: 0.7312376477871322
+mouth_middle_ratio: 0.9267273220380224
+mouth_nose_ratio: 2.355669825732981
+eye_mouth_ratio: 0.4996305873156571
+
+Angle Features:
+angle_between_nose_mouth: 103.43102887068167
+angle_nose_inner_eye_corners: 92.93567344642118
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-26-S.jpg
+Ratio Features:
+face_ratio: 1.558427059764111
+nose_ratio: 0.6583592135001262
+mouth_middle_ratio: 0.7453559924999299
+mouth_nose_ratio: 2.6666666666666665
+eye_mouth_ratio: 0.5848195353174249
+
+Angle Features:
+angle_between_nose_mouth: 111.99112991717713
+angle_nose_inner_eye_corners: 122.90524292298791
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-28-D.jpg
+Ratio Features:
+face_ratio: 1.663307824894112
+nose_ratio: 0.9748819646988041
+mouth_middle_ratio: 2.324952774876386
+mouth_nose_ratio: 2.4444444444444446
+eye_mouth_ratio: 0.6363636363636364
+
+Angle Features:
+angle_between_nose_mouth: 91.78991060824606
+angle_nose_inner_eye_corners: 77.9052429229879
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-28-S.jpg
+Ratio Features:
+face_ratio: 1.5002883229243353
+nose_ratio: 0.8881206051660501
+mouth_middle_ratio: 0.7520088040570472
+mouth_nose_ratio: 2.272727272727273
+eye_mouth_ratio: 0.56
+
+Angle Features:
+angle_between_nose_mouth: 102.05078488340955
+angle_nose_inner_eye_corners: 80.3718438715133
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 53.13010235415599
+
+-----------------------------------------
+
+Child: FMSD-29-D.jpg
+Ratio Features:
+face_ratio: 1.6137818456946287
+nose_ratio: 0.9758526350402184
+mouth_middle_ratio: 0.49902628924144427
+mouth_nose_ratio: 2.0928844424038795
+eye_mouth_ratio: 0.6515583641446041
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-29-S.jpg
+Ratio Features:
+face_ratio: 1.6554418760192244
+nose_ratio: 0.9822112490053069
+mouth_middle_ratio: 1.2456821978060995
+mouth_nose_ratio: 1.9090909090909092
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 84.8055710922652
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-30-D.jpg
+Ratio Features:
+face_ratio: 1.53248219070137
+nose_ratio: 0.989136507304304
+mouth_middle_ratio: 0.7299225200292847
+mouth_nose_ratio: 2.2022715545545237
+eye_mouth_ratio: 0.5902995919424497
+
+Angle Features:
+angle_between_nose_mouth: 108.43494882292202
+angle_nose_inner_eye_corners: 68.96248897457819
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-30-S.jpg
+Ratio Features:
+face_ratio: 1.5013015186830392
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 0.9262765060609458
+mouth_nose_ratio: 1.8
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 90.94695144677347
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-31-D.jpg
+Ratio Features:
+face_ratio: 1.5325249794049036
+nose_ratio: 1.0504065309377892
+mouth_middle_ratio: 1.099054499139696
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.6519202405202649
+
+Angle Features:
+angle_between_nose_mouth: 84.8055710922652
+angle_nose_inner_eye_corners: 68.83874018317172
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-31-S.jpg
+Ratio Features:
+face_ratio: 1.6310727237276994
+nose_ratio: 0.7777777777777778
+mouth_middle_ratio: 1.0881176406988353
+mouth_nose_ratio: 2.224998266055643
+eye_mouth_ratio: 0.649189020270599
+
+Angle Features:
+angle_between_nose_mouth: 99.46232220802563
+angle_nose_inner_eye_corners: 104.65675111576043
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-33-D.jpg
+Ratio Features:
+face_ratio: 1.633673433979046
+nose_ratio: 1.0557280900008412
+mouth_middle_ratio: 1.0946904162538451
+mouth_nose_ratio: 2.224998266055643
+eye_mouth_ratio: 0.6991266372144912
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-33-S.jpg
+Ratio Features:
+face_ratio: 1.6063464582664935
+nose_ratio: 1.1835174034286127
+mouth_middle_ratio: 0.7965662348464577
+mouth_nose_ratio: 2.114033065604494
+eye_mouth_ratio: 0.7376983767283376
+
+Angle Features:
+angle_between_nose_mouth: 84.88958243896876
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 56.309932474020215
+
+-----------------------------------------
+
+Child: FMSD-34-D.jpg
+Ratio Features:
+face_ratio: 1.4746237606444106
+nose_ratio: 1.2403642421632681
+mouth_middle_ratio: 1.3696211406682934
+mouth_nose_ratio: 1.8931873694490948
+eye_mouth_ratio: 0.7358236637186915
+
+Angle Features:
+angle_between_nose_mouth: 71.56505117707799
+angle_nose_inner_eye_corners: 64.63783305106882
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-34-S.jpg
+Ratio Features:
+face_ratio: 1.555276219895255
+nose_ratio: 1.0416051865284752
+mouth_middle_ratio: 1.2610621625351297
+mouth_nose_ratio: 1.8931873694490948
+eye_mouth_ratio: 0.6852833426171312
+
+Angle Features:
+angle_between_nose_mouth: 82.40535663140855
+angle_nose_inner_eye_corners: 68.68208772453846
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 36.86989764584401
+
+-----------------------------------------
+
+Child: FMSD-35-D.jpg
+Ratio Features:
+face_ratio: 1.6542011132136256
+nose_ratio: 1.0728601984227781
+mouth_middle_ratio: 1.5499803303236603
+mouth_nose_ratio: 2.3333333333333335
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 88.37502364247523
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-35-S.jpg
+Ratio Features:
+face_ratio: 1.4853828305673284
+nose_ratio: 0.9556030099933138
+mouth_middle_ratio: 0.7602859212697055
+mouth_nose_ratio: 2.1890818184619762
+eye_mouth_ratio: 0.6363636363636364
+
+Angle Features:
+angle_between_nose_mouth: 95.71059313749964
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-39-D.jpg
+Ratio Features:
+face_ratio: 1.5909520434850513
+nose_ratio: 1.1452847075210475
+mouth_middle_ratio: 1.002954216185023
+mouth_nose_ratio: 2.25
+eye_mouth_ratio: 0.7243558228002943
+
+Angle Features:
+angle_between_nose_mouth: 88.05851360908562
+angle_nose_inner_eye_corners: 90.0
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-39-S.jpg
+Ratio Features:
+face_ratio: 1.5620499351813308
+nose_ratio: 0.916227766016838
+mouth_middle_ratio: 1.0864289525102224
+mouth_nose_ratio: 2.1023796041628637
+eye_mouth_ratio: 0.6676086858827283
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 85.68397248013439
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-40-D.jpg
+Ratio Features:
+face_ratio: 1.4262825870462188
+nose_ratio: 0.889752796980515
+mouth_middle_ratio: 0.4048881650894581
+mouth_nose_ratio: 2.168268638542948
+eye_mouth_ratio: 0.5380637094168615
+
+Angle Features:
+angle_between_nose_mouth: 108.43494882292201
+angle_nose_inner_eye_corners: 61.50436138175502
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-40-S.jpg
+Ratio Features:
+face_ratio: 1.4114606837897337
+nose_ratio: 0.8790423663462976
+mouth_middle_ratio: 1.3060943124220303
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.5450973743662536
+
+Angle Features:
+angle_between_nose_mouth: 106.09081634885219
+angle_nose_inner_eye_corners: 74.74488129694222
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-43-D.jpg
+Ratio Features:
+face_ratio: 1.676003807884977
+nose_ratio: 0.8811284005580547
+mouth_middle_ratio: 1.619876538505327
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.75
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 83.3455749539934
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-43-S.jpg
+Ratio Features:
+face_ratio: 1.512150104369381
+nose_ratio: 1.0640170499710528
+mouth_middle_ratio: 1.493575987611354
+mouth_nose_ratio: 1.8921540406584891
+eye_mouth_ratio: 0.7656414934887764
+
+Angle Features:
+angle_between_nose_mouth: 85.23635830927383
+angle_nose_inner_eye_corners: 73.6389225446537
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 45.0
+
+-----------------------------------------
+
+Child: FMSD-44-D.jpg
+Ratio Features:
+face_ratio: 1.6659019652423024
+nose_ratio: 1.016227766016838
+mouth_middle_ratio: 0.5871200027344677
+mouth_nose_ratio: 2.2022715545545237
+eye_mouth_ratio: 0.6826268244387258
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-44-S.jpg
+Ratio Features:
+face_ratio: 1.6123870812531647
+nose_ratio: 0.9057941958012881
+mouth_middle_ratio: 1.6441183047457382
+mouth_nose_ratio: 2.0928844424038795
+eye_mouth_ratio: 0.6081211398682972
+
+Angle Features:
+angle_between_nose_mouth: 87.436229788535
+angle_nose_inner_eye_corners: 71.97527647876151
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-45-D.jpg
+Ratio Features:
+face_ratio: 1.592972371263782
+nose_ratio: 0.8113883008418966
+mouth_middle_ratio: 0.9284766908852593
+mouth_nose_ratio: 1.8333333333333333
+eye_mouth_ratio: 0.5909090909090909
+
+Angle Features:
+angle_between_nose_mouth: 100.30484646876603
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-45-S.jpg
+Ratio Features:
+face_ratio: 1.396485950656369
+nose_ratio: 1.073466688752185
+mouth_middle_ratio: 1.4
+mouth_nose_ratio: 2.2
+eye_mouth_ratio: 0.5926547641093317
+
+Angle Features:
+angle_between_nose_mouth: 84.8055710922652
+angle_nose_inner_eye_corners: 62.592424562181606
+angle_right_eye_right_corner: 60.25511870305777
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-46-D.jpg
+Ratio Features:
+face_ratio: 1.6221353079193004
+nose_ratio: 1.0557280900008412
+mouth_middle_ratio: 0.8579280908893565
+mouth_nose_ratio: 2.3359773379587376
+eye_mouth_ratio: 0.6183469424008423
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-46-S.jpg
+Ratio Features:
+face_ratio: 1.4468675148528052
+nose_ratio: 1.2966935557360253
+mouth_middle_ratio: 1.1413600232629066
+mouth_nose_ratio: 1.7
+eye_mouth_ratio: 0.8823529411764706
+
+Angle Features:
+angle_between_nose_mouth: 75.06858282186246
+angle_nose_inner_eye_corners: 59.90825801225528
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-47-D.jpg
+Ratio Features:
+face_ratio: 1.7413283815020453
+nose_ratio: 0.7947331922020551
+mouth_middle_ratio: 1.0881176406988353
+mouth_nose_ratio: 2.1818181818181817
+eye_mouth_ratio: 0.5848195353174249
+
+Angle Features:
+angle_between_nose_mouth: 99.46232220802563
+angle_nose_inner_eye_corners: 86.18592516570965
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-47-S.jpg
+Ratio Features:
+face_ratio: 1.686965814276207
+nose_ratio: 0.8594235253127366
+mouth_middle_ratio: 0.8673017867965747
+mouth_nose_ratio: 1.9026297590440446
+eye_mouth_ratio: 0.7883824968414551
+
+Angle Features:
+angle_between_nose_mouth: 85.60129464500447
+angle_nose_inner_eye_corners: 93.81407483429035
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-48-D.jpg
+Ratio Features:
+face_ratio: 1.6056094330116981
+nose_ratio: 1.1613008990009253
+mouth_middle_ratio: 1.0687057498186447
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 69.98404039711733
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-48-S.jpg
+Ratio Features:
+face_ratio: 1.6470588235294117
+nose_ratio: 1.032455532033676
+mouth_middle_ratio: 0.6824612990181453
+mouth_nose_ratio: 1.7
+eye_mouth_ratio: 0.9411764705882353
+
+Angle Features:
+angle_between_nose_mouth: 96.91122711902469
+angle_nose_inner_eye_corners: 85.9780098229799
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 71.56505117707799
+
+-----------------------------------------
+
+Child: FMSD-5-D.jpg
+Ratio Features:
+face_ratio: 1.7410298765917347
+nose_ratio: 1.1114516192023074
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.3
+eye_mouth_ratio: 0.6102464716355739
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 67.46321248940716
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-5-S.jpg
+Ratio Features:
+face_ratio: 1.6056094330116981
+nose_ratio: 0.8973665961010275
+mouth_middle_ratio: 1.8902832411327453
+mouth_nose_ratio: 1.8204531267727988
+eye_mouth_ratio: 0.6991266372144912
+
+Angle Features:
+angle_between_nose_mouth: 90.9992436702573
+angle_nose_inner_eye_corners: 80.3718438715133
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-50-D.jpg
+Ratio Features:
+face_ratio: 1.7020303218494215
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 0.9230769230769231
+mouth_nose_ratio: 2.1023796041628637
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 84.28940686250037
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-50-S.jpg
+Ratio Features:
+face_ratio: 1.684502489797001
+nose_ratio: 0.8973665961010275
+mouth_middle_ratio: 0.6685077822039596
+mouth_nose_ratio: 1.8204531267727988
+eye_mouth_ratio: 0.7990018711022757
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 81.70285503016314
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-51-D.jpg
+Ratio Features:
+face_ratio: 1.6053237119607642
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 0.989812977147567
+mouth_nose_ratio: 2.2022715545545237
+eye_mouth_ratio: 0.5902995919424497
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 63.43494882292201
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-51-S.jpg
+Ratio Features:
+face_ratio: 1.6961910918830716
+nose_ratio: 1.0812836696959094
+mouth_middle_ratio: 0.8220591523728691
+mouth_nose_ratio: 2.114033065604494
+eye_mouth_ratio: 0.6832648305959278
+
+Angle Features:
+angle_between_nose_mouth: 86.96443087494444
+angle_nose_inner_eye_corners: 70.68814343564735
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-52-D.jpg
+Ratio Features:
+face_ratio: 1.464896838272619
+nose_ratio: 0.9621544910730925
+mouth_middle_ratio: 0.9958932064677039
+mouth_nose_ratio: 1.901250666892889
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 64.94238458169698
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-52-S.jpg
+Ratio Features:
+face_ratio: 1.5154545151575742
+nose_ratio: 1.009580629230159
+mouth_middle_ratio: 1.8921540406584891
+mouth_nose_ratio: 2.0981989954220843
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 80.8376529542783
+angle_nose_inner_eye_corners: 77.9052429229879
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-53-D.jpg
+Ratio Features:
+face_ratio: 1.6659019652423024
+nose_ratio: 1.069699547716902
+mouth_middle_ratio: 0.7284313590846835
+mouth_nose_ratio: 2.3
+eye_mouth_ratio: 0.6086956521739131
+
+Angle Features:
+angle_between_nose_mouth: 83.8844964337146
+angle_nose_inner_eye_corners: 68.55226367289465
+angle_right_eye_right_corner: 63.43494882292201
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-53-S.jpg
+Ratio Features:
+face_ratio: 1.6031191006500942
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 1.2856486930664501
+mouth_nose_ratio: 2.1
+eye_mouth_ratio: 0.7158712561129956
+
+Angle Features:
+angle_between_nose_mouth: 92.41950921665634
+angle_nose_inner_eye_corners: 82.05652818940959
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-54-D.jpg
+Ratio Features:
+face_ratio: 1.4086384543529853
+nose_ratio: 1.0202847075210475
+mouth_middle_ratio: 0.9323254631461962
+mouth_nose_ratio: 1.8791620472966135
+eye_mouth_ratio: 0.9312661473328351
+
+Angle Features:
+angle_between_nose_mouth: 100.93909118319216
+angle_nose_inner_eye_corners: 98.13010235415598
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-54-S.jpg
+Ratio Features:
+face_ratio: 1.6451612903225807
+nose_ratio: 0.9488355881760051
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.2745447278539643
+eye_mouth_ratio: 0.559552536884202
+
+Angle Features:
+angle_between_nose_mouth: 96.11550356628541
+angle_nose_inner_eye_corners: 69.98404039711733
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-55-D.jpg
+Ratio Features:
+face_ratio: 1.7
+nose_ratio: 1.069699547716902
+mouth_middle_ratio: 0.909872986992699
+mouth_nose_ratio: 2.0024984394500787
+eye_mouth_ratio: 0.6991266372144912
+
+Angle Features:
+angle_between_nose_mouth: 89.48383577023516
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-55-S.jpg
+Ratio Features:
+face_ratio: 1.575034585319995
+nose_ratio: 1.049026565346346
+mouth_middle_ratio: 1.3152946437965904
+mouth_nose_ratio: 1.9118505207764291
+eye_mouth_ratio: 0.6963516786634169
+
+Angle Features:
+angle_between_nose_mouth: 94.34745690755967
+angle_nose_inner_eye_corners: 64.58071166109711
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-57-D.jpg
+Ratio Features:
+face_ratio: 1.575034585319995
+nose_ratio: 1.069699547716902
+mouth_middle_ratio: 1.361050703094283
+mouth_nose_ratio: 1.8
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 80.99149625797484
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-57-S.jpg
+Ratio Features:
+face_ratio: 1.4995934408381753
+nose_ratio: 1.0236374121889902
+mouth_middle_ratio: 1.11665284679121
+mouth_nose_ratio: 1.9090909090909092
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 84.28940686250037
+angle_nose_inner_eye_corners: 64.94238458169698
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-59-D.jpg
+Ratio Features:
+face_ratio: 1.720396266448363
+nose_ratio: 1.2043117972620958
+mouth_middle_ratio: 1.1655988545186429
+mouth_nose_ratio: 1.8805811245074375
+eye_mouth_ratio: 0.8221083073205848
+
+Angle Features:
+angle_between_nose_mouth: 80.71995431229031
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-59-S.jpg
+Ratio Features:
+face_ratio: 1.7073446947631141
+nose_ratio: 0.8939075609828563
+mouth_middle_ratio: 1.0922927484314184
+mouth_nose_ratio: 2.0928844424038795
+eye_mouth_ratio: 0.6096704956019663
+
+Angle Features:
+angle_between_nose_mouth: 93.03556912505556
+angle_nose_inner_eye_corners: 78.69006752597979
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-6-D.jpg
+Ratio Features:
+face_ratio: 1.61245154965971
+nose_ratio: 0.97729754465512
+mouth_middle_ratio: 1.865681974713062
+mouth_nose_ratio: 1.8027756377319946
+eye_mouth_ratio: 0.7765802747153208
+
+Angle Features:
+angle_between_nose_mouth: 87.3021943666837
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-6-S.jpg
+Ratio Features:
+face_ratio: 1.7244827241448257
+nose_ratio: 0.8655222968735872
+mouth_middle_ratio: 1.0833333333333333
+mouth_nose_ratio: 2.0024984394500787
+eye_mouth_ratio: 0.6991266372144912
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-60-D.jpg
+Ratio Features:
+face_ratio: 1.8139489956732822
+nose_ratio: 1.125
+mouth_middle_ratio: 1.1807754948468272
+mouth_nose_ratio: 2.25
+eye_mouth_ratio: 0.7222222222222222
+
+Angle Features:
+angle_between_nose_mouth: 85.23635830927383
+angle_nose_inner_eye_corners: 78.05582281155368
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-60-S.jpg
+Ratio Features:
+face_ratio: 1.5287506832984221
+nose_ratio: 0.9666705693201696
+mouth_middle_ratio: 0.8027729719194864
+mouth_nose_ratio: 1.8027756377319946
+eye_mouth_ratio: 0.7765802747153208
+
+Angle Features:
+angle_between_nose_mouth: 90.94695144677347
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-63-D.jpg
+Ratio Features:
+face_ratio: 1.5878209766090519
+nose_ratio: 1.0960406149325455
+mouth_middle_ratio: 0.746787993805677
+mouth_nose_ratio: 2.0981989954220843
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 90.94695144677347
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-63-S.jpg
+Ratio Features:
+face_ratio: 1.6896551724137931
+nose_ratio: 0.8856282322688355
+mouth_middle_ratio: 1.0901947487325072
+mouth_nose_ratio: 1.7910669423779806
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-64-D.jpg
+Ratio Features:
+face_ratio: 1.7514571193198898
+nose_ratio: 1.0623058987490537
+mouth_middle_ratio: 1.231009591914139
+mouth_nose_ratio: 1.75
+eye_mouth_ratio: 0.860113898485164
+
+Angle Features:
+angle_between_nose_mouth: 85.91438322002512
+angle_nose_inner_eye_corners: 70.2405292647868
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-64-S.jpg
+Ratio Features:
+face_ratio: 1.6356128386015332
+nose_ratio: 0.8950973831268275
+mouth_middle_ratio: 1.5231546211727818
+mouth_nose_ratio: 1.7910669423779806
+eye_mouth_ratio: 0.8333333333333334
+
+Angle Features:
+angle_between_nose_mouth: 87.0262689175199
+angle_nose_inner_eye_corners: 77.06739160326049
+angle_right_eye_right_corner: 32.47119229084849
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-65-D.jpg
+Ratio Features:
+face_ratio: 1.457142857142857
+nose_ratio: 0.9713405682469562
+mouth_middle_ratio: 1.21291131009396
+mouth_nose_ratio: 1.8204531267727988
+eye_mouth_ratio: 0.6991266372144912
+
+Angle Features:
+angle_between_nose_mouth: 75.96375653207353
+angle_nose_inner_eye_corners: 69.98404039711733
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-65-S.jpg
+Ratio Features:
+face_ratio: 1.78125
+nose_ratio: 1.2043117972620958
+mouth_middle_ratio: 0.6575959492214293
+mouth_nose_ratio: 1.7669044171975445
+eye_mouth_ratio: 0.9375
+
+Angle Features:
+angle_between_nose_mouth: 76.75948008481281
+angle_nose_inner_eye_corners: 72.95096902789018
+angle_right_eye_right_corner: 63.43494882292201
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-66-D.jpg
+Ratio Features:
+face_ratio: 1.5761991212168502
+nose_ratio: 0.809062908078577
+mouth_middle_ratio: 0.6173589518843134
+mouth_nose_ratio: 1.8181818181818181
+eye_mouth_ratio: 0.75
+
+Angle Features:
+angle_between_nose_mouth: 90.62959860841026
+angle_nose_inner_eye_corners: 83.3455749539934
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-66-S.jpg
+Ratio Features:
+face_ratio: 1.5994588430012977
+nose_ratio: 0.8684802597016987
+mouth_middle_ratio: 1.2649110640673518
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 91.00508600525419
+angle_nose_inner_eye_corners: 101.30993247402021
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-67-D.jpg
+Ratio Features:
+face_ratio: 1.6597215030078856
+nose_ratio: 1.073466688752185
+mouth_middle_ratio: 1.6601498609991838
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 80.99149625797484
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-67-S.jpg
+Ratio Features:
+face_ratio: 1.3153341044116411
+nose_ratio: 1.1858541225631423
+mouth_middle_ratio: 1.0855313806511437
+mouth_nose_ratio: 1.5
+eye_mouth_ratio: 0.8333333333333334
+
+Angle Features:
+angle_between_nose_mouth: 61.69924423399363
+angle_nose_inner_eye_corners: 53.08938041395299
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-68-D.jpg
+Ratio Features:
+face_ratio: 1.575034585319995
+nose_ratio: 0.9521770848491448
+mouth_middle_ratio: 1.6711322290080064
+mouth_nose_ratio: 2.0928844424038795
+eye_mouth_ratio: 0.6515583641446041
+
+Angle Features:
+angle_between_nose_mouth: 92.40021446085665
+angle_nose_inner_eye_corners: 72.95096902789018
+angle_right_eye_right_corner: 26.565051177077994
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-68-S.jpg
+Ratio Features:
+face_ratio: 1.6098788291544135
+nose_ratio: 0.9735304036198367
+mouth_middle_ratio: 0.7019137602506936
+mouth_nose_ratio: 2.1
+eye_mouth_ratio: 0.6683651832199142
+
+Angle Features:
+angle_between_nose_mouth: 101.42118627499929
+angle_nose_inner_eye_corners: 74.57783868126133
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-7-D.jpg
+Ratio Features:
+face_ratio: 1.5475821125259863
+nose_ratio: 0.8717082451262844
+mouth_middle_ratio: 1.3434574979434546
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7
+
+Angle Features:
+angle_between_nose_mouth: 99.46232220802563
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-7-S.jpg
+Ratio Features:
+face_ratio: 1.5287506832984221
+nose_ratio: 0.932455532033676
+mouth_middle_ratio: 0.6651901052377394
+mouth_nose_ratio: 1.9026297590440446
+eye_mouth_ratio: 0.7883824968414551
+
+Angle Features:
+angle_between_nose_mouth: 102.52880770915151
+angle_nose_inner_eye_corners: 90.54565759341573
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-70-D.jpg
+Ratio Features:
+face_ratio: 1.5620499351813308
+nose_ratio: 1.0557280900008412
+mouth_middle_ratio: 0.7178482586514922
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7387194130325367
+
+Angle Features:
+angle_between_nose_mouth: 84.28940686250037
+angle_nose_inner_eye_corners: 78.50343698241423
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-70-S.jpg
+Ratio Features:
+face_ratio: 1.4405192763169168
+nose_ratio: 1.154029729164783
+mouth_middle_ratio: 1.656472891122698
+mouth_nose_ratio: 2.1
+eye_mouth_ratio: 0.6683651832199142
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 67.27026792005532
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-71-D.jpg
+Ratio Features:
+face_ratio: 1.7579139008098015
+nose_ratio: 1.0824345061063545
+mouth_middle_ratio: 1.4958688987930184
+mouth_nose_ratio: 1.8931873694490948
+eye_mouth_ratio: 0.7358236637186915
+
+Angle Features:
+angle_between_nose_mouth: 86.18592516570965
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 32.47119229084849
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-71-S.jpg
+Ratio Features:
+face_ratio: 1.706434029913139
+nose_ratio: 1.1479536087705355
+mouth_middle_ratio: 0.6739053877331153
+mouth_nose_ratio: 2.091945894081005
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 83.45370921670596
+angle_nose_inner_eye_corners: 63.73336164291689
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-75-D.jpg
+Ratio Features:
+face_ratio: 1.5115481661870946
+nose_ratio: 0.8377223398316206
+mouth_middle_ratio: 0.4910972109351013
+mouth_nose_ratio: 1.9112541856026035
+eye_mouth_ratio: 0.6659120918162916
+
+Angle Features:
+angle_between_nose_mouth: 102.09475707701209
+angle_nose_inner_eye_corners: 75.68895873739359
+angle_right_eye_right_corner: 53.13010235415599
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-75-S.jpg
+Ratio Features:
+face_ratio: 1.5305028665083396
+nose_ratio: 1.0504065309377892
+mouth_middle_ratio: 1.5713484026367723
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7
+
+Angle Features:
+angle_between_nose_mouth: 98.130102354156
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-78-D.jpg
+Ratio Features:
+face_ratio: 1.5139374244946455
+nose_ratio: 0.9123406079269896
+mouth_middle_ratio: 2.5084472671969196
+mouth_nose_ratio: 1.8027756377319946
+eye_mouth_ratio: 0.7765802747153208
+
+Angle Features:
+angle_between_nose_mouth: 80.09581678702612
+angle_nose_inner_eye_corners: 70.3461759419467
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-78-S.jpg
+Ratio Features:
+face_ratio: 1.6221353079193004
+nose_ratio: 1.1613008990009253
+mouth_middle_ratio: 0.8110350040397626
+mouth_nose_ratio: 1.8888888888888888
+eye_mouth_ratio: 0.8235294117647058
+
+Angle Features:
+angle_between_nose_mouth: 80.53767779197439
+angle_nose_inner_eye_corners: 75.32360686255
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-8-D.jpg
+Ratio Features:
+face_ratio: 1.6206896551724137
+nose_ratio: 0.9501552810007571
+mouth_middle_ratio: 0.9958932064677039
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.7368421052631579
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-8-S.jpg
+Ratio Features:
+face_ratio: 1.5287506832984221
+nose_ratio: 0.9549150281252629
+mouth_middle_ratio: 1.003466214899358
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7
+
+Angle Features:
+angle_between_nose_mouth: 85.23635830927383
+angle_nose_inner_eye_corners: 82.3718503314193
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-80-D.jpg
+Ratio Features:
+face_ratio: 1.6098788291544135
+nose_ratio: 1.0858568051229471
+mouth_middle_ratio: 0.588348405414552
+mouth_nose_ratio: 2.3333333333333335
+eye_mouth_ratio: 0.6666666666666666
+
+Angle Features:
+angle_between_nose_mouth: 101.30993247402021
+angle_nose_inner_eye_corners: 77.9052429229879
+angle_right_eye_right_corner: 60.25511870305777
+angle_left_eye_right_corner: 59.03624346792648
+
+-----------------------------------------
+
+Child: FMSD-80-S.jpg
+Ratio Features:
+face_ratio: 1.626201478907211
+nose_ratio: 0.9920106350980555
+mouth_middle_ratio: 0.6565321642986127
+mouth_nose_ratio: 1.9877674693472376
+eye_mouth_ratio: 0.7797593804232332
+
+Angle Features:
+angle_between_nose_mouth: 86.03534527714388
+angle_nose_inner_eye_corners: 84.1303995569853
+angle_right_eye_right_corner: 71.56505117707799
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-83-D.jpg
+Ratio Features:
+face_ratio: 1.6473214076400524
+nose_ratio: 0.8353631404109062
+mouth_middle_ratio: 1.4117731575135795
+mouth_nose_ratio: 1.8129769016459198
+eye_mouth_ratio: 0.7990018711022757
+
+Angle Features:
+angle_between_nose_mouth: 77.47119229084849
+angle_nose_inner_eye_corners: 93.0664855011259
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 71.56505117707799
+
+-----------------------------------------
+
+Child: FMSD-83-S.jpg
+Ratio Features:
+face_ratio: 1.4210526315789473
+nose_ratio: 1.2539314761984488
+mouth_middle_ratio: 1.8923744558308435
+mouth_nose_ratio: 2.446968393949471
+eye_mouth_ratio: 0.6811149137797498
+
+Angle Features:
+angle_between_nose_mouth: 69.07549825507883
+angle_nose_inner_eye_corners: 71.56505117707799
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 56.309932474020215
+
+-----------------------------------------
+
+Child: FMSD-84-D.jpg
+Ratio Features:
+face_ratio: 1.6768572723551376
+nose_ratio: 0.9704111657676419
+mouth_middle_ratio: 0.7837175498670061
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.75
+
+Angle Features:
+angle_between_nose_mouth: 95.71059313749964
+angle_nose_inner_eye_corners: 85.23635830927383
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-84-S.jpg
+Ratio Features:
+face_ratio: 1.458926712787408
+nose_ratio: 1.0
+mouth_middle_ratio: 1.118033988749895
+mouth_nose_ratio: 1.5555555555555556
+eye_mouth_ratio: 1.1428571428571428
+
+Angle Features:
+angle_between_nose_mouth: 79.38034472384487
+angle_nose_inner_eye_corners: 97.1250163489018
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-85-D.jpg
+Ratio Features:
+face_ratio: 1.7020303218494215
+nose_ratio: 1.0945484858394787
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 1.8931873694490948
+eye_mouth_ratio: 0.7883824968414551
+
+Angle Features:
+angle_between_nose_mouth: 80.40686573726967
+angle_nose_inner_eye_corners: 73.65182845264876
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-85-S.jpg
+Ratio Features:
+face_ratio: 1.7575760678287229
+nose_ratio: 1.091431669166008
+mouth_middle_ratio: 1.0811655372416007
+mouth_nose_ratio: 1.877335943272391
+eye_mouth_ratio: 0.8235294117647058
+
+Angle Features:
+angle_between_nose_mouth: 81.2538377374448
+angle_nose_inner_eye_corners: 75.7499673021964
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-86-D.jpg
+Ratio Features:
+face_ratio: 1.6768572723551376
+nose_ratio: 0.9744406409659521
+mouth_middle_ratio: 1.27072975032485
+mouth_nose_ratio: 2.3190620475717774
+eye_mouth_ratio: 0.7142857142857143
+
+Angle Features:
+angle_between_nose_mouth: 94.08561677997488
+angle_nose_inner_eye_corners: 86.18592516570965
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-86-S.jpg
+Ratio Features:
+face_ratio: 1.4853828305673284
+nose_ratio: 0.9685647168069826
+mouth_middle_ratio: 1.1899825184264614
+mouth_nose_ratio: 2.1
+eye_mouth_ratio: 0.7142857142857143
+
+Angle Features:
+angle_between_nose_mouth: 111.03751102542182
+angle_nose_inner_eye_corners: 86.18592516570965
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-9-D.jpg
+Ratio Features:
+face_ratio: 1.6853684837655054
+nose_ratio: 0.9678383856861436
+mouth_middle_ratio: 0.6063390625908325
+mouth_nose_ratio: 2.4320020860068072
+eye_mouth_ratio: 0.6357072528610997
+
+Angle Features:
+angle_between_nose_mouth: 102.52880770915151
+angle_nose_inner_eye_corners: 77.9052429229879
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-9-S.jpg
+Ratio Features:
+face_ratio: 1.6358932694374735
+nose_ratio: 1.0048177980445863
+mouth_middle_ratio: 2.101103078466514
+mouth_nose_ratio: 1.9010158826634285
+eye_mouth_ratio: 0.7868786959829202
+
+Angle Features:
+angle_between_nose_mouth: 81.70285503016314
+angle_nose_inner_eye_corners: 74.74488129694222
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-90-D.jpg
+Ratio Features:
+face_ratio: 1.599111851166647
+nose_ratio: 0.8935982950028947
+mouth_middle_ratio: 1.4733403229794102
+mouth_nose_ratio: 2.2222222222222223
+eye_mouth_ratio: 0.65
+
+Angle Features:
+angle_between_nose_mouth: 88.95837332399003
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-90-S.jpg
+Ratio Features:
+face_ratio: 1.674248729517259
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 1.318507314527128
+mouth_nose_ratio: 1.7029386365926402
+eye_mouth_ratio: 0.8221083073205848
+
+Angle Features:
+angle_between_nose_mouth: 86.18592516570965
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-91-D.jpg
+Ratio Features:
+face_ratio: 1.625
+nose_ratio: 0.9616914409706524
+mouth_middle_ratio: 0.9285714285714286
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 90.0
+angle_nose_inner_eye_corners: 79.50852298766841
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-91-S.jpg
+Ratio Features:
+face_ratio: 1.5918689307248268
+nose_ratio: 0.9655428926792627
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.0901800063670097
+eye_mouth_ratio: 0.606407314553894
+
+Angle Features:
+angle_between_nose_mouth: 95.19442890773482
+angle_nose_inner_eye_corners: 69.62356478616361
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 18.434948822922017
+
+-----------------------------------------
+
+Child: FMSD-92-D.jpg
+Ratio Features:
+face_ratio: 1.5287506832984221
+nose_ratio: 0.8811284005580547
+mouth_middle_ratio: 1.0
+mouth_nose_ratio: 2.0
+eye_mouth_ratio: 0.7
+
+Angle Features:
+angle_between_nose_mouth: 96.3401917459099
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-92-S.jpg
+Ratio Features:
+face_ratio: 1.5538958377826075
+nose_ratio: 0.9804882933483543
+mouth_middle_ratio: 0.9514859136040754
+mouth_nose_ratio: 1.9
+eye_mouth_ratio: 0.7894736842105263
+
+Angle Features:
+angle_between_nose_mouth: 81.67434966957316
+angle_nose_inner_eye_corners: 79.50852298766841
+angle_right_eye_right_corner: 52.1250163489018
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-93-D.jpg
+Ratio Features:
+face_ratio: 1.7455527247037863
+nose_ratio: 0.967287389422694
+mouth_middle_ratio: 1.2041594578792296
+mouth_nose_ratio: 2.111111111111111
+eye_mouth_ratio: 0.6842105263157895
+
+Angle Features:
+angle_between_nose_mouth: 91.57655005518373
+angle_nose_inner_eye_corners: 78.05582281155368
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 36.86989764584404
+
+-----------------------------------------
+
+Child: FMSD-93-S.jpg
+Ratio Features:
+face_ratio: 1.7744867792871053
+nose_ratio: 1.0504065309377892
+mouth_middle_ratio: 0.874920982525689
+mouth_nose_ratio: 1.8
+eye_mouth_ratio: 0.8333333333333334
+
+Angle Features:
+angle_between_nose_mouth: 81.2538377374448
+angle_nose_inner_eye_corners: 79.50852298766841
+angle_right_eye_right_corner: 47.72631099390626
+angle_left_eye_right_corner: 63.43494882292201
+
+-----------------------------------------
+
+Child: FMSD-94-D.jpg
+Ratio Features:
+face_ratio: 1.5646114052880742
+nose_ratio: 0.8594235253127366
+mouth_middle_ratio: 1.4063348739819326
+mouth_nose_ratio: 1.8
+eye_mouth_ratio: 0.7777777777777778
+
+Angle Features:
+angle_between_nose_mouth: 77.00538320808349
+angle_nose_inner_eye_corners: 81.86989764584403
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 45.00000000000001
+
+-----------------------------------------
+
+Child: FMSD-94-S.jpg
+Ratio Features:
+face_ratio: 1.630055105208931
+nose_ratio: 0.9015968630812405
+mouth_middle_ratio: 1.0041237288352056
+mouth_nose_ratio: 1.7938288051478652
+eye_mouth_ratio: 0.7765802747153208
+
+Angle Features:
+angle_between_nose_mouth: 91.1457628381751
+angle_nose_inner_eye_corners: 89.41536947929482
+angle_right_eye_right_corner: 32.47119229084849
+angle_left_eye_right_corner: 52.1250163489018
+
+-----------------------------------------
+
+Child: FMSD-96-D.jpg
+Ratio Features:
+face_ratio: 1.6443059945588605
+nose_ratio: 0.8904158005974947
+mouth_middle_ratio: 1.9643888437404051
+mouth_nose_ratio: 1.8027756377319946
+eye_mouth_ratio: 0.7765802747153208
+
+Angle Features:
+angle_between_nose_mouth: 83.81138403675841
+angle_nose_inner_eye_corners: 71.97527647876151
+angle_right_eye_right_corner: 36.86989764584404
+angle_left_eye_right_corner: 26.565051177077994
+
+-----------------------------------------
+
+Child: FMSD-96-S.jpg
+Ratio Features:
+face_ratio: 1.6777294998639798
+nose_ratio: 0.8756539647401274
+mouth_middle_ratio: 0.6023552593005889
+mouth_nose_ratio: 1.8129769016459198
+eye_mouth_ratio: 0.6991266372144912
+
+Angle Features:
+angle_between_nose_mouth: 89.37040139158974
+angle_nose_inner_eye_corners: 74.05460409907714
+angle_right_eye_right_corner: 18.434948822922017
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-98-D.jpg
+Ratio Features:
+face_ratio: 1.805512464613651
+nose_ratio: 1.0687246967010104
+mouth_middle_ratio: 1.2041594578792296
+mouth_nose_ratio: 1.7777777777777777
+eye_mouth_ratio: 0.9395810236483068
+
+Angle Features:
+angle_between_nose_mouth: 80.92294619907055
+angle_nose_inner_eye_corners: 80.01817071226684
+angle_right_eye_right_corner: 45.00000000000001
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
+Child: FMSD-98-S.jpg
+Ratio Features:
+face_ratio: 1.5707875644382345
+nose_ratio: 1.0705149370277574
+mouth_middle_ratio: 0.6651901052377394
+mouth_nose_ratio: 1.9090909090909092
+eye_mouth_ratio: 0.763391406756257
+
+Angle Features:
+angle_between_nose_mouth: 94.76364169072617
+angle_nose_inner_eye_corners: 73.61045966596522
+angle_right_eye_right_corner: 33.690067525979785
+angle_left_eye_right_corner: 33.690067525979785
+
+-----------------------------------------
+
