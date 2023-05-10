@@ -64,7 +64,7 @@ def extract_features(directory):
                 # landmarks = np.array(landmarks).flatten()
                 # Append the features and labels
                 if landmarks.shape != (0,):
-                    hair_color, skin_color = extract_hair_and_skin_color(image,landmarks)
+                    hair_color, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
                     dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
                     belongs_to_set = '$'
                     # With these lines:
@@ -117,24 +117,34 @@ def extract_landmarks(image):
     # cv2.waitKey(0)
     return landmarks
 
-def extract_hair_and_skin_color(image,landmarks):
+def extract_hair_and_skin_color(image,landmarks,image_name):
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2BGRA)
     height, width, _ = image.shape # extract the image width and height
     rectangular_area_right_hair = extract_bounding_box(landmarks[0][16][0]+2 , landmarks[0][16][1]-7, width, height)
     rectangular_area_left_hair = extract_bounding_box(landmarks[0][0][0] , landmarks[0][1][1]-20, width, height)
     rectangular_area_left_skin = extract_bounding_box(landmarks[0][31][0]-6 , landmarks[0][32][1]-6, width, height)
     rectangular_area_right_skin = extract_bounding_box(landmarks[0][35][0]+6 , landmarks[0][35][1]-6, width, height)
-    right_skin = extract_color_from_region(hsv,rectangular_area_right_skin)
-    left_skin = extract_color_from_region(image,rectangular_area_left_skin)
+    # Get the skin region points
+    rectangular_area_left_skin_points = get_skin_region_points(rectangular_area_left_skin)
+    rectangular_area_right_skin_points = get_skin_region_points(rectangular_area_right_skin)
+    # Crop the skin regions
+    left_skin_region = crop_skin_region(image, rectangular_area_left_skin_points)
+    right_skin_region = crop_skin_region(image, rectangular_area_right_skin_points)
+    # Combine the skin regions and save the image
+    combined_skin_region = combine_skin_regions(left_skin_region, right_skin_region)
+    output_directory = "C:/kobbi/endProject/TSKinFace_Data/Azura_Test/test/only_bounding_boxes/"
+    os.makedirs(output_directory, exist_ok=True)
+    output_image_path = os.path.join(output_directory, f"{os.path.splitext(image_name)[0]}_skin.png")
+    cv2.imwrite(output_image_path, combined_skin_region)
     right_hair = extract_color_from_region(image,rectangular_area_right_hair)
     left_hair = extract_color_from_region(image,rectangular_area_left_hair)
 
     # Convert the average color of the rectangular areas to the same color space
     # print(right_skin + " and with left " + left_skin + )
     hair_mask = ((right_hair[0]+left_hair[0]) / 2,(right_hair[1]+left_hair[1]) / 2 , (right_hair[2]+left_hair[2]) /2)
-    skin_mask = ((right_skin[0]+left_skin[0]) / 2,(right_skin[1]+left_skin[1]) / 2 , (right_skin[2]+left_skin[2]) /2)
+    skin_color = dominant_color_cluster(combined_skin_region)
     #mean_skin = cv2.mean(image, mask=skin_mask)
-    return hair_mask , skin_mask
+    return hair_mask , skin_color
 
 def extract_bounding_box(point_x, point_y, image_width, image_height):
     x, y = point_x, point_y
@@ -144,12 +154,36 @@ def extract_bounding_box(point_x, point_y, image_width, image_height):
     rectangular_area = [[x1, y1], [x1, y2], [x2, y2], [x2, y1]]
     return rectangular_area
 
+def get_skin_region_points(rectangular_area):
+    points = []
+    for point in rectangular_area:
+        x, y = point[0], point[1]
+        points.append((x, y))
+    
+    return points
+
+def crop_skin_region(image, points):
+    x_min = min([p[0] for p in points])
+    x_max = max([p[0] for p in points])
+    y_min = min([p[1] for p in points])
+    y_max = max([p[1] for p in points])
+
+    width = x_max - x_min
+    height = y_max - y_min
+
+    if width > height:
+        y_max = y_min + width
+    else:
+        x_max = x_min + height
+
+    return image[y_min:y_max, x_min:x_max]
+
 # def extract_bounding_box(point_x,point_y) :
 #     x,y = point_x,point_y
 #     rectangular_area = [[x-2, y-2], [x-2, y+2], [x+2, y+2], [x+2, y-2]]
 #     return rectangular_area  
 
-def extract_color_from_region(image, rectangular_area):
+def extract_color_from_region(image , rectangular_area):
     # Create a copy of the original image
     image_with_bounding_box = image.copy()
     # Draw the bounding box on the image_with_bounding_box
@@ -246,6 +280,19 @@ def combine_eye_regions(left_eye_region, right_eye_region):
     combined_eye_region[0:right_eye_region.shape[0], left_eye_region.shape[1]:] = right_eye_region
     
     return combined_eye_region
+
+def combine_skin_regions(left_skin_region, right_skin_region):
+    combined_height = max(left_skin_region.shape[0], right_skin_region.shape[0])
+    combined_width = left_skin_region.shape[1] + right_skin_region.shape[1]
+
+    combined_skin_region = np.zeros((combined_height, combined_width, 3), dtype=np.uint8)
+
+    combined_skin_region[0:left_skin_region.shape[0], 0:left_skin_region.shape[1]] = left_skin_region
+    combined_skin_region[0:right_skin_region.shape[0], left_skin_region.shape[1]:] = right_skin_region
+
+    return combined_skin_region
+
+
 
 def is_blueish(palette):
     for color in palette:

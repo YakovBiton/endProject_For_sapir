@@ -16,13 +16,13 @@ directory_For_Singles = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Single_SD'
 directory_For_Pairs = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD'
 model_path = 'C:\\kobbi\\endProject\\py_torch_model\\model.pth'
 
-img_father_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-1-F.jpg'
-img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-1-M.jpg'
+img_father_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-17-F.jpg'
+img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-17-M.jpg'
 
 # Extract the features
-#features = extract_features(directory_For_Singles)
-#features , x ,y = landmarks_calculator(features)
-#neural_Classifier(x , y)
+features = extract_features(directory_For_Singles)
+features , x ,y = landmarks_calculator(features)
+neural_Classifier(x , y)
 # landmarks_classifier(features , x , y)
 
 
@@ -31,7 +31,7 @@ img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FM
 #evaluate(model_path , input_data , true_label)
 
 ########################  find child from data base  ######################################## 
-find_child(img_father_path , img_mother_path)
+#find_child(img_father_path , img_mother_path)
 ########################  find child from data base  ######################################## 
 
 ###################### create data base       ##########################################

@@ -62,9 +62,14 @@ def landmarks_calculator(features):
         ratio_features[0].append(mouth_nose_ratio)
         ratio_features[0].append(eye_mouth_ratio)
         
+        skin_color_Red = feature.skin_color[0]
+        skin_color_Green = feature.skin_color[1]
+        skin_color_Blue = feature.skin_color[2]
+
         feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio, eye_mouth_ratio]
         feature.angle_features = [angle_between_nose_mouth, angle_nose_inner_eye_corners, angle_right_eye_right_corner, angle_left_eye_right_corner]
-
+        feature.color_features = [skin_color_Red , skin_color_Green , skin_color_Blue]
+        
        # X.append([nose_ratio, mouth_middle_ratio])
         # y.append(int(feature.label.split('-')[0]))
         # Draw the line on the image
@@ -87,8 +92,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'x'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'y'
-                                X.append([*feature.ratio_features, *feature.angle_features, *f.ratio_features, *f.angle_features])
-                                y.append([*f1.ratio_features, *f1.angle_features])
+                                X.append([*feature.ratio_features, *feature.angle_features, *feature.color_features, *f.ratio_features, *f.angle_features, *f.color_features])
+                                y.append([*f1.ratio_features, *f1.angle_features, *f1.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
             elif fm == 'FMD' and sex == 'M.jpg':
                 for f in features:
@@ -98,8 +103,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'x'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'y'
-                                X.append([*f.ratio_features, *f.angle_features, *feature.ratio_features, *feature.angle_features])
-                                y.append([*f1.ratio_features, *f1.angle_features])
+                                X.append([*f.ratio_features, *f.angle_features, *f.color_features, *feature.ratio_features, *feature.angle_features, *feature.color_features])
+                                y.append([*f1.ratio_features, *f1.angle_features, *f1.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)                  
             elif fm == 'FMD' and sex == 'D.jpg':
                 for f in features:
@@ -109,8 +114,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'y'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'x'
-                                X.append([*f.ratio_features, *f.angle_features, *f1.ratio_features, *f1.angle_features])
-                                y.append([*feature.ratio_features, *feature.angle_features])
+                                X.append([*f.ratio_features, *f.angle_features, *f.color_features, *f1.ratio_features, *f1.angle_features, *f1.color_features])
+                                y.append([*feature.ratio_features, *feature.angle_features, *feature.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
             elif fm == 'FMS' and sex == 'F.jpg':
                 for f in features:
@@ -120,8 +125,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'x'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'y'
-                                X.append([*feature.ratio_features, *feature.angle_features, *f.ratio_features, *f.angle_features])
-                                y.append([*f1.ratio_features, *f1.angle_features])
+                                X.append([*feature.ratio_features, *feature.angle_features, *feature.color_features, *f.ratio_features, *f.angle_features, *f.color_features])
+                                y.append([*f1.ratio_features, *f1.angle_features, *f1.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
             elif fm == 'FMS' and sex == 'M.jpg':
                 for f in features:
@@ -131,8 +136,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'x'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'y'
-                                X.append([*f.ratio_features, *f.angle_features, *feature.ratio_features, *feature.angle_features])
-                                y.append([*f1.ratio_features, *f1.angle_features])
+                                X.append([*f.ratio_features, *f.angle_features, *f.color_features, *feature.ratio_features, *feature.angle_features, *feature.color_features])
+                                y.append([*f1.ratio_features, *f1.angle_features, *f1.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
             elif fm == 'FMS' and sex == 'S.jpg':
                 for f in features:
@@ -142,8 +147,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'y'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'x'
-                                X.append([*f.ratio_features, *f.angle_features, *f1.ratio_features, *f1.angle_features])
-                                y.append([*feature.ratio_features, *feature.angle_features])
+                                X.append([*f.ratio_features, *f.angle_features, *f.color_features, *f1.ratio_features, *f1.angle_features, *f1.color_features])
+                                y.append([*feature.ratio_features, *feature.angle_features, *feature.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
             elif fm == 'FMSD' and sex == 'F.jpg':
                 for f in features:
@@ -153,8 +158,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'x'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'y'
-                                X.append([*feature.ratio_features, *feature.angle_features, *f.ratio_features, *f.angle_features])
-                                y.append([*f1.ratio_features, *f1.angle_features])
+                                X.append([*feature.ratio_features, *feature.angle_features, *feature.color_features, *f.ratio_features, *f.angle_features, *f.color_features])
+                                y.append([*f1.ratio_features, *f1.angle_features, *f1.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
             elif fm == 'FMSD' and sex == 'M.jpg':
                 for f in features:
@@ -164,8 +169,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'x'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'y'
-                                X.append([*f.ratio_features, *f.angle_features, *feature.ratio_features, *feature.angle_features])
-                                y.append([*f1.ratio_features, *f1.angle_features])
+                                X.append([*f.ratio_features, *f.angle_features, *f.color_features, *feature.ratio_features, *feature.angle_features, *feature.color_features])
+                                y.append([*f1.ratio_features, *f1.angle_features, *f1.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set) 
             elif fm == 'FMSD' and sex == 'D.jpg':
                 for f in features:
@@ -175,8 +180,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'y'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'x'
-                                X.append([*f.ratio_features, *f.angle_features, *f1.ratio_features, *f1.angle_features])
-                                y.append([*feature.ratio_features, *feature.angle_features])
+                                X.append([*f.ratio_features, *f.angle_features, *f.color_features, *f1.ratio_features, *f1.angle_features, *f1.color_features])
+                                y.append([*feature.ratio_features, *feature.angle_features, *feature.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
             elif fm == 'FMSD' and sex == 'S.jpg':
                 for f in features:
@@ -186,8 +191,8 @@ def landmarks_calculator(features):
                                 feature.belongs_to_set = 'y'
                                 f.belongs_to_set = 'x'
                                 f1.belongs_to_set = 'x'
-                                X.append([*f.ratio_features, *f.angle_features, *f1.ratio_features, *f1.angle_features])
-                                y.append([*feature.ratio_features, *feature.angle_features])
+                                X.append([*f.ratio_features, *f.angle_features, *f.color_features, *f1.ratio_features, *f1.angle_features, *f1.color_features])
+                                y.append([*feature.ratio_features, *feature.angle_features, *feature.color_features])
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)                                                                
     X = np.array(X)
     y = np.array(y)

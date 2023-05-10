@@ -110,7 +110,7 @@ def extract_attributes(image, file_name):
     landmarks = np.array(extract_landmarks(image))
 
     if landmarks.shape != (0,):
-        hair_color, skin_color = extract_hair_and_skin_color(image, landmarks)
+        hair_color, skin_color = extract_hair_and_skin_color(image, landmarks,image_name)
         dominant_eye_color, eye_palette = extract_eye_color(image, landmarks , "output_eye_image.jpg")
         belongs_to_set = '$'
         face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
