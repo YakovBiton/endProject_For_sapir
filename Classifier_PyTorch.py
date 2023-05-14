@@ -10,10 +10,10 @@ class ChildFaceFeaturesNet(nn.Module):
     
     def __init__(self):
         super(ChildFaceFeaturesNet, self).__init__()
-        self.fc1 = nn.Linear(24, 128)
-        self.fc2 = nn.Linear(128, 64)
-        self.fc3 = nn.Linear(64, 32)
-        self.fc4 = nn.Linear(32, 12)
+        self.fc1 = nn.Linear(276, 1024)
+        self.fc2 = nn.Linear(1024, 512)
+        self.fc3 = nn.Linear(512, 256)
+        self.fc4 = nn.Linear(256, 138)
 
     def forward(self, x):
         x = torch.relu(self.fc1(x))

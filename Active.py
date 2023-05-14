@@ -9,6 +9,8 @@ from Classifier_PyTorch import *
 from Eval_Model import *
 from Find_Child import *
 from Child_Data_Maker import *
+from Features_Classifier import *
+from Images_DataBase import *
 # Set the directory where the images are stored
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 directory2 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Bigger_test'
@@ -20,11 +22,17 @@ img_father_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FM
 img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-17-M.jpg'
 
 # Extract the features
-features = extract_features(directory_For_Singles)
-features , x ,y = landmarks_calculator(features)
-neural_Classifier(x , y)
+features = extract_features(directory_For_Pairs)
+features_after_cal = landmarks_calculator(features)
+add_To_DataBase(features_after_cal)
+
+#features , x ,y = set_X_y(features)
+#neural_Classifier(x , y)
 # landmarks_classifier(features , x , y)
 
+########################  features classifier be importens  ######################################## 
+#feature_regression(x,y)
+########################  features classifier be importens  ######################################## 
 
 #eval model activation:
 #features , input_data ,true_label = landmarks_calculator(features)

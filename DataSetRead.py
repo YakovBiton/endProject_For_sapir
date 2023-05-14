@@ -12,7 +12,7 @@ from msrest.authentication import CognitiveServicesCredentials
 import colorthief
 from DomiColor import *
 from keras_vggface.utils import preprocess_input
-
+import face_recognition
 #set the directory
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
@@ -60,6 +60,7 @@ def extract_features(directory):
                 image_resize = resizeImage(image) # Resize the image still doesn't used
                 image_name = os.path.basename(file_path)
                 landmarks = np.array(extract_landmarks(image))
+                
                 # Preprocess the landmarks
                 # landmarks = np.array(landmarks).flatten()
                 # Append the features and labels
@@ -67,6 +68,7 @@ def extract_features(directory):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
                     dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
                     belongs_to_set = '$'
+                    face_embeddings = face_recognition.face_encodings(image)
                     # With these lines:
                     ######   features_VGGFace still does not work ######
                     #features_VGGFace = extract_VGGFace_features(file_path)
@@ -74,7 +76,7 @@ def extract_features(directory):
                     #    print("Skipping image", file_path)
                     #    continue
                     #features_VGGFace_array = np.array(features_VGGFace)
-                    face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+                    face_features = FaceFeatures(landmarks, face_embeddings, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -417,13 +419,14 @@ def string_to_array(s):
 
 
 class FaceFeatures:
-    def __init__(self, landmarks ,hair_color, skin_color, label, image , name, family_type, family_number, member_type, belongs_to_set):
+    def __init__(self, landmarks, face_embeddings, hair_color, skin_color, label, image , image_name, family_type, family_number, member_type, belongs_to_set):
         self.landmarks = landmarks
+        self.face_embeddings = face_embeddings
         self.hair_color = hair_color
         self.skin_color = skin_color
         self.label = label
         self.image = image
-        self.name = name
+        self.image_name = image_name
         self.family_type = family_type
         self.family_number = family_number
         self.member_type = member_type

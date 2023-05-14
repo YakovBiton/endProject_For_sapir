@@ -36,7 +36,7 @@ def landmarks_calculator(features):
         nose_width_short = euclidean_distance(landmarks_coordinates[0][31], landmarks_coordinates[0][35])
         mouth_nose_ratio = mouth_width / nose_width_short
         eye_distance = euclidean_distance(landmarks_coordinates[0][39], landmarks_coordinates[0][42])
-        eye_mouth_ratio = eye_distance / mouth_width
+       # eye_mouth_ratio = eye_distance / mouth_width
     # Calculate the angle between nose and mouth lines
         nose_line_start = landmarks_coordinates[0][27]
         nose_line_end = landmarks_coordinates[0][30]
@@ -60,15 +60,15 @@ def landmarks_calculator(features):
         ratio_features[0].append(nose_ratio) # Append nose_ratio to the sub-list
         ratio_features[0].append(mouth_middle_ratio) # Append mouth_middle_ratio to the sub-list
         ratio_features[0].append(mouth_nose_ratio)
-        ratio_features[0].append(eye_mouth_ratio)
+        
         
         skin_color_Red = feature.skin_color[0]
         skin_color_Green = feature.skin_color[1]
-        skin_color_Blue = feature.skin_color[2]
-
-        feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio, eye_mouth_ratio]
+       # skin_color_Blue = feature.skin_color[2]
+        face_embeddings_array = np.array(feature.face_embeddings)
+        feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio, *face_embeddings_array[0]]
         feature.angle_features = [angle_between_nose_mouth, angle_nose_inner_eye_corners, angle_right_eye_right_corner, angle_left_eye_right_corner]
-        feature.color_features = [skin_color_Red , skin_color_Green , skin_color_Blue]
+        feature.color_features = [skin_color_Red , skin_color_Green]
         
        # X.append([nose_ratio, mouth_middle_ratio])
         # y.append(int(feature.label.split('-')[0]))
@@ -81,6 +81,12 @@ def landmarks_calculator(features):
         # show lines on the face
         # cv2.imshow("Image with Line", image)
         # cv2.waitKey(0)
+    
+    return features
+
+def set_X_y(features):
+    X = []
+    y = []
     for feature in features:
         fm , number , sex = feature.label.split('-')[0 : 3]
         if feature.belongs_to_set == '$':

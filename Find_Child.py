@@ -50,7 +50,11 @@ def find_child(father_Img_path,mother_Img_path):
 
 
 def cac_parents_landmarks(features):
-    X = []
+   X = []
+   features_after_cac = landmarks_calculator(features)
+   X.append([*features_after_cac[0].ratio_features, *features_after_cac[0].angle_features, *features_after_cac[0].color_features, *features_after_cac[1].ratio_features, *features_after_cac[1].angle_features, *features_after_cac[1].color_features])
+   return X
+   """ 
     for feature in features:
         ratio_features = [[]]
         angle_features = [[]]
@@ -99,8 +103,9 @@ def cac_parents_landmarks(features):
         
         feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio, eye_mouth_ratio]
         feature.angle_features = [angle_between_nose_mouth, angle_nose_inner_eye_corners, angle_right_eye_right_corner, angle_left_eye_right_corner]
-    X.append([*features[0].ratio_features, *features[0].angle_features,*features[1].ratio_features,*features[1].angle_features])
-    return X
+    X.append([*features[0].ratio_features, *features[0].angle_features,*features[1].ratio_features,*features[1].angle_features]) """
+   
+
 
 def extract_attributes(image, file_name):
     label = makeLabel(file_name)
@@ -111,9 +116,10 @@ def extract_attributes(image, file_name):
 
     if landmarks.shape != (0,):
         hair_color, skin_color = extract_hair_and_skin_color(image, landmarks,image_name)
+        face_embeddings = face_recognition.face_encodings(image)
         dominant_eye_color, eye_palette = extract_eye_color(image, landmarks , "output_eye_image.jpg")
         belongs_to_set = '$'
-        face_features = FaceFeatures(landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+        face_features = FaceFeatures(landmarks, face_embeddings, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
         return face_features
     else:
         print("Failed to extract landmarks")
@@ -150,8 +156,9 @@ def find_closest_children(predicted_child_attributes, file_path="C:\\kobbi\\endP
 
 
 class FaceFeatures:
-    def __init__(self, landmarks, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set):
+    def __init__(self, landmarks, face_embeddings, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set):
         self.landmarks = landmarks
+        self.face_embeddings = face_embeddings
         self.hair_color = hair_color
         self.skin_color = skin_color
         self.label = label
