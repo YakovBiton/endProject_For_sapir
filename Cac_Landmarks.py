@@ -64,11 +64,11 @@ def landmarks_calculator(features):
         
         skin_color_Red = feature.skin_color[0]
         skin_color_Green = feature.skin_color[1]
-       # skin_color_Blue = feature.skin_color[2]
+        skin_color_Blue = feature.skin_color[2]
         face_embeddings_array = np.array(feature.face_embeddings)
-        feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio, *face_embeddings_array[0]]
+        feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio]
         feature.angle_features = [angle_between_nose_mouth, angle_nose_inner_eye_corners, angle_right_eye_right_corner, angle_left_eye_right_corner]
-        feature.color_features = [skin_color_Red , skin_color_Green]
+        feature.color_features = [skin_color_Red , skin_color_Green , skin_color_Blue]
         
        # X.append([nose_ratio, mouth_middle_ratio])
         # y.append(int(feature.label.split('-')[0]))

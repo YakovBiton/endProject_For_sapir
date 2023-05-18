@@ -18,12 +18,21 @@ def add_To_DataBase(features):
     """)
     conn.commit()
     for feature in features:
+        landmarks_array = np.array(feature.landmarks)
+        # Convert NumPy array to nested list
+        landmarks = landmarks_array.tolist()
+        # Convert nested list to list of (x, y) tuples
+        landmarks_list = [(x, y) for [x, y] in landmarks[0]]
         # Sample data (replace this with your actual data)
+        face_embeddings_array = np.array(feature.face_embeddings)
+        resnet_feature = np.array(feature.feature_resnet)
+
         image_data = {
         "image_full_name": feature.image_name,
         "info": {
-            #"landmarks": numpy_to_list(feature.landmarks),
-            #"face_embeddings": numpy_to_list(feature.face_embeddings),
+            "landmarks": landmarks_list,
+            "face_embeddings": numpy_to_list(face_embeddings_array),
+            "feature_resnet": numpy_to_list(resnet_feature),
             "ratio_features": numpy_to_list(feature.ratio_features),
             "angle_features": numpy_to_list(feature.angle_features),
             "color_features": numpy_to_list(feature.color_features)

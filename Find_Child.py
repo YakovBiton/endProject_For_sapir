@@ -1,8 +1,13 @@
 from scipy.spatial.distance import euclidean
+from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from DataSetRead import *
 from Cac_Landmarks import *
 from Classifier_PyTorch import *
+import sqlite3
+import json
+from res18_check import *
+
 def find_child(father_Img_path,mother_Img_path):
     
     print("Father image path:", father_Img_path)
@@ -18,8 +23,11 @@ def find_child(father_Img_path,mother_Img_path):
     if mother_Img is None:
         print("Failed to load mother image:", mother_Img_path)
         return
+    face_embeddings_father = extract_embedding(father_Img_path)
+    face_embeddings_mother = extract_embedding(mother_Img_path)
     
-    
+    feature_resnet_father = extract_features_resnet(father_Img_path, model_resnet)
+    feature_resnet_mother = extract_features_resnet(mother_Img_path, model_resnet)
     father_Img_name = os.path.basename(father_Img_path)
     mother_Img_name = os.path.basename(mother_Img_path)
 
@@ -32,16 +40,23 @@ def find_child(father_Img_path,mother_Img_path):
     model = ChildFaceFeaturesNet()
     model.load_state_dict(torch.load('C://kobbi//endProject//py_torch_model//model.pth'))
     model.eval()
-
+    print("X  : " ,len(X))
     predicted_child_attributes = model(torch.tensor(X, dtype=torch.float32).unsqueeze(0)).detach().numpy()
+    print("predicted child : " , len(predicted_child_attributes))
+    closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother = find_N_closest_child(predicted_child_attributes[0], face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother)
+    children_lists = [
+    closest_children_embedding_father,
+    closest_children_embedding_mother,
+    closest_children_resnet_father,
+    closest_children_resnet_mother,
+    ]
 
-    print(predicted_child_attributes)
-    
-    closest_children = find_closest_children(predicted_child_attributes[0])
+    top_10_best_matches = find_best_match(children_lists)
+    print(top_10_best_matches)
 
-    print("The 5 closest children are:")
-    for child in closest_children:
-        print(child)
+    #print("The 5 closest children from CNN are:")
+    #for child in closest_children_CNN:
+   #     print(child)
     
 
 
@@ -50,9 +65,9 @@ def find_child(father_Img_path,mother_Img_path):
 
 
 def cac_parents_landmarks(features):
-   X = []
+   
    features_after_cac = landmarks_calculator(features)
-   X.append([*features_after_cac[0].ratio_features, *features_after_cac[0].angle_features, *features_after_cac[0].color_features, *features_after_cac[1].ratio_features, *features_after_cac[1].angle_features, *features_after_cac[1].color_features])
+   X = [*features_after_cac[0].ratio_features, *features_after_cac[0].angle_features, *features_after_cac[0].color_features, *features_after_cac[1].ratio_features, *features_after_cac[1].angle_features, *features_after_cac[1].color_features]
    return X
    """ 
     for feature in features:
@@ -153,6 +168,92 @@ def find_closest_children(predicted_child_attributes, file_path="C:\\kobbi\\endP
     closest_children = sorted(similarities, key=lambda x: x[1], reverse=True)[:top_k]
     return [child[0] for child in closest_children]  # Return only the names of the top_k closest children
 
+def find_N_closest_child(predicted_child_attributes, face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother, N=5):
+    # Connect to the SQLite database
+    conn = sqlite3.connect("C:\\kobbi\\endProject\\TSKinFace_Data\\image_data.db")
+    cursor = conn.cursor()
+    # Define the query to fetch landmarks for fathers and mothers from FMS families
+    query = """
+    SELECT image_full_name, info
+    FROM image_data
+    WHERE image_full_name LIKE 'FMSD_%_S.%' OR image_full_name LIKE 'FMSD_%_D.%'
+    """
+    # Execute the query and fetch the results
+    cursor.execute(query)
+    results = cursor.fetchall()
+    # Set the print options to display all array elements
+    np.set_printoptions(threshold=5000)
+
+    # Initialize lists to store the closest children
+    closest_children_CNN = []
+    closest_children_embedding_father = []
+    closest_children_embedding_mother = []
+    closest_children_resnet_father = []
+    closest_children_resnet_mother = []
+
+    for result in results:
+        image_full_name, info_str = result
+        info = json.loads(info_str)  # Parse the info string into a dictionary
+        embedding = info['face_embeddings']
+        resnet = info['feature_resnet']
+        ratio_features = info['ratio_features']
+        angle_features = info['angle_features']
+        color_features = info['color_features']
+        child_attributes = [*ratio_features, *angle_features, *color_features]
+        print(predicted_child_attributes)
+        print(child_attributes)
+        #similarity_attributes = np.dot(predicted_child_attributes, child_attributes) / (
+       #     np.linalg.norm(predicted_child_attributes) * np.linalg.norm(child_attributes)
+       # )
+
+       # closest_children_CNN.append((image_full_name, similarity_attributes))
+
+        similarity_embedding_father = cosine_similarity_matrix(embedding, face_embeddings_father)
+        similarity_embedding_mother = cosine_similarity_matrix(embedding, face_embeddings_mother)
+
+        closest_children_embedding_father.append((image_full_name, similarity_embedding_father))
+        closest_children_embedding_mother.append((image_full_name, similarity_embedding_mother))
+
+        similarity_resnet_father = cosine_similarity(resnet, feature_resnet_father)
+        similarity_resnet_mother = cosine_similarity(resnet, feature_resnet_mother)
+
+        closest_children_resnet_father.append((image_full_name, similarity_resnet_father))
+        closest_children_resnet_mother.append((image_full_name, similarity_resnet_mother))
+
+    # Sort the lists based on the similarity values
+    closest_children_CNN.sort(key=lambda x: x[1], reverse=True)
+    closest_children_embedding_father.sort(key=lambda x: x[1], reverse=True)
+    closest_children_embedding_mother.sort(key=lambda x: x[1], reverse=True)
+    closest_children_resnet_father.sort(key=lambda x: x[1], reverse=True)
+    closest_children_resnet_mother.sort(key=lambda x: x[1], reverse=True)
+
+    # Get the top N closest children
+    closest_children_CNN = closest_children_CNN[:N]
+    closest_children_embedding_father = closest_children_embedding_father[:N]
+    closest_children_embedding_mother = closest_children_embedding_mother[:N]
+    closest_children_resnet_father = closest_children_resnet_father[:N]
+    closest_children_resnet_mother = closest_children_resnet_mother[:N]
+
+    # Close the database connection
+    conn.close()
+
+    return closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother
+
+def find_best_match(children_lists):
+    child_counter = {}
+
+    for child_list in children_lists:
+        for child, _ in child_list:
+            if child in child_counter:
+                child_counter[child] += 1
+            else:
+                child_counter[child] = 1
+
+    # Sort children by their count (number of lists they appear in)
+    sorted_children = sorted(child_counter.items(), key=lambda x: x[1], reverse=True)
+
+    # Return the top 10 children
+    return sorted_children[:10]
 
 
 class FaceFeatures:
