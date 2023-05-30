@@ -71,7 +71,7 @@ def cosine_similarity_matrix(matrix1, matrix2):
     return cosine_similarity_value
 
 # Example usage
-similarity = cosine_similarity(features1_resnet, features2_resnet)
-print(f'Cosine similarity between the two images: {similarity}')
-similarity2 = cosine_similarity_matrix(features1_emb, features2_emb)
-print(f'Cosine similarity between the two images: {similarity2}')
+#similarity = cosine_similarity(features1_resnet, features2_resnet)
+#print(f'Cosine similarity between the two images: {similarity}')
+#similarity2 = cosine_similarity_matrix(features1_emb, features2_emb)
+#print(f'Cosine similarity between the two images: {similarity2}')

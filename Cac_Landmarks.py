@@ -205,6 +205,51 @@ def set_X_y(features):
 
     return features , X , y   
 
+
+def set_X_y_father_classifier(features):
+    X = []
+    y = []
+    for feature in features:
+        fm , number , sex = feature.label.split('-')[0 : 3]
+        if feature.belongs_to_set == '$':
+            if fm == 'FMD' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'D.jpg':
+                        feature.belongs_to_set = 'x'
+                        f.belongs_to_set = 'y'
+                        X.append([*feature.ratio_features, *feature.angle_features, *feature.color_features])
+                        y.append([ *f.ratio_features, *f.angle_features, *f.color_features])
+                        print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set)  
+            elif fm == 'FMD' and sex == 'D.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'F.jpg':
+                        feature.belongs_to_set = 'y'
+                        f.belongs_to_set = 'x'
+                        X.append([*f.ratio_features, *f.angle_features, *f.color_features])
+                        y.append([ *feature.ratio_features, *feature.angle_features, *feature.color_features])
+                        print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set)                  
+            elif fm == 'FMS' and sex == 'S.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'F.jpg':
+                        feature.belongs_to_set = 'y'
+                        f.belongs_to_set = 'x'
+                        X.append([*f.ratio_features, *f.angle_features, *f.color_features])
+                        y.append([ *feature.ratio_features, *feature.angle_features, *feature.color_features])
+                        print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set) 
+            elif fm == 'FMS' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'S.jpg':
+                        feature.belongs_to_set = 'x'
+                        f.belongs_to_set = 'y'
+                        X.append([*feature.ratio_features, *feature.angle_features, *feature.color_features])
+                        y.append([ *f.ratio_features, *f.angle_features, *f.color_features])
+                        print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set) 
+                                                                            
+    X = np.array(X)
+    y = np.array(y)
+
+    return  X , y 
+
 # Define your line length calculator function
 def line_length_calculator(arr_of_dots):
     total_distance = 0.0

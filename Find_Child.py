@@ -2,11 +2,15 @@ from scipy.spatial.distance import euclidean
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from DataSetRead import *
-from Cac_Landmarks import *
+from Cac_Landmarks import landmarks_calculator
 from Classifier_PyTorch import *
+from Classifier_Father import *
 import sqlite3
 import json
 from res18_check import *
+from tensorflow.keras.models import load_model
+from sklearn.preprocessing import StandardScaler
+import joblib
 
 def find_child(father_Img_path,mother_Img_path):
     
@@ -32,28 +36,33 @@ def find_child(father_Img_path,mother_Img_path):
     mother_Img_name = os.path.basename(mother_Img_path)
 
 
-    father_features = extract_attributes(father_Img , father_Img_name)
-    mother_features = extract_attributes(mother_Img , mother_Img_name)
+    father_features = extract_features_from_image(father_Img_path)
+    print(father_features.landmarks)
+    mother_features = extract_features_from_image(mother_Img_path)
     parents_Features = [father_features , mother_features]
-    X = cac_parents_landmarks(parents_Features)
-    
-    model = ChildFaceFeaturesNet()
+    features_after_cac = landmarks_calculator(parents_Features)
+    parents_Features_fin = [*features_after_cac[0].ratio_features, *features_after_cac[0].angle_features, *features_after_cac[0].color_features, *features_after_cac[1].ratio_features, *features_after_cac[1].angle_features, *features_after_cac[1].color_features]
+    predicted_child_attributes = predict_child_with_keras_model(parents_Features_fin)
+    #X = cac_parents_landmarks(parents_Features)
+    """model = ChildFaceFeaturesNetModified()
     model.load_state_dict(torch.load('C://kobbi//endProject//py_torch_model//model.pth'))
     model.eval()
     print("X  : " ,len(X))
-    predicted_child_attributes = model(torch.tensor(X, dtype=torch.float32).unsqueeze(0)).detach().numpy()
+    predicted_child_attributes = model(torch.tensor(X, dtype=torch.float32).unsqueeze(0)).detach().numpy()"""
     print("predicted child : " , len(predicted_child_attributes))
-    closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother = find_N_closest_child(predicted_child_attributes[0], face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother)
+    closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother = find_N_closest_child(predicted_child_attributes, face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother)
     children_lists = [
+    closest_children_CNN,
     closest_children_embedding_father,
     closest_children_embedding_mother,
     closest_children_resnet_father,
     closest_children_resnet_mother,
     ]
 
-    top_10_best_matches = find_best_match(children_lists)
-    print(top_10_best_matches)
-
+    top_N_best_matches = find_best_match(children_lists , 10)
+    print(top_N_best_matches)
+    print(closest_children_CNN)
+    return top_N_best_matches
     #print("The 5 closest children from CNN are:")
     #for child in closest_children_CNN:
    #     print(child)
@@ -69,58 +78,34 @@ def cac_parents_landmarks(features):
    features_after_cac = landmarks_calculator(features)
    X = [*features_after_cac[0].ratio_features, *features_after_cac[0].angle_features, *features_after_cac[0].color_features, *features_after_cac[1].ratio_features, *features_after_cac[1].angle_features, *features_after_cac[1].color_features]
    return X
-   """ 
-    for feature in features:
-        ratio_features = [[]]
-        angle_features = [[]]
-        landmarks_coordinates = feature.landmarks
-    # Ratio-based features
-        nose_length = nose_length_calculator(landmarks_coordinates[0][27:31])
-        nose_width_long = nose_wide_calculator(landmarks_coordinates[0][31:36])
-        nose_ratio = nose_length / nose_width_long
-    # Face width and height ratio
-        face_width = euclidean_distance(landmarks_coordinates[0][0], landmarks_coordinates[0][16])
-        face_height = euclidean_distance(landmarks_coordinates[0][27], landmarks_coordinates[0][8])
-        face_ratio = face_width / face_height
-    #mouth 
-        left_to_mouth = line_length_calculator([get_midpoint(landmarks_coordinates[0][3], landmarks_coordinates[0][4]), landmarks_coordinates[0][48]])
-        right_to_mouth = line_length_calculator([get_midpoint(landmarks_coordinates[0][12], landmarks_coordinates[0][13]), landmarks_coordinates[0][54]])
-        mouth_middle_ratio = left_to_mouth / right_to_mouth
-        mouth_width = euclidean_distance(landmarks_coordinates[0][48], landmarks_coordinates[0][54])
-        nose_width_short = euclidean_distance(landmarks_coordinates[0][31], landmarks_coordinates[0][35])
-        mouth_nose_ratio = mouth_width / nose_width_short
-        eye_distance = euclidean_distance(landmarks_coordinates[0][39], landmarks_coordinates[0][42])
-        eye_mouth_ratio = eye_distance / mouth_width
-    # Calculate the angle between nose and mouth lines
-        nose_line_start = landmarks_coordinates[0][27]
-        nose_line_end = landmarks_coordinates[0][30]
-        mouth_line_start = get_midpoint(landmarks_coordinates[0][3], landmarks_coordinates[0][4])
-        mouth_line_end = landmarks_coordinates[0][48]
-        angle_between_nose_mouth = angle_between_lines(nose_line_start, nose_line_end, mouth_line_start, mouth_line_end)
-        angle_features[0].append(angle_between_nose_mouth)
+
+def predict_child_with_keras_model(X):
+    # Load the Keras model from disk
+    model = load_model('C://kobbi//endProject//tensorflow_model//model.h5')
+
+    # Load the scaler fitted on the training data
+    scaler_father = joblib.load('C://kobbi//endProject//tensorflow_model//scaler_father.pkl')
+    scaler_mother = joblib.load('C://kobbi//endProject//tensorflow_model//scaler_mother.pkl')
+
+    X = np.array(X)  # Convert list to numpy array
+    X = X.reshape(-1, 22)  # Reshape the 1D array into a 2D array if necessary
+
+    # Preprocess the data in the same way as for training
+    X_father = scaler_father.transform(X[:,:11])  # First half of the features are father's
+    X_mother = scaler_mother.transform(X[:,11:])  # Second half of the features are mother's
+
+    # Make predictions on the new data
+    predicted_child_attributes = model.predict([X_father, X_mother])
     
-        # Angle-based features
-        angle_nose_inner_eye_corners = angle_between_points(landmarks_coordinates[0][39], landmarks_coordinates[0][30], landmarks_coordinates[0][42])
-        angle_features[0].append(angle_nose_inner_eye_corners)
-
-        angle_right_eye_right_corner = angle_between_points(landmarks_coordinates[0][37], landmarks_coordinates[0][36], landmarks_coordinates[0][41])
-        angle_features[0].append(angle_right_eye_right_corner)
-
-        angle_left_eye_right_corner = angle_between_points(landmarks_coordinates[0][43], landmarks_coordinates[0][42], landmarks_coordinates[0][47])
-        angle_features[0].append(angle_left_eye_right_corner)
-
-
-        ratio_features[0].append(face_ratio)
-        ratio_features[0].append(nose_ratio) # Append nose_ratio to the sub-list
-        ratio_features[0].append(mouth_middle_ratio) # Append mouth_middle_ratio to the sub-list
-        ratio_features[0].append(mouth_nose_ratio)
-        ratio_features[0].append(eye_mouth_ratio)
-        
-        feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio, eye_mouth_ratio]
-        feature.angle_features = [angle_between_nose_mouth, angle_nose_inner_eye_corners, angle_right_eye_right_corner, angle_left_eye_right_corner]
-    X.append([*features[0].ratio_features, *features[0].angle_features,*features[1].ratio_features,*features[1].angle_features]) """
+    print("X  : " ,len(X))
+    print("predicted child : " , len(predicted_child_attributes))
+    return predicted_child_attributes
    
+def cac_father_landmarks(features):
+    features_after_cac = landmarks_calculator(features)
 
+    X = [*features_after_cac[0].ratio_features, *features_after_cac[0].angle_features, *features_after_cac[0].color_features]
+    return X
 
 def extract_attributes(image, file_name):
     label = makeLabel(file_name)
@@ -134,8 +119,8 @@ def extract_attributes(image, file_name):
         face_embeddings = face_recognition.face_encodings(image)
         dominant_eye_color, eye_palette = extract_eye_color(image, landmarks , "output_eye_image.jpg")
         belongs_to_set = '$'
-        face_features = FaceFeatures(landmarks, face_embeddings, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
-        return face_features
+       # face_features = FaceFeatures(landmarks, face_embeddings, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+       # return face_features
     else:
         print("Failed to extract landmarks")
         return None
@@ -202,11 +187,14 @@ def find_N_closest_child(predicted_child_attributes, face_embeddings_father, fac
         child_attributes = [*ratio_features, *angle_features, *color_features]
         print(predicted_child_attributes)
         print(child_attributes)
-        #similarity_attributes = np.dot(predicted_child_attributes, child_attributes) / (
-       #     np.linalg.norm(predicted_child_attributes) * np.linalg.norm(child_attributes)
-       # )
+       # Flatten predicted_child_attributes to 1D
+        predicted_child_attributes = predicted_child_attributes.flatten()
 
-       # closest_children_CNN.append((image_full_name, similarity_attributes))
+        # Calculate cosine similarity
+        #similarity_attributes = np.dot(predicted_child_attributes, child_attributes) / (np.linalg.norm(predicted_child_attributes) * np.linalg.norm(child_attributes))
+        similarity_attributes = cosine_similarity(child_attributes,predicted_child_attributes)
+        closest_children_CNN.append((image_full_name, similarity_attributes))
+
 
         similarity_embedding_father = cosine_similarity_matrix(embedding, face_embeddings_father)
         similarity_embedding_mother = cosine_similarity_matrix(embedding, face_embeddings_mother)
@@ -239,7 +227,7 @@ def find_N_closest_child(predicted_child_attributes, face_embeddings_father, fac
 
     return closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother
 
-def find_best_match(children_lists):
+def find_best_match(children_lists , N):
     child_counter = {}
 
     for child_list in children_lists:
@@ -253,10 +241,10 @@ def find_best_match(children_lists):
     sorted_children = sorted(child_counter.items(), key=lambda x: x[1], reverse=True)
 
     # Return the top 10 children
-    return sorted_children[:10]
+    return sorted_children[:N]
 
 
-class FaceFeatures:
+"""class FaceFeatures:
     def __init__(self, landmarks, face_embeddings, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set):
         self.landmarks = landmarks
         self.face_embeddings = face_embeddings
@@ -268,4 +256,4 @@ class FaceFeatures:
         self.family_type = family_type
         self.family_number = family_number
         self.member_type = member_type
-        self.belongs_to_set = belongs_to_set
+        self.belongs_to_set = belongs_to_set"""

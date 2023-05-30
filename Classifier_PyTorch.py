@@ -27,8 +27,39 @@ class ChildFaceFeaturesNet(nn.Module):
         x = self.fc4(x)
         return x
 
+class ChildFaceFeaturesNetModified(nn.Module):
     
-model = ChildFaceFeaturesNet()
+    def __init__(self):
+        super(ChildFaceFeaturesNetModified, self).__init__()
+
+        self.single_layers = nn.ModuleList([nn.Linear(2, 8) for _ in range(11)])
+
+        # Final layers
+        self.fc1 = nn.Linear(88, 64)
+        self.fc2 = nn.Linear(64, 32)
+        self.fc3 = nn.Linear(32, 11)
+
+        self.dropout = nn.Dropout(0.5) # Added dropout for regularization
+
+    def forward(self, x):
+        outputs = []
+        for i in range(11):
+            x_single = torch.relu(self.single_layers[i](torch.cat((x[:, i:i+1], x[:, i+11:i+12]), dim=1)))
+            x_single = self.dropout(x_single) # Added dropout after the first layer
+            outputs.append(x_single)
+
+        x = torch.cat(outputs, dim=1)
+
+        # Final layers
+        x = torch.relu(self.fc1(x))
+        x = self.dropout(x) # Added dropout after the first layer
+        x = torch.relu(self.fc2(x))
+        x = self.dropout(x) # Added dropout after the second layer
+        x = self.fc3(x)
+
+        return x
+    
+model = ChildFaceFeaturesNetModified()
 
 def neural_Classifier(X , y ):
         criterion = nn.MSELoss()
@@ -54,7 +85,7 @@ def neural_Classifier(X , y ):
         epochs = 300
         train_losses = []
         val_losses = []
-        patience = 10
+        patience = 100
         best_val_loss = float('inf')
         counter = 0
         for epoch in range(epochs):

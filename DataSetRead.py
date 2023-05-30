@@ -18,6 +18,8 @@ from res18_check import extract_embedding
 import torch
 import torchvision.models as models
 import torchvision.transforms as transforms
+import sqlite3
+import json
 #set the directory
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
@@ -70,7 +72,12 @@ def extract_features(directory):
                 image = cv2.imread(file_path)
                 image_resize = resizeImage(image) # Resize the image still doesn't used
                 image_name = os.path.basename(file_path)
-                landmarks = np.array(extract_landmarks(image))
+                # Check if the data is in the database
+                info = retrieve_from_database(image_name)
+                if info is not None:
+                    landmarks = info["landmarks"]
+                else:
+                    landmarks = np.array(extract_landmarks(image))
                 # Preprocess the landmarks
                 # landmarks = np.array(landmarks).flatten()
                 # Append the features and labels
@@ -78,8 +85,14 @@ def extract_features(directory):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
                     dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
                     belongs_to_set = '$'
-                    face_embeddings = extract_embedding(file_path)
-                    feature_resnet = extract_features_resnet(file_path, model_resnet)
+                    if info is not None:
+                        face_embeddings = info["face_embeddings"]
+                    else:
+                        face_embeddings = extract_embedding(file_path)
+                    if info is not None:    
+                        feature_resnet = info["feature_resnet"]
+                    else:
+                        feature_resnet = extract_features_resnet(file_path, model_resnet)
                     # With these lines:
                     ######   features_VGGFace still does not work ######
                     #features_VGGFace = extract_VGGFace_features(file_path)
@@ -98,15 +111,112 @@ def extract_features(directory):
                     file_path_bad = os.path.join(bad_photos_path, file_name)
                     copyBefore = image.copy()
                     cv2.imwrite(file_path_bad, copyBefore)
-   
     
-    #for feature in features:
-       #print("feature", feature.name , "68 is ", feature.landmarks[0][35][0]) 
-       #print(feature.skin_color)
-       #print(feature.hair_color)
+    
+        #for feature in features:
+        #print("feature", feature.name , "68 is ", feature.landmarks[0][35][0]) 
+        #print(feature.skin_color)
+        #print(feature.hair_color)
        
-       #np.set_printoptions(threshold=sys.maxsize)   
+        #np.set_printoptions(threshold=sys.maxsize)   
     return features
+
+def extract_features_from_image(file_path):
+    file_name = os.path.basename(file_path)
+    label = makeLabel(file_name)
+    # Extract information from filename
+    family_type , family_number , member_type  = label.split('-')[0 : 3] 
+    # FMD or FMS
+    # number of the family
+    # M, F, D, or S
+    # Load the image and extract the landmarks
+    image = cv2.imread(file_path)
+    image_resize = resizeImage(image) # Resize the image still doesn't used
+    image_name = os.path.basename(file_path)
+    # Check if the data is in the database
+    info = retrieve_from_database(image_name)
+    if info is not None:
+        landmarks = info["landmarks"]
+    else:
+        landmarks = np.array(extract_landmarks(image))
+    # Preprocess the landmarks
+    # landmarks = np.array(landmarks).flatten()
+    # Append the features and labels
+    if landmarks.shape != (0,):
+        hair_color, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
+        dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
+        belongs_to_set = '$'
+        if info is not None:
+            face_embeddings = info["face_embeddings"]
+        else:
+            face_embeddings = extract_embedding(file_path)
+        if info is not None:    
+            feature_resnet = info["feature_resnet"]
+        else:
+            feature_resnet = extract_features_resnet(file_path, model_resnet)
+        # With these lines:
+        ######   features_VGGFace still does not work ######
+        #features_VGGFace = extract_VGGFace_features(file_path)
+        #if features_VGGFace is None:
+        #    print("Skipping image", file_path)
+        #    continue
+        #features_VGGFace_array = np.array(features_VGGFace)
+        face_features = FaceFeatures(landmarks, face_embeddings, feature_resnet, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+        #  landmarks = np.append(landmarks, [hair_color, skin_color])
+        # landmarks = np.expand_dims(landmarks, axis=-1)
+        # eye_color(image)
+        # landmarks[3] = 
+        return face_features
+    else:
+        file_path_bad = os.path.join(bad_photos_path, file_name)
+        copyBefore = image.copy()
+        cv2.imwrite(file_path_bad, copyBefore)
+
+
+def retrieve_from_database(image_full_name):
+    # Connect to the SQLite database
+    conn = sqlite3.connect("C:\\kobbi\\endProject\\TSKinFace_Data\\image_data.db")
+    cursor = conn.cursor()
+
+   # Query the database for the image data
+    
+    cursor.execute("""
+    SELECT info FROM image_data WHERE image_full_name = ?
+    """, (image_full_name,))
+
+    result = cursor.fetchone()
+    if result is None:
+        return None
+
+    # The data is stored as a JSON string, so we need to convert it back to a Python dictionary
+    info = json.loads(result[0])
+
+    # Convert the lists back to NumPy arrays
+    info["landmarks"] = np.array([[tuple(point) for point in info["landmarks"]]]) # extra dimension added
+    info["face_embeddings"] = np.array(info["face_embeddings"])
+    info["feature_resnet"] = np.array(info["feature_resnet"])
+    info["ratio_features"] = np.array(info["ratio_features"])
+    info["angle_features"] = np.array(info["angle_features"])
+    info["color_features"] = np.array(info["color_features"])
+
+    return info
+
+
+def extract_features_from_dataBase():
+    # Connect to the SQLite database
+    conn = sqlite3.connect("C:\\kobbi\\endProject\\TSKinFace_Data\\image_data.db")
+    cursor = conn.cursor()
+    # Define the query to fetch landmarks for fathers and mothers from FMS families
+    query = """
+    SELECT image_full_name, info
+    FROM image_data
+    WHERE image_full_name LIKE 'FMS_%_%.%' OR image_full_name LIKE 'FMD_%_%.%'
+    """
+    # Execute the query and fetch the results
+    cursor.execute(query)
+    results = cursor.fetchall()
+
+
 
 
 def extract_landmarks(image):
