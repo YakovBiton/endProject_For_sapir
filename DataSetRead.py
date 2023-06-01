@@ -83,7 +83,7 @@ def extract_features(directory):
                 # Append the features and labels
                 if landmarks.shape != (0,):
                     hair_color, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
-                    dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
+                   # dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
                     belongs_to_set = '$'
                     if info is not None:
                         face_embeddings = info["face_embeddings"]
@@ -186,6 +186,7 @@ def retrieve_from_database(image_full_name):
 
     result = cursor.fetchone()
     if result is None:
+        print("Image did not exit in database")
         return None
 
     # The data is stored as a JSON string, so we need to convert it back to a Python dictionary

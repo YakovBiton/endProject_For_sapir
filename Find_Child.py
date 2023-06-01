@@ -56,7 +56,8 @@ def find_child(father_Img_path,mother_Img_path):
     closest_children_embedding_father,
     closest_children_embedding_mother,
     closest_children_resnet_father,
-    closest_children_resnet_mother,
+    closest_children_resnet_mother
+    
     ]
 
     top_N_best_matches = find_best_match(children_lists , 10)

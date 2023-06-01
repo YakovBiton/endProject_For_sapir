@@ -14,6 +14,9 @@ from Images_DataBase import *
 from Classifier_Father import *
 from Eval_Keras_model import *
 from check_system import check_score
+from keras_binary_classifier import *
+from Pair_binary_sklearn import *
+from Triple_classifier import *
 # Set the directory where the images are stored
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 directory2 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Bigger_test'
@@ -26,14 +29,24 @@ img_father_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FM
 img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-31-M.jpg'
 
 # Extract the features
-#features = extract_features(directory_For_All)
-#features_after_cal = landmarks_calculator(features)
+features = extract_features(directory_For_All)
+features_after_cal = landmarks_calculator(features)
 #add_To_DataBase(features_after_cal)
 
-#features_blank , x ,y = set_X_y(features_after_cal)
+#x ,y = set_X_y(features_after_cal)
 #neural_Classifier(x , y)
 #train_keras_classifier(x , y )
 
+########################  binary classifier  ######################################## 
+#x,y = set_pairs_labels(features_after_cal)
+#pair_keras(x, y)
+########################  binary classifier  ######################################## 
+
+########################  triple classifier  ######################################## 
+x,y = set_trips_labels_features(features_after_cal)
+#trip_keras(x,y)
+########################  triple classifier  ######################################## 
+predict_and_evaluate_new_data(x,y)
 ########################  father classifier  ######################################## 
 #x ,y = set_X_y_father_classifier(features_after_cal)
 #neural_Classifier_father(x ,y)
@@ -48,7 +61,7 @@ img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FM
 
 ########################  find child from data base  ######################################## 
 #find_child(img_father_path , img_mother_path)
-check_score()
+#check_score()
 ########################  find child from data base  ######################################## 
 
 ###################### create data base       ##########################################
