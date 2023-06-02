@@ -5,6 +5,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
 import numpy as np
+import matplotlib.pyplot as plt
 
 def build_model_keras_triple(input_shape=(17,)):
     # Define the three inputs
@@ -28,13 +29,15 @@ def build_model_keras_triple(input_shape=(17,)):
 
     # Add final dense layers and compile model
     dense = Dense(32, activation="relu")(combined)
-    dense = Dense(18, activation="relu")(dense)
+    dense = Dense(17, activation="relu")(dense)
     output = Dense(1, activation="sigmoid")(dense)
 
     model = Model([mother_input, father_input, child_input], output)
-    model.compile(optimizer=Adam(0.001), loss='binary_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer=Adam(0.0001), loss='binary_crossentropy', metrics=['accuracy'])
 
     return model
+
+import matplotlib.pyplot as plt
 
 def trip_keras(trips, labels):
     pairs = np.array(trips)
@@ -49,12 +52,26 @@ def trip_keras(trips, labels):
     # Slice the data into respective 'father', 'mother', and 'child' parts
     X_train_father, X_train_mother, X_train_child = np.split(X_train, indices_or_sections=3, axis=1)
     X_test_father, X_test_mother, X_test_child = np.split(X_test, indices_or_sections=3, axis=1)
-    # Define the early stopping callback
-    early_stopping = EarlyStopping(monitor='val_accuracy', patience=5, restore_best_weights=True)
-    # Train the model
-    history = model.fit([X_train_mother, X_train_father, X_train_child], y_train, epochs=30, validation_data=([X_test_mother, X_test_father, X_test_child], y_test), callbacks=[early_stopping])
 
-    
+    # Define the early stopping callback
+    early_stopping = EarlyStopping(monitor='val_accuracy', patience=7, restore_best_weights=True)
+
+    # Train the model
+    history = model.fit([X_train_mother, X_train_father, X_train_child], y_train, 
+                        epochs=30, 
+                        validation_data=([X_test_mother, X_test_father, X_test_child], y_test), 
+                        callbacks=[early_stopping])
+
+    # Plot the history for accuracy
+    plt.figure()
+    plt.plot(history.history['accuracy'])
+    plt.plot(history.history['val_accuracy'])
+    plt.title('Model Accuracy')
+    plt.ylabel('Accuracy')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Val'], loc='upper left')
+    plt.show()
+
     # Evaluate the model
     y_pred = model.predict([X_test_mother, X_test_father, X_test_child])
 

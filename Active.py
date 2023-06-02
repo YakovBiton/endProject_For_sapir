@@ -31,7 +31,7 @@ img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FM
 # Extract the features
 features = extract_features(directory_For_All)
 features_after_cal = landmarks_calculator(features)
-#add_To_DataBase(features_after_cal)
+add_To_DataBase(features_after_cal)
 
 #x ,y = set_X_y(features_after_cal)
 #neural_Classifier(x , y)
@@ -43,10 +43,10 @@ features_after_cal = landmarks_calculator(features)
 ########################  binary classifier  ######################################## 
 
 ########################  triple classifier  ######################################## 
-x,y = set_trips_labels_features(features_after_cal)
+#x,y = set_trips_labels_features(features_after_cal)
 #trip_keras(x,y)
 ########################  triple classifier  ######################################## 
-predict_and_evaluate_new_data(x,y)
+#predict_and_evaluate_new_data(x,y)
 ########################  father classifier  ######################################## 
 #x ,y = set_X_y_father_classifier(features_after_cal)
 #neural_Classifier_father(x ,y)

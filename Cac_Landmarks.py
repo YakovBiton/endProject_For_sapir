@@ -14,18 +14,17 @@ def draw_line(image, arr_of_dots, color, thickness):
 
 
 #landmarks calculator function
-def landmarks_calculator(features):
+def landmarks_calculator(features , draw_on_image=False, image=None):
     for feature in features:
-        ratio_features = []
-        angle_features = []
         landmarks_coordinates = feature.landmarks
     # Ratio-based features
         face_width = euclidean_distance(landmarks_coordinates[0][0], landmarks_coordinates[0][16])
-        nose_length = nose_length_calculator(landmarks_coordinates[0][27:31])
-        nose_width_long = nose_wide_calculator(landmarks_coordinates[0][31:36])
-        nose_ratio = nose_length / nose_width_long
-    # Nose to Face Width Ratio: Ratio of the nose width to the face width.
+        nose_length = euclidean_distance(landmarks_coordinates[0][27] , landmarks_coordinates[0][30])
         nose_width = euclidean_distance(landmarks_coordinates[0][31], landmarks_coordinates[0][35])
+        nose_width_connected = nose_wide_calculator(landmarks_coordinates[0][31:36])
+        nose_ratio = nose_length / nose_width
+    # Nose to Face Width Ratio: Ratio of the nose width to the face width.
+       
         nose_face_width_ratio = nose_width / face_width
 
     # Face width and height ratio
@@ -45,7 +44,6 @@ def landmarks_calculator(features):
         interocular_face_width_ratio = interocular_distance / face_width
 
     # Nose Length to Face Length Ratio: The length of the nose as a ratio of the face length.
-        nose_length = euclidean_distance(landmarks_coordinates[0][27], landmarks_coordinates[0][30])
         face_length = euclidean_distance(landmarks_coordinates[0][27], landmarks_coordinates[0][8])
         nose_face_length_ratio = nose_length / face_length
 
@@ -82,21 +80,86 @@ def landmarks_calculator(features):
         skin_color_Blue = feature.skin_color[2]
         face_embeddings_array = np.array(feature.face_embeddings)
         feature.ratio_features = [face_ratio, nose_ratio, mouth_middle_ratio, mouth_nose_ratio , nose_face_width_ratio , interocular_face_width_ratio , nose_face_length_ratio ,left_eye_face_width_ratio , right_eye_face_width_ratio]
-        feature.angle_features = [angle_between_nose_mouth, angle_nose_inner_eye_corners, angle_right_eye_right_corner, angle_left_eye_right_corner,chin_angle]
+        feature.angle_features = [angle_between_nose_mouth , angle_nose_inner_eye_corners, angle_right_eye_right_corner, angle_left_eye_right_corner, chin_angle]
         feature.color_features = [skin_color_Red , skin_color_Green , skin_color_Blue]
+
+
+        if draw_on_image is True:
+
+        # X.append([nose_ratio, mouth_middle_ratio])
+            # y.append(int(feature.label.split('-')[0]))
+            # Draw the line on the image
+            image = feature.image
+            #draw_line(image, landmarks_coordinates[0][27:31], (0, 255, 0), 2)
+            #draw_line(image, landmarks_coordinates[0][31:36], (0, 255, 0), 2)
+        # draw_line_direct(image, get_midpoint(landmarks_coordinates[0][12], landmarks_coordinates[0][13]),landmarks_coordinates[0][54], (255,0,0), 2)
+        # draw_line_direct(image, get_midpoint(landmarks_coordinates[0][3], landmarks_coordinates[0][4]),landmarks_coordinates[0][48], (255,0,0), 2)
+
+            # Ratio features image 1
+            image1 = feature.image.copy()
+
+            # Face Width
+            draw_line_direct(image1, landmarks_coordinates[0][0], landmarks_coordinates[0][16], (0, 255, 0), 2)
+            
+            # Face Height
+            draw_line_direct(image1, landmarks_coordinates[0][27], landmarks_coordinates[0][8], (0, 255, 0), 2)
+
+            # Mouth Width
+            draw_line_direct(image1, landmarks_coordinates[0][48], landmarks_coordinates[0][54], (255, 0, 0), 2)
+            
+            # Nose Width Short
+            draw_line_direct(image1, landmarks_coordinates[0][31], landmarks_coordinates[0][35], (255, 0, 0), 2)
+            
+            cv2.imshow("Image with ratio features 1", image1)
+            cv2.waitKey(0)
+
+            # Ratio features image 2
+            image2 = feature.image.copy()
+
+            # Interocular Distance
+            draw_line_direct(image2, get_midpoint(landmarks_coordinates[0][39], landmarks_coordinates[0][40]), get_midpoint(landmarks_coordinates[0][42], landmarks_coordinates[0][47]), (0, 0, 255), 2)
+            # Face Width
+            draw_line_direct(image2, landmarks_coordinates[0][0], landmarks_coordinates[0][16], (0, 0, 255), 2)
+            # Face Height
+            draw_line_direct(image2, landmarks_coordinates[0][27], landmarks_coordinates[0][8], (0, 255, 0), 2)
+            # Nose Length
+            draw_line_direct(image2, landmarks_coordinates[0][27], landmarks_coordinates[0][30], (0, 255, 200), 2)
+            
+            
+
+            cv2.imshow("Image with ratio features 2", image2)
+            cv2.waitKey(0)
+
+            # Angle features image
+            image3 = feature.image.copy()
+
+            # Angle Between Nose and Mouth Line
+        # draw_line(image3, [landmarks_coordinates[0][27], landmarks_coordinates[0][30], get_midpoint(landmarks_coordinates[0][3], landmarks_coordinates[0][4]),landmarks_coordinates[0][48]], (0, 255, 255), 2)
+            # Left Eye Width
+            #draw_line_direct(image3, landmarks_coordinates[0][36], landmarks_coordinates[0][39], (255, 255, 0), 2)
+            
+            # Right Eye Width
+        # draw_line_direct(image3, landmarks_coordinates[0][42], landmarks_coordinates[0][45], (255, 255, 0), 2)
+            # Face Width
+            #draw_line_direct(image3, landmarks_coordinates[0][0], landmarks_coordinates[0][16], (255, 255, 0), 2)
+            # Angle Nose Inner Eye Corners
+            draw_line(image3, [landmarks_coordinates[0][39], landmarks_coordinates[0][30], landmarks_coordinates[0][42]], (255, 0, 255), 2)
+
+            # Angle Right Eye Right Corner
+            draw_line(image3, [landmarks_coordinates[0][37], landmarks_coordinates[0][36], landmarks_coordinates[0][41]], (0, 255, 128), 2)
+            
+            # Angle Left Eye Right Corner
+            draw_line(image3, [landmarks_coordinates[0][43], landmarks_coordinates[0][42], landmarks_coordinates[0][47]], (128, 255, 0), 2)
+
+            # Chin Angle
+            draw_line(image3, [landmarks_coordinates[0][7], landmarks_coordinates[0][8], landmarks_coordinates[0][9]], (0, 128, 255), 2)
+            
+            cv2.imshow("Image with angle features", image3)
+            cv2.waitKey(0)
+            # show lines on the face
+            cv2.imshow("Image with Line", image)
+            cv2.waitKey(0)
         
-       # X.append([nose_ratio, mouth_middle_ratio])
-        # y.append(int(feature.label.split('-')[0]))
-        # Draw the line on the image
-        image = feature.image
-        draw_line(image, landmarks_coordinates[0][27:31], (0, 255, 0), 2)
-        draw_line(image, landmarks_coordinates[0][31:36], (0, 0, 255), 2)
-        draw_line_direct(image, get_midpoint(landmarks_coordinates[0][12], landmarks_coordinates[0][13]),landmarks_coordinates[0][54], (255,0,0), 2)
-        draw_line_direct(image, get_midpoint(landmarks_coordinates[0][3], landmarks_coordinates[0][4]),landmarks_coordinates[0][48], (255,0,0), 2)
-        # show lines on the face
-        # cv2.imshow("Image with Line", image)
-        # cv2.waitKey(0)
-    
     return features
 
 def set_X_y(features):

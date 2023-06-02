@@ -59,7 +59,7 @@ def find_child(father_Img_path,mother_Img_path):
     closest_children_resnet_mother
     
     ]
-
+    
     top_N_best_matches = find_best_match(children_lists , 10)
     print(top_N_best_matches)
     print(closest_children_CNN)
@@ -89,11 +89,11 @@ def predict_child_with_keras_model(X):
     scaler_mother = joblib.load('C://kobbi//endProject//tensorflow_model//scaler_mother.pkl')
 
     X = np.array(X)  # Convert list to numpy array
-    X = X.reshape(-1, 22)  # Reshape the 1D array into a 2D array if necessary
+    X = X.reshape(-1, 34)  # Reshape the 1D array into a 2D array if necessary
 
     # Preprocess the data in the same way as for training
-    X_father = scaler_father.transform(X[:,:11])  # First half of the features are father's
-    X_mother = scaler_mother.transform(X[:,11:])  # Second half of the features are mother's
+    X_father = scaler_father.transform(X[:,:17])  # First half of the features are father's
+    X_mother = scaler_mother.transform(X[:,17:])  # Second half of the features are mother's
 
     # Make predictions on the new data
     predicted_child_attributes = model.predict([X_father, X_mother])
