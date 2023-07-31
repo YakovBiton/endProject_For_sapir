@@ -4,7 +4,9 @@ from tensorflow.keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
 import numpy as np
-
+########################     ########################################
+# binary resnet classifier (does not work need super computer)
+########################     ########################################
 def build_model_keras_pair(input_shape):
     # Define the inputs
     input_a = Input(shape=input_shape)

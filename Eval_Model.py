@@ -2,7 +2,9 @@ import torch
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from Classifier_PyTorch import ChildFaceFeaturesNet
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-
+########################     ########################################
+# eval function for the tenserflow model
+########################     ########################################
 def evaluate(model_path, input_data, true_labels):
     model_class = ChildFaceFeaturesNet
     model = model_class()

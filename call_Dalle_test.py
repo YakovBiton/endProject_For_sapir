@@ -3,12 +3,14 @@ import requests
 import json
 import base64
 import os
-
+########################     ########################################
+# attempt to create face the child image from Dalle 
+########################     ########################################
 # DALL-E API endpoint
 DALLE_ENDPOINT_GENERE = 'https://api.openai.com/v1/images/generations'
 DALLE_ENDPOINT_VARIA =  'https://api.openai.com/v1/images/variations'
 # DALL-E API key
-API_KEY = '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'
+API_KEY = 'null'
 
 # Path to the image file
 image_path = 'C:/kobbi/endProject/TSKinFace_Data/Azura_Test/test/FMD-1-D.jpg'

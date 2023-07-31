@@ -7,7 +7,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-
+########################     ########################################
+# attempt to train 2 classifier one for each parent and then use thrid classifier with the outputs
+########################     ########################################
 def build_model(input_shape):
     input_father = Input(shape=input_shape)
     input_mother = Input(shape=input_shape)

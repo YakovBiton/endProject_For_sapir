@@ -1,6 +1,8 @@
 import urllib.request
 import tarfile
-
+########################     ########################################
+# download the dlib library 
+########################     ########################################
 url = 'http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2'
 
 # Download the file from the URL

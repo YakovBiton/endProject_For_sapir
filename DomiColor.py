@@ -6,7 +6,9 @@ from colorthief import ColorThief
 from io import BytesIO
 import numpy as np
 from sklearn.cluster import KMeans
-
+########################     ########################################
+# the correct and "smart" method to extract the colors with use of clustring and dominant colors
+########################     ########################################
 
 def closest_color(requested_color):
     min_colors = {}

@@ -6,7 +6,9 @@ from scipy.spatial.distance import cosine
 import face_recognition
 import cv2
 import numpy as np
-
+########################     ########################################
+# handle resnet methods for extracting features from images
+########################     ########################################
 # Load a pre-trained ResNet18 model
 model = models.resnet50(pretrained=True)
 

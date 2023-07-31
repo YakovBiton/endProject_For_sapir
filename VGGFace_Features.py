@@ -2,6 +2,9 @@ import numpy as np
 from deepface import DeepFace
 from deepface.commons import functions
 from PIL import Image
+########################     ########################################
+# attempts to VGGFace for feature extraction (becuase of the quality of the images it will only work for 1 image out of 10-15 so it been not used)
+########################     ########################################
 
 # Load an image of a face
 img_path = 'C:/kobbi/endProject/TSKinFace_Data/All_Single_SD/all/FMD-1-F.jpg'

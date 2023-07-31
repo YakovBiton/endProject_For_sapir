@@ -4,6 +4,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
 import numpy as np
+########################     ########################################
+# evaluation functions for the kereas models
+########################     ########################################
 def evaluate_keras_model(X_new, y_new):
     # Load the model from disk
     model = load_model('C://kobbi//endProject//tensorflow_model//model.h5')

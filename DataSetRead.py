@@ -20,6 +20,10 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 import sqlite3
 import json
+
+########################     ########################################
+# handle all the extractions of the data we need from the images for the calculation and the training
+########################     ########################################
 #set the directory
 directory = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test'
 model_path = 'C:\kobbi\endProject\shape_predictor_68_face_landmarks.dat'
@@ -52,6 +56,8 @@ face_client = FaceClient(ENDPOINT, credentials)"""
 def extract_features(directory):
     features = []
     labels = []
+    # Now call this function at the start of your feature extraction
+    color_info_dict = read_eye_hair_color_info("C:\\kobbi\\endProject\\TSKinFace_Data\\image_eye_hair_color_info.txt")
     #loop through subdirectories  
     for subdir in os.listdir(directory):
         subdir_path = os.path.join(directory, subdir)
@@ -72,6 +78,7 @@ def extract_features(directory):
                 image = cv2.imread(file_path)
                 image_resize = resizeImage(image) # Resize the image still doesn't used
                 image_name = os.path.basename(file_path)
+                image_name_withoutend, _ = os.path.splitext(os.path.basename(file_path))  # This will give you the filename without the extension
                 # Check if the data is in the database
                 info = retrieve_from_database(image_name)
                 if info is not None:
@@ -82,8 +89,17 @@ def extract_features(directory):
                 # landmarks = np.array(landmarks).flatten()
                 # Append the features and labels
                 if landmarks.shape != (0,):
-                    hair_color, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
+                    hair_color_null, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
                    # dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
+                    if info is not None:
+                        eye_color = color_info_dict[image_name_withoutend]["eye_color"]
+                    else:
+                        eye_color = 0
+                    
+                    if info is not None:
+                        hair_color = color_info_dict[image_name_withoutend]["hair_color"]
+                    else:
+                        hair_color = 0
                     belongs_to_set = '$'
                     if info is not None:
                         face_embeddings = info["face_embeddings"]
@@ -100,7 +116,7 @@ def extract_features(directory):
                     #    print("Skipping image", file_path)
                     #    continue
                     #features_VGGFace_array = np.array(features_VGGFace)
-                    face_features = FaceFeatures(landmarks, face_embeddings, feature_resnet, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+                    face_features = FaceFeatures(landmarks, face_embeddings, feature_resnet, hair_color,eye_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
                   #  landmarks = np.append(landmarks, [hair_color, skin_color])
                    # landmarks = np.expand_dims(landmarks, axis=-1)
                    # eye_color(image)
@@ -122,6 +138,7 @@ def extract_features(directory):
     return features
 
 def extract_features_from_image(file_path):
+    color_info_dict = read_eye_hair_color_info("C:\\kobbi\\endProject\\TSKinFace_Data\\image_eye_hair_color_info.txt")
     file_name = os.path.basename(file_path)
     label = makeLabel(file_name)
     # Extract information from filename
@@ -140,10 +157,13 @@ def extract_features_from_image(file_path):
     else:
         landmarks = np.array(extract_landmarks(image))
     # Preprocess the landmarks
+    image_name_withoutend, _ = os.path.splitext(os.path.basename(file_path))  # This will give you the filename without the extension
     # landmarks = np.array(landmarks).flatten()
     # Append the features and labels
     if landmarks.shape != (0,):
         hair_color, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
+        eye_color = color_info_dict[image_name_withoutend]["eye_color"]
+        hair_color = color_info_dict[image_name_withoutend]["hair_color"]
         dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
         belongs_to_set = '$'
         if info is not None:
@@ -161,7 +181,7 @@ def extract_features_from_image(file_path):
         #    print("Skipping image", file_path)
         #    continue
         #features_VGGFace_array = np.array(features_VGGFace)
-        face_features = FaceFeatures(landmarks, face_embeddings, feature_resnet, hair_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
+        face_features = FaceFeatures(landmarks, face_embeddings, feature_resnet, hair_color,eye_color, skin_color, label, image, image_name, family_type, family_number, member_type, belongs_to_set)
         #  landmarks = np.append(landmarks, [hair_color, skin_color])
         # landmarks = np.expand_dims(landmarks, axis=-1)
         # eye_color(image)
@@ -240,6 +260,24 @@ def extract_landmarks(image):
     #cv2.imshow("Facial Landmarks", copyImage)
     #cv2.waitKey(0)
     return landmarks
+
+# Define a function to read the text file into a dictionary
+def read_eye_hair_color_info(file_path):
+    color_info_dict = {}
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+    current_key = ""
+    for line in lines:
+        line = line.strip()
+        if line.endswith(':'):
+            current_key = line[:-1]  # Remove the ":" at the end
+        elif "Eyes color:" in line:
+            eye_color = line.split(": ")[1]
+            color_info_dict.setdefault(current_key, {})["eye_color"] = eye_color
+        elif "Hair color:" in line:
+            hair_color = line.split(": ")[1]
+            color_info_dict.setdefault(current_key, {})["hair_color"] = hair_color
+    return color_info_dict
 
 def extract_hair_and_skin_color(image,landmarks,image_name):
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2BGRA)
@@ -541,11 +579,12 @@ def string_to_array(s):
 
 
 class FaceFeatures:
-    def __init__(self, landmarks, face_embeddings, feature_resnet, hair_color, skin_color, label, image , image_name, family_type, family_number, member_type, belongs_to_set):
+    def __init__(self, landmarks, face_embeddings, feature_resnet, hair_color, eye_color, skin_color, label, image , image_name, family_type, family_number, member_type, belongs_to_set):
         self.landmarks = landmarks
         self.face_embeddings = face_embeddings
         self.feature_resnet = feature_resnet
         self.hair_color = hair_color
+        self.eye_color = eye_color
         self.skin_color = skin_color
         self.label = label
         self.image = image

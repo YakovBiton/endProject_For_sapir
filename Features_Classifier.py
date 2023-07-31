@@ -5,6 +5,9 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+########################     ########################################
+# attempt to create classifier that check if feature help to the training of the model or not
+########################     ########################################
 def feature_regression(X, y):
     # Split the data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

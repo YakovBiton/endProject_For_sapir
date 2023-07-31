@@ -2,18 +2,28 @@ import random
 import cv2
 import math
 import numpy as np
-# Define your line drawing function
+########################     ########################################
+# cacluate all the features from the dlib library and create labels for them
+########################     ########################################
+
+# ######################### Draw line on images for visualization ########################################
+# Define a function to visually represent a line between two points on an image. 
+# It's particularly useful for visualizing relationships or distances between points in an image.
 def draw_line_direct(image, start_point, end_point, color, thickness):
     cv2.line(image, start_point, end_point, color, thickness)
-
+# Define a function to draw a sequence of connected lines on an image.
+# This can help to visualize paths or relationships between a series of points within an image.
 def draw_line(image, arr_of_dots, color, thickness):
     for i in range(len(arr_of_dots) - 1):
         start_point = arr_of_dots[i]
         end_point = arr_of_dots[i + 1]
         cv2.line(image, start_point, end_point, color, thickness)
+# ######################### Draw line on images for visualization ########################################
 
-
-#landmarks calculator function
+# ######################### Landmarks Calculator of the faces images ########################################
+# This function computes features from facial landmarks for further use in a neural network.
+# It is capable of calculating ratio-based and angle-based features, as well as facial color.
+# Additionally, the function can visualize these calculated features on the original image for better understanding and debugging.
 def landmarks_calculator(features , draw_on_image=False, image=None):
     for feature in features:
         landmarks_coordinates = feature.landmarks
@@ -161,6 +171,7 @@ def landmarks_calculator(features , draw_on_image=False, image=None):
             cv2.waitKey(0)
         
     return features
+# ######################### Landmarks Calculator of the faces images ########################################
 
 def set_X_y(features):
     X = []
@@ -604,7 +615,7 @@ def set_trips_labels_features(features):
                                 y.append(1)
                                 positive_samples += 1
                                 print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
-    negative_samples = 0
+    negative_samples = -500
     while negative_samples < positive_samples:
         # Randomly choose two features
         feature1, feature2, feature3 = random.sample(features, 3)
@@ -621,6 +632,153 @@ def set_trips_labels_features(features):
     labels = np.array(y)
 
     return tripels, labels
+
+def set_trips_labels_resnet(features):
+    X = []
+    y = []
+    positive_samples = 0
+    for feature in features:
+        fm , number , sex = feature.label.split('-')[0 : 3]
+        if feature.belongs_to_set == '$':
+            if fm == 'FMD' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'M.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([feature.feature_resnet, f.feature_resnet, f1.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
+            elif fm == 'FMD' and sex == 'M.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'F.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([f.feature_resnet, feature.feature_resnet, f1.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)                  
+            elif fm == 'FMD' and sex == 'D.jpg':
+                for f in features:
+                    if f.family_type == 'FMD' and f.family_number == number and f.member_type == 'F.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMD' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.feature_resnet, f1.feature_resnet, feature.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+            elif fm == 'FMS' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'M.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMS' and f1.family_number == number and f1.member_type == 'S.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([feature.feature_resnet, f.feature_resnet, f1.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+            elif fm == 'FMS' and sex == 'M.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'F.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMS' and f1.family_number == number and f1.member_type == 'S.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([f.feature_resnet, feature.feature_resnet, f1.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+            elif fm == 'FMS' and sex == 'S.jpg':
+                for f in features:
+                    if f.family_type == 'FMS' and f.family_number == number and f.member_type == 'F.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMS' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.feature_resnet, f1.feature_resnet, feature.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+            elif fm == 'FMSD' and sex == 'F.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'M.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([feature.feature_resnet, f.feature_resnet, f1.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
+            elif fm == 'FMSD' and sex == 'M.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'F.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'D.jpg':
+                                feature.belongs_to_set = 'x'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'y'
+                                X.append([f.feature_resnet, feature.feature_resnet, f1.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set) 
+            elif fm == 'FMSD' and sex == 'D.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'F.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.feature_resnet, f1.feature_resnet, feature.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)  
+            elif fm == 'FMSD' and sex == 'S.jpg':
+                for f in features:
+                    if f.family_type == 'FMSD' and f.family_number == number and f.member_type == 'F.jpg':
+                        for f1 in features:
+                            if f1.family_type == 'FMSD' and f1.family_number == number and f1.member_type == 'M.jpg':
+                                feature.belongs_to_set = 'y'
+                                f.belongs_to_set = 'x'
+                                f1.belongs_to_set = 'x'
+                                X.append([f.feature_resnet, f1.feature_resnet, feature.feature_resnet])
+                                y.append(1)
+                                positive_samples += 1
+                                print(feature.label + " belongs to ", feature.belongs_to_set, " and ", f.label + " belongs to ", f.belongs_to_set, " and ", f1.label, " belongs to ", f1.belongs_to_set)
+    negative_samples = 0
+    while negative_samples < positive_samples:
+        # Randomly choose two features
+        feature1, feature2, feature3 = random.sample(features, 3)
+        # Check that they are not from the same family or not a parent-child pair
+        fm1, number1, sex1 = feature1.label.split('-')[0 : 3]
+        fm2, number2, sex2 = feature2.label.split('-')[0 : 3]
+        fm3, number3, sex3 = feature3.label.split('-')[0 : 3]
+        if number1 != number2 and number3 != number1 and (sex1 in ['F.jpg'] and sex2 in ['M.jpg'] and sex3 in ['S.jpg' , 'D.jpg']):
+            X.append([feature1.feature_resnet, feature2.feature_resnet, feature3.feature_resnet])
+            y.append(0)
+            negative_samples += 1
+
+    tripels = np.array(X)
+    labels = np.array(y)
+
+    return tripels, labels
+
+
 
 def set_X_y_father_classifier(features):
     X = []

@@ -1,5 +1,7 @@
 import os
-
+########################     ########################################
+# after deleting images that dont work with the dlib library we need to delete the rest of the family images . this functions handle it
+########################     ########################################
 dir1 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD'
 dir2 = 'C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test_Copy'
 

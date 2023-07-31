@@ -2,6 +2,9 @@ from DataSetRead import *
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+########################     ########################################
+# some visualization of the data
+########################     ########################################
 
 def visualize_data(features):
    flat_features =[]

@@ -11,7 +11,9 @@ from res18_check import *
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import StandardScaler
 import joblib
-
+########################     ########################################
+# the functions we use to find child after uploading the images to the website
+########################     ########################################
 def find_child(father_Img_path,mother_Img_path):
     
     print("Father image path:", father_Img_path)
@@ -49,20 +51,21 @@ def find_child(father_Img_path,mother_Img_path):
     model.eval()
     print("X  : " ,len(X))
     predicted_child_attributes = model(torch.tensor(X, dtype=torch.float32).unsqueeze(0)).detach().numpy()"""
-    print("predicted child : " , len(predicted_child_attributes))
-    closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother = find_N_closest_child(predicted_child_attributes, face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother)
+    closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother , pred_prediction = find_N_closest_child(predicted_child_attributes, face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother , parents_Features_fin)
     children_lists = [
-    closest_children_CNN,
-    closest_children_embedding_father,
-    closest_children_embedding_mother,
     closest_children_resnet_father,
-    closest_children_resnet_mother
-    
+    closest_children_embedding_father,
+    closest_children_resnet_mother,
+    closest_children_embedding_mother,
+    closest_children_CNN
     ]
-    
-    top_N_best_matches = find_best_match(children_lists , 10)
+    top_N_best_matches = find_best_match(children_lists, pred_prediction, 5)
     print(top_N_best_matches)
-    print(closest_children_CNN)
+    print("CNN regresia model ",closest_children_CNN)
+    print("father resnet ",closest_children_resnet_father)
+    print("mother resnet ",closest_children_resnet_mother)
+    print("father embedding ",closest_children_embedding_father)
+    print("mother embedding ",closest_children_embedding_mother)
     return top_N_best_matches
     #print("The 5 closest children from CNN are:")
     #for child in closest_children_CNN:
@@ -98,8 +101,6 @@ def predict_child_with_keras_model(X):
     # Make predictions on the new data
     predicted_child_attributes = model.predict([X_father, X_mother])
     
-    print("X  : " ,len(X))
-    print("predicted child : " , len(predicted_child_attributes))
     return predicted_child_attributes
    
 def cac_father_landmarks(features):
@@ -154,7 +155,8 @@ def find_closest_children(predicted_child_attributes, file_path="C:\\kobbi\\endP
     closest_children = sorted(similarities, key=lambda x: x[1], reverse=True)[:top_k]
     return [child[0] for child in closest_children]  # Return only the names of the top_k closest children
 
-def find_N_closest_child(predicted_child_attributes, face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother, N=5):
+def find_N_closest_child(predicted_child_attributes, face_embeddings_father, face_embeddings_mother, feature_resnet_father, feature_resnet_mother,  parents_Features , N=7 ):
+    model = load_model('C://kobbi//endProject//tensorflow_model//model_triple.h5')
     # Connect to the SQLite database
     conn = sqlite3.connect("C:\\kobbi\\endProject\\TSKinFace_Data\\image_data.db")
     cursor = conn.cursor()
@@ -162,7 +164,7 @@ def find_N_closest_child(predicted_child_attributes, face_embeddings_father, fac
     query = """
     SELECT image_full_name, info
     FROM image_data
-    WHERE image_full_name LIKE 'FMSD_%_S.%' OR image_full_name LIKE 'FMSD_%_D.%'
+    WHERE image_full_name LIKE 'FMSD_%_S.%' OR image_full_name LIKE 'FMSD_%_D.%' OR image_full_name LIKE 'FMD_%_D.%' OR image_full_name LIKE 'FMS_%_S.%'
     """
     # Execute the query and fetch the results
     cursor.execute(query)
@@ -176,23 +178,36 @@ def find_N_closest_child(predicted_child_attributes, face_embeddings_father, fac
     closest_children_embedding_mother = []
     closest_children_resnet_father = []
     closest_children_resnet_mother = []
-
+    pred_prediction = []
+    
     for result in results:
         image_full_name, info_str = result
         info = json.loads(info_str)  # Parse the info string into a dictionary
+        landmarks = np.array([[tuple(point) for point in info["landmarks"]]]) 
         embedding = info['face_embeddings']
         resnet = info['feature_resnet']
         ratio_features = info['ratio_features']
         angle_features = info['angle_features']
         color_features = info['color_features']
         child_attributes = [*ratio_features, *angle_features, *color_features]
-        print(predicted_child_attributes)
-        print(child_attributes)
        # Flatten predicted_child_attributes to 1D
         predicted_child_attributes = predicted_child_attributes.flatten()
+        # Concatenate the features of the father, mother and child
+        triplet_features = parents_Features + child_attributes
+        triplet_features_array = np.array(triplet_features)
+        father_features, mother_features, child_features = np.split(triplet_features_array, indices_or_sections=3)
+        print(triplet_features)
+        father_features = np.expand_dims(father_features, axis=0)
+        mother_features = np.expand_dims(mother_features, axis=0)
+        child_features = np.expand_dims(child_features, axis=0)
+        pred = model.predict([father_features, mother_features, child_features])[0][0]
 
+
+        pred_prediction.append((image_full_name, pred))
         # Calculate cosine similarity
         #similarity_attributes = np.dot(predicted_child_attributes, child_attributes) / (np.linalg.norm(predicted_child_attributes) * np.linalg.norm(child_attributes))
+        print (image_full_name)
+        print (pred)
         similarity_attributes = cosine_similarity(child_attributes,predicted_child_attributes)
         closest_children_CNN.append((image_full_name, similarity_attributes))
 
@@ -208,6 +223,9 @@ def find_N_closest_child(predicted_child_attributes, face_embeddings_father, fac
 
         closest_children_resnet_father.append((image_full_name, similarity_resnet_father))
         closest_children_resnet_mother.append((image_full_name, similarity_resnet_mother))
+
+
+        
 
     # Sort the lists based on the similarity values
     closest_children_CNN.sort(key=lambda x: x[1], reverse=True)
@@ -226,18 +244,36 @@ def find_N_closest_child(predicted_child_attributes, face_embeddings_father, fac
     # Close the database connection
     conn.close()
 
-    return closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother
+    return closest_children_CNN, closest_children_embedding_father, closest_children_embedding_mother, closest_children_resnet_father, closest_children_resnet_mother , pred_prediction
 
-def find_best_match(children_lists , N):
+def find_best_match(children_lists ,pred_prediction, N):
     child_counter = {}
-
+    pred_dict = dict(pred_prediction)
+    children_already_added_pred = set()
     for child_list in children_lists:
         for child, _ in child_list:
-            if child in child_counter:
-                child_counter[child] += 1
-            else:
+            if child not in child_counter:
                 child_counter[child] = 1
+            else:
+                child_counter[child] += 1
+            if pred_dict.get(child, 0) > 0.5 and child not in children_already_added_pred:
+                child_counter[child] += 2
+                children_already_added_pred.add(child)
 
+            # Check if the child is of the "FMSD" type
+            if child.startswith('FMSD'):
+                # Identify the sibling
+                child_parts = child.split('-')
+                sibling_type = 'S.jpg' if 'D.jpg' in child else 'D.jpg'
+                sibling = f'{child_parts[0]}-{child_parts[1]}-{sibling_type}'
+
+                # Update the sibling's count
+                if sibling not in child_counter:
+                    child_counter[sibling] = 1
+                else:
+                    child_counter[sibling] += 1
+                #if pred_dict.get(sibling, 0) > 0.5:
+                #    child_counter[sibling] += 2
     # Sort children by their count (number of lists they appear in)
     sorted_children = sorted(child_counter.items(), key=lambda x: x[1], reverse=True)
 

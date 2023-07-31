@@ -1,7 +1,9 @@
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 from DataSetRead import *
-
+########################     ########################################
+# the first attempt to classify colors with "simple" way of labeling
+########################     ########################################
 # Assume you have a dataset of colors with their corresponding labels
 colors_skin = [[255, 0, 0], [0, 255, 0], [185,185,185], [210,180,140], [255, 255, 0], [130,130,160], [111,55,55], [255, 255, 255], [100, 42, 42] , [25, 25, 25]]
 labels_skin = ["red", "green", "light white", "tan white", "yellow", "dark white", "light brown", "pale white", "brown", "dark black"] 

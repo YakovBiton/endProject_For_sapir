@@ -2,6 +2,10 @@ import os
 import cv2
 from Find_Child import *
 from Cac_Landmarks import *
+########################     ########################################
+# fucntions for the website 
+########################     ########################################
+
 def extract_son_daughter_attributes(directory_path):
     son_daughter_attributes = []
 

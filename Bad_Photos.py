@@ -1,7 +1,11 @@
 import os
-
+########################     ######################################## 
+# Function to handle "bad images" in a given directory path. It aims to exclude families 
+# with incomplete member images due to issues with the dlib landmarks library.
+########################     ########################################
 # Set the directory path
 directory_path = "C:\\kobbi\\endProject\\TSKinFace_Data\\Azura_Test_Copy"
+
 
 def fun(directory_path):
     files = os.listdir(directory_path)

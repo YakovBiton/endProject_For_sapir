@@ -6,7 +6,9 @@ from tensorflow.keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
-
+########################     ########################################
+# binary (father and mother are referred as one) classification classifier
+########################     ########################################
 def build_model_binary(input_shape):
     input_father = Input(shape=input_shape)
     input_mother = Input(shape=input_shape)

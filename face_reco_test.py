@@ -1,6 +1,8 @@
 import face_recognition
 import numpy as np
-
+########################     ########################################
+# check if the face embedding working
+########################     ########################################
 # Load the image file
 image = face_recognition.load_image_file('C:\\kobbi\\endProject\\TSKinFace_Data\\All_Pairs_SD\\FMSD\\FMSD-17-F.jpg')
 test = [1,2,4]
