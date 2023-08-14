@@ -63,7 +63,6 @@ def landmarks_calculator(features , draw_on_image=False, image=None):
         left_eye_face_width_ratio = left_eye_width / face_width
         right_eye_face_width_ratio = right_eye_width / face_width
 
-       # eye_mouth_ratio = eye_distance / mouth_width
     # Calculate the angle between nose and mouth lines
         nose_line_start = landmarks_coordinates[0][27]
         nose_line_end = landmarks_coordinates[0][30]
@@ -96,9 +95,7 @@ def landmarks_calculator(features , draw_on_image=False, image=None):
 
         if draw_on_image is True:
 
-        # X.append([nose_ratio, mouth_middle_ratio])
-            # y.append(int(feature.label.split('-')[0]))
-            # Draw the line on the image
+        
             image = feature.image
             #draw_line(image, landmarks_coordinates[0][27:31], (0, 255, 0), 2)
             #draw_line(image, landmarks_coordinates[0][31:36], (0, 255, 0), 2)
@@ -488,6 +485,7 @@ def set_pairs_labels_resnet(features):
 
     return pairs, labels
 
+### the x and y we use for the current model ###
 def set_trips_labels_features(features):
     X = []
     y = []

@@ -85,12 +85,9 @@ def extract_features(directory):
                     landmarks = info["landmarks"]
                 else:
                     landmarks = np.array(extract_landmarks(image))
-                # Preprocess the landmarks
-                # landmarks = np.array(landmarks).flatten()
-                # Append the features and labels
                 if landmarks.shape != (0,):
                     hair_color_null, skin_color = extract_hair_and_skin_color(image,landmarks,image_name)
-                   # dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
+                   #dominant_eye_color,eye_palette = extract_eye_color(image, landmarks, file_name)
                     if info is not None:
                         eye_color = color_info_dict[image_name_withoutend]["eye_color"]
                     else:
@@ -136,6 +133,8 @@ def extract_features(directory):
        
         #np.set_printoptions(threshold=sys.maxsize)   
     return features
+
+############################# for one image ##################################
 
 def extract_features_from_image(file_path):
     color_info_dict = read_eye_hair_color_info("C:\\kobbi\\endProject\\TSKinFace_Data\\image_eye_hair_color_info.txt")
