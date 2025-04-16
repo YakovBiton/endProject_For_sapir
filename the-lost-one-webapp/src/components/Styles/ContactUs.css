@@ -1,0 +1,25 @@
+.contactus {
+    width: 100%;
+    min-height: 100vh; /* Use min-height to fill the viewport height */
+    background-image: url("../../assets/bgfmd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .content {
+    padding-top: 200px; /* Adjust the top padding to accommodate the navbar */
+  }
+  
+  h1 {
+    font-family: gabriola;
+    font-size: 40px;
+    line-height: 1.5; /* Adjust the line-height value as needed */
+    padding-left: 50px;
+}
+  
+  .iconStyle {
+    padding-top: 50px;
+    padding-left: 100px;
+  }
+  
