@@ -29,7 +29,7 @@ img_father_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Data\\FMD_FMS_FMSD
 img_mother_path = 'C:\\kobbi\\endProject\\TSKinFace_Data\\All_Data\\FMD_FMS_FMSD\\FMSD-98-M.jpg'
 
 ########################      ######################################## 
-# Active functions for all the processes
+# Active functions for all the processes  
 ########################     ######################################## 
 
 
