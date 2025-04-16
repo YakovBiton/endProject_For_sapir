@@ -12,6 +12,7 @@ The project was developed as my end-of-degree project in Computer Science and de
 * **Triple-subject Kinship Verification**: Analyzes parent-parent-child relationships
 * **Fast API Backend**: Scalable RESTful service for face kinship verification
 * **Interactive GUI**: Desktop application for testing and visualization
+* **Web Application**: React-based front-end with authentication for uploading and processing images
 * **Database Integration**: SQLite storage for facial features and embeddings
 
 ## Technical Approach
@@ -24,7 +25,7 @@ The system uses a multi-faceted approach to kinship verification:
    * Binary parent-child classification
    * Triple subject (father-mother-child) classification
    * ResNet-based feature extraction
-4. **Ensemble Method**: Combines predictions from various models for improved accuracy
+4. **Ensemble Method**: Combines predictions from various models through a point-based scoring system
 
 ## Dataset
 
@@ -40,7 +41,8 @@ The project utilizes the TSKinFace dataset (Tri-Subject Kinship Face), which con
 * **Feature Extraction**: Geometric measurements, color analysis, and neural embeddings
 * **Classification Models**: Both PyTorch and TensorFlow/Keras implementations
 * **Visualization Tools**: Interactive displays of facial landmarks and features
-* **Evaluation System**: Comprehensive metrics for model performance
+* **Evaluation System**: Point-based scoring from multiple classifier outputs
+* **Web Interface**: React application for uploading parent images and finding potential matches
 
 ### Technologies Used:
 
@@ -49,15 +51,25 @@ The project utilizes the TSKinFace dataset (Tri-Subject Kinship Face), which con
 * **PyTorch & TensorFlow**: Deep learning frameworks
 * **FastAPI**: Backend API development
 * **SQLite**: Database for facial features storage
+* **React**: Frontend web application
+* **Firebase**: Authentication for web application
 
 ## Results and Performance
 
-The system achieved accuracy in identifying parent-child relationships from facial images. The triple-subject classification model demonstrated particularly strong performance in distinguishing true family relationships from random groupings.
+The system uses a point-based approach where each classifier (PyTorch, Keras, ResNet50, etc.) contributes points to potential parent-child matches. Based on the accumulated points, matches are classified as either "potential matches" or "strong matches" if they exceed a certain threshold.
 
-Key metrics:
-* Binary classification accuracy: ~85%
-* Triple-subject classification accuracy: ~80%
-* Ensemble model performance: ~88%
+In testing with real data:
+* **Potential Matches**: 26% of correct children identified
+* **Strong Matches**: 35% of correct children identified
+* **Overall Success Rate**: 61% of parent-child relationships correctly identified
+
+## Web Application
+
+The system includes a React-based web application where users can:
+* Create an account and log in securely through Firebase authentication
+* Upload facial images of two parents (father and mother)
+* Process the images through the facial kinship verification system
+* View potential children matches ranked by likelihood of biological relation
 
 ## Future Directions
 
@@ -73,7 +85,7 @@ Key metrics:
 git clone https://github.com/yourusername/the-lost-one.git
 cd the-lost-one
 
-# Install dependencies
+# Install backend dependencies
 pip install -r requirements.txt
 
 # Run the FastAPI server
@@ -81,3 +93,8 @@ python main.py
 
 # Launch the GUI application
 python Main_Gui.py
+
+# For the React web application
+cd webapp
+npm install
+npm start
